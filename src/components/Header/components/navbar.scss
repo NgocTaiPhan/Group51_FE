@@ -1,0 +1,25 @@
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background-color: #87c84a;
+  li {
+    list-style: none;
+    padding-right: 20px;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      transition: all 0.3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
