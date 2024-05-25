@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.scss";
 import logo from "../../img/logo.png";
-import footer from "../../img/_images_icons_payment.png";
+import footer from "../../assets/img/_images_icons_payment.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
