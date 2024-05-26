@@ -1,7 +1,7 @@
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
-import logo from "../../img/logo.png";
+import logo from "../../assets/img/logo.png";
 import {
   AudioOutlined,
   ShoppingCartOutlined,
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           />
           <ul className={`account_option ${isVisible ? 'visible' : 'hidden'}`}>
             <li>
-              <NavLink className="loginPage" to="/login">
+              <NavLink className="loginPage" to="/Login">
                 Login
               </NavLink>
             </li>
