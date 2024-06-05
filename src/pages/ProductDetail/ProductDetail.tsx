@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, redirect, useNavigate, useParams } from "react-router-dom";
 import data from "../../data/data";
 import { useEffect, useState } from "react";
 import "./ProductDetail.scss";
@@ -10,39 +10,76 @@ import { MdOutlinePayment } from "react-icons/md";
 import { FaHandHoldingUsd } from "react-icons/fa";
 
 export default function ProductDetail() {
-  const getProduct = async (id: number) => {
-    return data.menu.find((product) => product.id == id);
-  };
+  const [soupDetail, setSoupDetail] = useState<any>([]);
+  const [amount, setAmount] = useState(1);
   const getSoupById = async (soupId: any) => {
     return data.soups.find((soup) => (soup.id = soupId));
   };
-
+  const getProduct = async (id: number) => {
+    return data.menu.find((product) => product.id == id);
+  };
+  const getOthers = async (id: number) => {
+    return data.menu.filter((product) => product.id != id);
+  };
   const param = useParams();
+  const navigate = useNavigate();
   const [detail, setDetail] = useState<any>([]);
-  const [soupDetail, setSoupDetail] = useState<any>([]);
-  const [amount, setAmount] = useState(1);
+  const [others, setOthers] = useState<any>([]);
   useEffect(() => {
     fecthProductDetail();
-  }, []);
-
+  }, [param.productId]);
+  const loadOthers = async (param: any) => {
+    const product = await getOthers(param.productId);
+    return product;
+  };
   const loadProduct = async (param: any) => {
     const product = await getProduct(param.productId);
     return product;
+  };
+  const fecthProductDetail = async () => {
+    const result = await loadProduct(param);
+    const soup = await loadSoup(result?.soups);
+    const others = await loadOthers(param);
+    console.log(result);
+
+    setDetail(result);
+    setOthers(others.slice(0, 5));
+  };
+  const handleProductClick = (productId: number) => {
+    window.location.href = `/product-detail/${productId}`;
+  };
+  const renderOthers = () => {
+    return others.map((element: any) => {
+      return (
+        <div key={element.id} className="px-5 py-5 mx-5 others">
+          <div onClick={() => handleProductClick(element.id)}>
+            <div>
+              <img src={element.image} />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-color1 py-2">
+                {element.name}
+              </h3>
+              <p className="py-1 text-color2">{element.description}</p>
+              <p className="py-1 font-semibold">{element.price} VND</p>
+              <div className="flex items-center py-1">
+                <FaStar style={{ color: "#f9c951" }} />
+                <span>{element.rate}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    });
   };
   const loadSoup = async (id: any) => {
     const product = await getSoupById(id);
     return product;
   };
 
-  const fecthProductDetail = async () => {
-    const result = await loadProduct(param);
-    const soup = await loadSoup(result?.soups);
-    setDetail(result);
-  };
-
   return (
     <div>
-      <div style={{ background: "rgb(246 246 246)" }}>
+      <div>
         <div className="px-20 flex items-center">
           <span className="mx-2">
             <FaHome />
@@ -173,6 +210,12 @@ export default function ProductDetail() {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <div className="px-20 py-3 other_products">
+            <h3 className="text-2xl font-semibold text-white">Sản phẩm khác</h3>
+          </div>
+          <div className="flex justify-start py-20 px-10">{renderOthers()}</div>
         </div>
       </div>
     </div>
