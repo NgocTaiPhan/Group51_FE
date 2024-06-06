@@ -1,0 +1,29 @@
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center !important;
+  padding: 15px !important;
+  background-color: #87c84a;
+}
+.navbar li {
+  list-style: none;
+  padding-right: 20px !important;
+}
+.navbar li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.navbar li a:hover {
+  color: #fff;
+}
+
+/*# sourceMappingURL=navbar.css.map */

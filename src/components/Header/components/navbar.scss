@@ -6,12 +6,12 @@ a{
 }
 .navbar {
   display: flex;
-  justify-content: center;
-  padding: 15px;
+  justify-content: center !important;
+  padding: 15px !important;
   background-color: #87c84a;
   li {
     list-style: none;
-    padding-right: 20px;
+    padding-right: 20px!important;
     a {
       text-decoration: none;
       color: black;
