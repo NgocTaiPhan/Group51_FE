@@ -12,27 +12,35 @@ export default function Router() {
     const routing = useRoutes([
         {
 
-          path: "/product-detail/:productId",
-          element: (
-              <ProductDetai />
-          ),
+            path: "/",
+            element: (
+                <HomeLayout/>
+            ),
 
         },
         {
-          path: "/login",
-          element: (
-              <Login />
-          )
+            path: "/login",
+            element: (
+                <Login/>
+            )
         },
         {
-          path: "/register",
-          element: (
-              <Register />
-          )
+            path: "/register",
+            element: (
+                <Register/>
+            )
+        },
+        {
+            path: "/",
+            element: (
+                <HomeLayout/>
+            ), children: [
+                {
+                    path: "/account",
+                    element: <Account/>,
+                },
+            ],
         }
-      ],
-    },
-
-  ]);
-  return routing;
+    ]);
+    return routing;
 }
