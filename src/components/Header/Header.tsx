@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           />
           <ul className={`account_option ${isVisible ? 'visible' : 'hidden'}`}>
             <li>
-              <NavLink className="loginPage" to="/Login">
+              <NavLink className="loginPage" to="/login">
                 Login
               </NavLink>
             </li>

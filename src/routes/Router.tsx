@@ -14,7 +14,15 @@ export default function Router() {
           element: (
               <ProductDetai />
           ),
+
         },
+        {
+          path: "/login",
+          element: (
+              <Login />
+          )
+        }
+
       ],
     },
   ]);
