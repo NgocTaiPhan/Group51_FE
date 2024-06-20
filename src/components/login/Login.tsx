@@ -53,7 +53,7 @@ function Login() {
                             <tbody>
                             <tr className="username">
                                 <td><label>Tên đăng nhập:</label></td>
-                                <td><input value="" /></td>
+                                <td><input type="text" value="" /></td>
                             </tr>
                             <tr className="pass">
                                 <td><label>Mật khẩu:</label></td>

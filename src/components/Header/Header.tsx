@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   };
   return (
     <div className="header">
-      <div className="container">
+      <div className="header_container">
         <div className="mtw_banner_top_content">
           <a href="#">
             <img src={logo} width="80" height="80" alt="logo" />
