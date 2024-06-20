@@ -3,7 +3,7 @@ import "./navbar.scss";
 export default function Navbar() {
   return (
     <nav>
-      <ul className="navbar">
+      <ul className="header_navbar">
         <li>
           <a href="#">
             <span>Home</span>
