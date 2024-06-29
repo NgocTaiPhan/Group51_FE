@@ -8,6 +8,10 @@
   color: #87c84a;
 }
 
+.detail_container {
+  width: 90% !important;
+}
+
 .increase,
 .decrease {
   padding: 4px;
@@ -91,6 +95,46 @@
 
 .other_products {
   background-color: #87c84a;
+}
+
+.line {
+  width: 1px;
+  height: 500px;
+  background-color: rgba(203, 203, 203, 0.631372549);
+}
+
+.line_1 {
+  width: 500px;
+  height: 1px;
+  background-color: rgba(203, 203, 203, 0.631372549);
+}
+
+.comment .setNewComment {
+  padding: 10px;
+  width: 100%;
+}
+.comment input:focus {
+  outline: none;
+}
+.comment input.comment-input:focus {
+  outline: none;
+}
+.comment .submit_comment {
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #87c84a;
+  margin-top: 10px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.3s;
+}
+.comment .submit_comment:hover {
+  background: rgba(135, 200, 74, 0.79);
+}
+
+.promotion_box li {
+  list-style: disc;
+  margin-left: 20px;
 }
 
 /*# sourceMappingURL=ProductDetail.css.map */

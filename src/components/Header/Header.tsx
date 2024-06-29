@@ -34,8 +34,8 @@ const Header: React.FC = () => {
   };
 
   return (
-<!--       <div className="header">
-        <div className="container">
+    <div className="header">
+        <div className="header_container">
           <div className="mtw_banner_top_content">
             <a href="#">
               <img src={logo} width="80" height="80" alt="logo" />
@@ -85,49 +85,50 @@ const Header: React.FC = () => {
                 }}
                 onClick={handleCartToggle} // Thêm sự kiện onClick để mở popup cart
             />
-          </div> -->
+          </div>
 
-    <div className="header">
-      <div className="header_container">
-        <div className="mtw_banner_top_content">
-          <a href="#">
-            <img src={logo} width="80" height="80" alt="logo" />
-          </a>
-        </div>
-        <Search
-          placeholder="input search text"
-          onSearch={onSearch}
-          enterButton
-          style={{ width: 600 }}
-        />
-        <div className="right_header">
-          <UserOutlined
-          className="account"
-            style={{transition: "all 0.3s", fontSize: 28, marginRight: 30, cursor: "pointer" }}
-            onClick={handleToggle}
-          />
-          <ul className={`account_option ${isVisible ? 'visible' : 'hidden'}`}>
-            <li>
-              <NavLink className="loginPage" to="/login">
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="cartPage" to="/cart">
-                Cart
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="myAccount" to="/account">
-                My Account
-              </NavLink>
-            </li>
-          </ul>
-          <ShoppingCartOutlined className="cart" style={{transition: "all 0.3s" , fontSize: 28, cursor: "pointer" }} />
+    {/*<div className="header">*/}
+    {/*  <div className="header_container">*/}
+    {/*    <div className="mtw_banner_top_content">*/}
+    {/*      <a href="#">*/}
+    {/*        <img src={logo} width="80" height="80" alt="logo" />*/}
+    {/*      </a>*/}
+    {/*    </div>*/}
+    {/*    <Search*/}
+    {/*      placeholder="input search text"*/}
+    {/*      onSearch={onSearch}*/}
+    {/*      enterButton*/}
+    {/*      style={{ width: 600 }}*/}
+    {/*    />*/}
+    {/*    <div className="right_header">*/}
+    {/*      <UserOutlined*/}
+    {/*      className="account"*/}
+    {/*        style={{transition: "all 0.3s", fontSize: 28, marginRight: 30, cursor: "pointer" }}*/}
+    {/*        onClick={handleToggle}*/}
+    {/*      />*/}
+    {/*      <ul className={`account_option ${isVisible ? 'visible' : 'hidden'}`}>*/}
+    {/*        <li>*/}
+    {/*          <NavLink className="loginPage" to="/login">*/}
+    {/*            Login*/}
+    {/*          </NavLink>*/}
+    {/*        </li>*/}
+    {/*        <li>*/}
+    {/*          <NavLink className="cartPage" to="/cart">*/}
+    {/*            Cart*/}
+    {/*          </NavLink>*/}
+    {/*        </li>*/}
+    {/*        <li>*/}
+    {/*          <NavLink className="myAccount" to="/account">*/}
+    {/*            My Account*/}
+    {/*          </NavLink>*/}
+    {/*        </li>*/}
+    {/*      </ul>*/}
+    {/*      <ShoppingCartOutlined className="cart" style={{transition: "all 0.3s" , fontSize: 28, cursor: "pointer" }} />*/}
         </div>
         <Navbar />
         <CartPopUp visible={isCartVisible} onClose={handleCartToggle} />
       </div>
+
   );
 };
 
