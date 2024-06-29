@@ -1,11 +1,24 @@
-import React, { lazy } from "react";
-import { useRoutes } from "react-router-dom";
+import React, { lazy, useState } from "react";
+import { useRoutes, NavLink, useLocation } from "react-router-dom";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
-import ProductDetai from "../pages/ProductDetail/ProductDetail";
+import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Login from "../pages/login/Login";
-import Regiter from "../pages/register/Register";
 import Register from "../pages/register/Register";
+import CartPopUp from "../pages/cart/CartPopUp";
+import Cart from "../pages/cart/Cart";
+
 export default function Router() {
+  const [isCartVisible, setIsCartVisible] = useState(false);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.pathname === "/cart") {
+      setIsCartVisible(true);
+    } else {
+      setIsCartVisible(false);
+    }
+  }, [location.pathname]);
+
   const routing = useRoutes([
     {
       path: "/",
@@ -13,26 +26,32 @@ export default function Router() {
       children: [
         {
           path: "/product-detail/:productId",
-          element: (
-              <ProductDetai />
-          ),
-
+          element: <ProductDetail />,
         },
         {
           path: "/login",
-          element: (
-              <Login />
-          )
+          element: <Login />,
         },
         {
           path: "/register",
-          element: (
-              <Register />
-          )
+          element: <Register />,
+        },
+        {
+          path: "/cart",
+          element: <></>, // Empty component for routing
+        },
+        {
+          path: "/carts",
+          element: <Cart  />,
         }
       ],
     },
-
   ]);
-  return routing;
+
+  return (
+      <>
+        {routing}
+        <CartPopUp visible={isCartVisible} onClose={() => setIsCartVisible(false)} />
+      </>
+  );
 }
