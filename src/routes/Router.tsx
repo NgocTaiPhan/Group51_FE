@@ -59,7 +59,8 @@ export default function Router() {
         {
           path: "/carts",
           element: <Cart  />,
-        }
+        },
+        {
           path: "/account",
           element: <Account />,
         },

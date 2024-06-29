@@ -1,0 +1,44 @@
+.header_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header_container .ant-input-search-button {
+  background-color: #87c84a;
+}
+.header_container .ant-input-search-button:hover {
+  background: #b5e389 !important;
+}
+.header_container .skip-account {
+  text-decoration: none;
+}
+.header_container .account_option {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 25.5px 4.5px;
+  padding: 20px;
+  left: 78%;
+  opacity: 0;
+  transition: all 0.2s;
+}
+.header_container .account_option li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+.header_container .account_option li a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+.header_container .account_option li a:hover {
+  color: #87c84a;
+}
+.header_container .account_option.visible {
+  opacity: 1;
+}
+.header_container .account:hover,
+.header_container .cart:hover {
+  color: #87c84a;
+}
+
+/*# sourceMappingURL=Header.css.map */
