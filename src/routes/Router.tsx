@@ -6,6 +6,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import CartPopUp from "../pages/cart/CartPopUp";
 import Cart from "../pages/cart/Cart";
+import Account from "../pages/Account/Account";
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -27,7 +28,22 @@ export default function Router() {
         {
           path: "/product-detail/:productId",
           element: <ProductDetail />,
+
         },
+      ],
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/",
+      element: <HomeLayout />,
+      children: [
         {
           path: "/login",
           element: <Login />,
@@ -44,6 +60,10 @@ export default function Router() {
           path: "/carts",
           element: <Cart  />,
         }
+          path: "/account",
+          element: <Account />,
+        },
+
       ],
     },
   ]);
