@@ -64,8 +64,13 @@
   margin-right: 20px;
 }
 
-.btn-forgotpass {
+.forgotpass {
   margin-left: 80px;
+}
+
+.input-custom {
+  padding: 15px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=InforUser.css.map */
