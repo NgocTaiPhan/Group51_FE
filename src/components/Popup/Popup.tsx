@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {Button, Modal} from 'antd';
 
-export default function Popup({btnText, title, content}: { btnText: any, title: any, content: any }) {
+export default function Popup(props: any) {
     const [open, setOpen] = useState(false);
+
+    // Mở modal
     const showModal = () => {
         setOpen(true);
     };
@@ -16,14 +18,15 @@ export default function Popup({btnText, title, content}: { btnText: any, title: 
     };
 
     return (
-        <>
+        <div className="mx-auto">
+
             <Button className="btn btn-custom" onClick={showModal}>
-                {btnText}
+                {props.btnText}
             </Button>
-            <Modal title={title} open={open} onOk={handleOk} onCancel={handleCancel}>
-                <div>{content}</div>
+            <Modal title={props.title} open={open} onOk={handleOk} onCancel={handleCancel}>
+                <div>{props.content}</div>
             </Modal>
-        </>
+        </div>
     );
 }
 

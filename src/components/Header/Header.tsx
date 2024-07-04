@@ -10,7 +10,9 @@ import {
 import { Input } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
 import { useState } from "react";
+import { useCart } from "../../pages/ProductDetail/CartContext";
 import CartPopUp from "../../pages/cart/CartPopUp"; // Đảm bảo đường dẫn chính xác
+
 
 const { Search } = Input;
 
@@ -19,6 +21,7 @@ const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { cartItemCount } = useCart();
   const [isVisible, setIsVisible] = useState(false);
   const [isCartVisible, setIsCartVisible] = useState(false);
 

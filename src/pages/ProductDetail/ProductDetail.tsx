@@ -13,9 +13,11 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FaGift } from "react-icons/fa6";
 import { Avatar, Form, Button, List, Input } from "antd";
 import moment from "moment";
+import { useCart } from "./CartContext";
 
 export default function ProductDetail() {
   const [soupDetail, setSoupDetail] = useState<any>([]);
+  const { addToCart } = useCart();
   const [amount, setAmount] = useState(1);
   const [comments, setComments] = useState<any>([]);
   const [newCommentText, setNewCommentText] = useState<string>("");
@@ -182,24 +184,32 @@ export default function ProductDetail() {
                     background: "#f33828",
                     width: "70%",
                     borderRadius: 5,
-                    display:"flex",
-                    alignItems:"center"
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
-                  <FaGift style={{ color:"#fff", marginLeft: 10}}/>
+                  <FaGift style={{ color: "#fff", marginLeft: 10 }} />
                   <p
                     style={{
                       padding: "5px 10px",
                       color: "#fff",
                       fontWeight: 500,
-                      margin: 0
+                      margin: 0,
                     }}
                   >
                     Thân chúc quý khách dùng ngon miệng
                   </p>
                 </div>
 
-                <ul className="promotion_box" style={{ padding: 10 , background:"#fff", marginTop:10, listStyleType:"disc"}}>
+                <ul
+                  className="promotion_box"
+                  style={{
+                    padding: 10,
+                    background: "#fff",
+                    marginTop: 10,
+                    listStyleType: "disc",
+                  }}
+                >
                   <li>Freeship với đơn hàng 5 phần trở lên</li>
                   <li>Tặng kèm trái cây tráng miệng mỗi ngày</li>
                   <li>Cuối tuần tặng kèm nước uống</li>
@@ -224,7 +234,12 @@ export default function ProductDetail() {
                   </button>
                 </div>
                 <div>
-                  <button className="addToCart">Thêm vào giỏ hàng</button>
+                  <button
+                    className="addToCart"
+                    onClick={() => addToCart(amount)}
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
                 </div>
               </div>
               <div>
