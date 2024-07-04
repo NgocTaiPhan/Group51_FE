@@ -6,23 +6,23 @@ a {
   text-decoration: none;
 }
 
-.navbar {
+.header_navbar {
   display: flex;
   justify-content: center !important;
   padding: 15px !important;
   background-color: #87c84a;
 }
-.navbar li {
+.header_navbar li {
   list-style: none;
   padding-right: 20px !important;
 }
-.navbar li a {
+.header_navbar li a {
   text-decoration: none;
   color: black;
   font-weight: 500;
   transition: all 0.3s;
 }
-.navbar li a:hover {
+.header_navbar li a:hover {
   color: #fff;
 }
 
