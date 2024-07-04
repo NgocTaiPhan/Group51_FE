@@ -10,6 +10,7 @@ import {
 import { Input, Space } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
 import { useState } from "react";
+import { useCart } from "../../pages/ProductDetail/CartContext";
 
 const { Search } = Input;
 
@@ -17,6 +18,7 @@ const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
   console.log(info?.source, value);
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { cartItemCount } = useCart();
   const [isVisible, setIsVisible] = useState(false);
   const handleToggle = () => {
     setIsVisible(!isVisible);
@@ -37,11 +39,16 @@ const Header: React.FC = () => {
         />
         <div className="right_header">
           <UserOutlined
-          className="account"
-            style={{transition: "all 0.3s", fontSize: 28, marginRight: 30, cursor: "pointer" }}
+            className="account"
+            style={{
+              transition: "all 0.3s",
+              fontSize: 28,
+              marginRight: 30,
+              cursor: "pointer",
+            }}
             onClick={handleToggle}
           />
-          <ul className={`account_option ${isVisible ? 'visible' : 'hidden'}`}>
+          <ul className={`account_option ${isVisible ? "visible" : "hidden"}`}>
             <li>
               <NavLink className="loginPage" to="/login">
                 Login
@@ -58,7 +65,17 @@ const Header: React.FC = () => {
               </NavLink>
             </li>
           </ul>
-          <ShoppingCartOutlined className="cart" style={{transition: "all 0.3s" , fontSize: 28, cursor: "pointer" }} />
+          <div>
+            <ShoppingCartOutlined
+              className="cart"
+              style={{
+                transition: "all 0.3s",
+                fontSize: 28,
+                cursor: "pointer",
+              }}
+            />
+            <span className="cart-count">{cartItemCount}</span>
+          </div>
         </div>
       </div>
       <Navbar />
