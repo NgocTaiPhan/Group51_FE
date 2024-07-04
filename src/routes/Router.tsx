@@ -7,6 +7,7 @@ import Register from "../pages/register/Register";
 import CartPopUp from "../pages/cart/CartPopUp";
 import Cart from "../pages/cart/Cart";
 import Account from "../pages/Account/Account";
+import Product from "../pages/product/Product";
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -64,7 +65,10 @@ export default function Router() {
           path: "/account",
           element: <Account />,
         },
-
+        {
+          path: "/product",
+          element: <Product />,
+        },
       ],
     },
   ]);

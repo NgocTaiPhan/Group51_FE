@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Drawer, List, Avatar, InputNumber, Divider, Button } from 'antd';
 import {NavLink} from "react-router-dom";
 
+
 interface CartProps {
     visible: boolean;
     onClose: () => void;
@@ -65,10 +66,10 @@ const CartPopUp: React.FC<CartProps> = ({ visible, onClose }) => {
                 )}
             />
             <Divider />
-            <div style={{ textAlign: 'right', fontWeight: 'bold' }}>
+            <div style={{ textAlign: 'right', fontWeight: 'bold', marginTop: 550}}>
                 Tổng tiền: ${total}
             </div>
-            <Button type="primary" block style={{ marginTop: 16 }}>
+            <Button type="primary" block style={{ marginTop: 20}}>
                 <NavLink className="checkout" to="/carts">
                     Thanh toán
                 </NavLink>
