@@ -8,10 +8,19 @@ import ShareIcon from "@mui/icons-material/Share";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaHandHoldingUsd } from "react-icons/fa";
+import { comment } from "../../interfaces/product";
+import { FaRegUserCircle } from "react-icons/fa";
+import { FaGift } from "react-icons/fa6";
+import { Avatar, Form, Button, List, Input } from "antd";
+import moment from "moment";
+import { useCart } from "./CartContext";
 
 export default function ProductDetail() {
   const [soupDetail, setSoupDetail] = useState<any>([]);
+  const { addToCart } = useCart();
   const [amount, setAmount] = useState(1);
+  const [comments, setComments] = useState<any>([]);
+  const [newCommentText, setNewCommentText] = useState<string>("");
   const getSoupById = async (soupId: any) => {
     return data.soups.find((soup) => (soup.id = soupId));
   };
@@ -40,9 +49,10 @@ export default function ProductDetail() {
     const result = await loadProduct(param);
     const soup = await loadSoup(result?.soups);
     const others = await loadOthers(param);
-    console.log(result);
+    console.log(result?.comments);
 
     setDetail(result);
+    setComments(result?.comments || []);
     setOthers(others.slice(0, 5));
   };
   const handleProductClick = (productId: number) => {
@@ -71,6 +81,41 @@ export default function ProductDetail() {
         </div>
       );
     });
+  };
+  const renderComments = (comments: comment[]) => {
+    return (
+      <ul className="pl-0">
+        {comments.map((comment) => (
+          <li key={comment.id} className="flex items-center mb-3">
+            <FaRegUserCircle
+              style={{ width: 40, height: 40, marginRight: 20 }}
+            />
+            <div>
+              <p
+                style={{
+                  fontSize: 18,
+                  fontWeight: 500,
+                  marginBottom: 0,
+                  color: "#385898",
+                }}
+              >
+                {comment.author}
+              </p>
+              <p style={{ marginBottom: 0, fontSize: 14 }}>{comment.text}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+  const handleAddComment = () => {
+    const newComment: comment = {
+      id: comments.length + 1,
+      text: newCommentText,
+      author: "QuyNguyen",
+    };
+    setComments([...comments, newComment]);
+    setNewCommentText("");
   };
   const loadSoup = async (id: any) => {
     const product = await getSoupById(id);
@@ -115,25 +160,62 @@ export default function ProductDetail() {
                   {detail.name}
                 </span>
               </p>
-              <div className="flex items-center px-2 py-3">
-                <span>
-                  <FaStar style={{ color: "#f9c951" }} />
-                </span>
-                <span className="text-base font-normal tracking-widest mx-2">
-                  {detail.rate}
-                </span>
+              <div>
+                <p className="text-base font-normal tracking-widest mx-2">
+                  Mã sản phẩm: {detail.id}{" "}
+                </p>
               </div>
               <div>
                 <span className="text-base font-normal tracking-widest mx-2">
                   {detail.description}
                 </span>
               </div>
-              <div className="py-5">
+              <div className="py-3">
                 <span className="text-lg font-semibold tracking-widest mx-2 product_price">
                   {detail.price} VND
                 </span>
               </div>
-              <div className="flex items-center">
+              <div
+                className="my-3"
+                style={{ padding: 10, background: "#f8f8f8", borderRadius: 10 }}
+              >
+                <div
+                  style={{
+                    background: "#f33828",
+                    width: "70%",
+                    borderRadius: 5,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <FaGift style={{ color: "#fff", marginLeft: 10 }} />
+                  <p
+                    style={{
+                      padding: "5px 10px",
+                      color: "#fff",
+                      fontWeight: 500,
+                      margin: 0,
+                    }}
+                  >
+                    Thân chúc quý khách dùng ngon miệng
+                  </p>
+                </div>
+
+                <ul
+                  className="promotion_box"
+                  style={{
+                    padding: 10,
+                    background: "#fff",
+                    marginTop: 10,
+                    listStyleType: "disc",
+                  }}
+                >
+                  <li>Freeship với đơn hàng 5 phần trở lên</li>
+                  <li>Tặng kèm trái cây tráng miệng mỗi ngày</li>
+                  <li>Cuối tuần tặng kèm nước uống</li>
+                </ul>
+              </div>
+              <div className="flex items-center pt-3">
                 <div className="flex" style={{ marginRight: 20 }}>
                   <button
                     className="decrease"
@@ -152,7 +234,12 @@ export default function ProductDetail() {
                   </button>
                 </div>
                 <div>
-                  <button className="addToCart">Thêm vào giỏ hàng</button>
+                  <button
+                    className="addToCart"
+                    onClick={() => addToCart(amount)}
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
                 </div>
               </div>
               <div>
@@ -208,6 +295,28 @@ export default function ProductDetail() {
                   </li>
                 </ul>
               </div>
+            </div>
+            <div className="line mx-5"></div>
+            <div className="comment">
+              <h2 className="text-2xl">Hỏi đáp - Bình luận</h2>
+              <p className="py-3 text-base font-medium">
+                {comments.length} bình luận
+              </p>
+              <div className="line_1 my-2"></div>
+              <div>{renderComments(comments)}</div>
+              <div>
+                <h4 style={{ marginTop: 50 }}>Add a Comment</h4>
+                <input
+                  className="setNewComment"
+                  placeholder="Your Comment..."
+                  value={newCommentText}
+                  onChange={(e) => setNewCommentText(e.target.value)}
+                />
+                <button className="submit_comment" onClick={handleAddComment}>
+                  Submit
+                </button>
+              </div>
+              <div className="line_1 my-2"></div>
             </div>
           </div>
         </div>
