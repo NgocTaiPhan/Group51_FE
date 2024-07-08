@@ -7,6 +7,7 @@ import Account from "../pages/Account/Account";
 import Login from "../pages/login/Login";
 import Regiter from "../pages/register/Register";
 import Register from "../pages/register/Register";
+import Tracking from "../pages/Tracking/Tracking";
 
 export default function Router() {
     const routing = useRoutes([
@@ -38,6 +39,17 @@ export default function Router() {
                 {
                     path: "/account",
                     element: <Account/>,
+                },
+            ],
+        },
+        {
+            path: "/",
+            element: (
+                <HomeLayout/>
+            ), children: [
+                {
+                    path: "/tracking",
+                    element: <Tracking/>,
                 },
             ],
         }
