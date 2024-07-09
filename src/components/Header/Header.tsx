@@ -30,9 +30,6 @@ const Header: React.FC = () => {
   };
 
   const handleCartToggle = () => {
-    if (isCartVisible) {
-      navigate(-1); // Quay về trang trước đó khi đóng popup
-    }
     setIsCartVisible(!isCartVisible);
   };
 
@@ -88,6 +85,7 @@ const Header: React.FC = () => {
                 }}
                 onClick={handleCartToggle} // Thêm sự kiện onClick để mở popup cart
             />
+            <span className="cart-count">{cartItemCount}</span>
           </div>
         </div>
         <Navbar />
