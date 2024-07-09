@@ -10,7 +10,6 @@ import {
 import { Input } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
 import { useState } from "react";
-import CartPopUp from "../../pages/cart/CartPopUp"; // Đảm bảo đường dẫn chính xác
 
 const { Search } = Input;
 
@@ -83,12 +82,10 @@ const Header: React.FC = () => {
                   fontSize: 28,
                   cursor: "pointer",
                 }}
-                onClick={handleCartToggle} // Thêm sự kiện onClick để mở popup cart
             />
           </div>
         </div>
         <Navbar />
-        <CartPopUp visible={isCartVisible} onClose={handleCartToggle} />
       </div>
 
   );

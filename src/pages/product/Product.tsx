@@ -2,27 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Button } from "antd";
 import data from "../../data/data";
 import "./Product.scss";
-import { comment } from "../../interfaces/product";
+import {Link} from "react-router-dom";
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
-interface Product {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    image: string;
-    category: number;
-    soups?: number; // Nếu có thể thiếu, bạn có thể đánh dấu là không bắt buộc
-    comments: comment[]; // Sử dụng interface từ file interfaces/product.ts
-}
 
-const getProduct = async (): Promise<Product[]> => {
+const getProduct = async () => {
     return data.menu;
 };
 
+const formatPrice = (price: number): string => {
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+};
 export default function Product() {
-    const [products, setProducts] = useState<Product[]>([]); // Sử dụng kiểu dữ liệu Product
-
+    const [products, setProducts] = useState<any[]>([]); // Sử dụng kiểu dữ liệu any
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -32,10 +24,8 @@ export default function Product() {
                 console.error("Error fetching products:", error);
             }
         };
-
         fetchProducts();
     }, []);
-
     return (
         <div>
             <section style={{ backgroundColor: 'white' }}>
@@ -54,12 +44,15 @@ export default function Product() {
                                             <h5 className="mb-0">{product.name}</h5>
                                         </div>
                                         <div className="d-flex justify-content-between mb-3">
-                                            <h5 className="text-dark mb-0">${product.price}</h5>
+                                            <h5 className="text-dark mb-0">{formatPrice(product.price)}</h5>
                                         </div>
                                         <div className="d-flex justify-content-center align-items-center">
-                                            <Button className="detail bg-emerald-600 text-white">
-                                                Xem chi tiết
-                                            </Button>
+                                            {/* eslint-disable-next-line react/jsx-no-undef */}
+                                            <Link to={`/product-detail/${product.id}`}>
+                                                <Button className="detail text-white">
+                                                    Xem chi tiết
+                                                </Button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
