@@ -4,9 +4,11 @@ import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import Tracking from "../pages/Tracking/Tracking";
 import CartPopUp from "../pages/cart/CartPopUp";
 import Cart from "../pages/cart/Cart";
 import Account from "../pages/Account/Account";
+import Product from "../pages/product/Product";
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -61,10 +63,25 @@ export default function Router() {
           element: <Cart  />,
         },
         {
+
           path: "/account",
           element: <Account />,
         },
-
+        {
+          path: "/product",
+          element: <Product />,
+        },
+          {
+            path: "/",
+            element: (
+                <HomeLayout/>
+            ), children: [
+                {
+                    path: "/tracking",
+                    element: <Tracking/>,
+                },
+            ],
+        }
       ],
     },
   ]);

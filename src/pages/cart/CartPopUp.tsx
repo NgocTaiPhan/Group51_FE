@@ -4,6 +4,7 @@ import { Drawer, List, Avatar, InputNumber, Divider, Button } from 'antd';
 import { NavLink } from "react-router-dom";
 import { useCart } from '../ProductDetail/CartContext';
 
+
 interface CartProps {
   visible: boolean;
   onClose: () => void;
@@ -39,6 +40,7 @@ const CartPopUp: React.FC<CartProps> = ({ visible, onClose }) => {
               title={item.name}
               description={`Price: ${item.price} VND`}
             />
+
             <InputNumber
               min={1}
               value={item.quantity}
@@ -50,17 +52,17 @@ const CartPopUp: React.FC<CartProps> = ({ visible, onClose }) => {
           </List.Item>
         )}
       />
-      <Divider />
-      <div style={{ textAlign: 'right', fontWeight: 'bold' }}>
-        Tổng tiền: {total} VND
-      </div>
-      <Button type="primary" block style={{ marginTop: 16 }}>
-        <NavLink className="checkout" to="/carts">
-          Thanh toán
-        </NavLink>
-      </Button>
-    </Drawer>
-  );
+            <Divider />
+            <div style={{ textAlign: 'right', fontWeight: 'bold', marginTop: 550}}>
+                Tổng tiền: {total} VND
+            </div>
+            <Button type="primary" block style={{ marginTop: 20}}>
+                <NavLink className="checkout" to="/carts">
+                    Thanh toán
+                </NavLink>
+            </Button>
+        </Drawer>
+    );
 };
 
 export default CartPopUp;
