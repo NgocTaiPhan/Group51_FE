@@ -14,6 +14,7 @@ import { FaGift } from "react-icons/fa6";
 import { Avatar, Form, Button, List, Input } from "antd";
 import moment from "moment";
 import { useCart } from "./CartContext";
+import CartPopUp from "../cart/CartPopUp";
 
 export default function ProductDetail() {
   const [soupDetail, setSoupDetail] = useState<any>([]);
@@ -21,6 +22,18 @@ export default function ProductDetail() {
   const [amount, setAmount] = useState(1);
   const [comments, setComments] = useState<any>([]);
   const [newCommentText, setNewCommentText] = useState<string>("");
+  const [isPopupVisible, setPopupVisible] = useState<boolean>(false);
+
+  const handleAddToCart = () => {
+    const productToAdd = {
+      id: detail.id.toString(),
+      name: detail.name,
+      price: detail.price,
+      quantity: amount,
+      image: detail.image,
+    };
+    addToCart(productToAdd);
+  };
   const getSoupById = async (soupId: any) => {
     return data.soups.find((soup) => (soup.id = soupId));
   };
@@ -136,7 +149,7 @@ export default function ProductDetail() {
         </div>
         <div className="px-20 py-20">
           <div
-            className="detail_container mx-auto py-10 product-details flex justify-start"
+            className="detail_container mx-auto py-10 product-details flex justify-around	"
             style={{ width: 1280, background: "#fff" }}
           >
             <div className="product_img">
@@ -234,10 +247,7 @@ export default function ProductDetail() {
                   </button>
                 </div>
                 <div>
-                  <button
-                    className="addToCart"
-                    onClick={() => addToCart(amount)}
-                  >
+                  <button className="addToCart" onClick={handleAddToCart}>
                     Thêm vào giỏ hàng
                   </button>
                 </div>
@@ -327,6 +337,10 @@ export default function ProductDetail() {
           <div className="flex justify-start py-20 px-10">{renderOthers()}</div>
         </div>
       </div>
+      <CartPopUp
+        visible={isPopupVisible}
+        onClose={() => setPopupVisible(false)}
+      />
     </div>
   );
 }
