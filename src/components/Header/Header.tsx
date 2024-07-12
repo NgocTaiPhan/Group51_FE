@@ -11,7 +11,9 @@ import { Input } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
 import { useState } from "react";
 import { useCart } from "../../pages/ProductDetail/CartContext";
-import CartPopUp from "../../pages/cart/CartPopUp"; // Đảm bảo đường dẫn chính xác
+import {Link} from "react-router-dom";
+
+
 
 
 const { Search } = Input;
@@ -41,8 +43,9 @@ const Header: React.FC = () => {
               <img src={logo} width="80" height="80" alt="logo" />
             </a>
           </div>
+            <Navbar />
           <Search
-              placeholder="input search text"
+              placeholder="Điền tên sản phẩm"
               onSearch={onSearch}
               enterButton
               style={{ width: 600 }}
@@ -65,31 +68,33 @@ const Header: React.FC = () => {
                 </NavLink>
               </li>
               <li>
-                <a className="cartPage" href="#" onClick={handleCartToggle}>
-                  Cart
-                </a>
+                  <Link to={"/cart"}><a className="cartPage" href="" onClick={handleCartToggle}>
+                      Cart
+                  </a></Link>
+
               </li>
-              <li>
-                <NavLink className="myAccount" to="/information">
+                <li>
+                    <NavLink className="myAccount" to="/information">
                   My Account
                 </NavLink>
               </li>
             </ul>
-
-            <ShoppingCartOutlined
+            <NavLink to={"/cart"}>
+                <ShoppingCartOutlined
                 className="cart"
                 style={{
-                  transition: "all 0.3s",
-                  fontSize: 28,
-                  cursor: "pointer",
+                    transition: "all 0.3s",
+                    fontSize: 28,
+                    cursor: "pointer",
+                    color: "white"
                 }}
-                onClick={handleCartToggle} // Thêm sự kiện onClick để mở popup cart
-            />
+            /></NavLink>
+
             <span className="cart-count">{cartItemCount}</span>
           </div>
+
         </div>
-        <Navbar />
-        <CartPopUp visible={isCartVisible} onClose={handleCartToggle} />
+
       </div>
 
   );

@@ -1,7 +1,9 @@
 .footer {
   .footer_content {
+    color: white;
+    background: #006600;
     margin: auto;
-    width: 1480px;
+    width: 100%;
     display: flex;
     padding: 20px;
     .footer_item {
@@ -9,36 +11,36 @@
 
       .icon {
         transition: all 0.5s;
-        color: rgb(215 215 215);
+        color: white;
         font-size: 40px;
         margin-right: 20px;
         cursor: pointer;
         &:hover {
-          color: #87c84a;
+          color: #fcbc34;
         }
       }
       ul {
         padding-left: 0;
         li {
           padding-bottom: 18px;
-          color: #999999;
+          color: white;
           font-weight: 500;
           transition: all 0.5s;
           cursor: pointer;
           &:hover {
-            color: #87c84a;
+            color: #fcbc34;
           }
+
         }
       }
     }
   }
-  .footer-bot {
-    background: #bdbcbc29;
-    .bot_content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-    }
-  }
+  //.footer-bot {
+  //  .bot_content {
+  //    display: flex;
+  //    justify-content: space-between;
+  //    align-items: center;
+  //    padding: 20px;
+  //  }
+  //}
 }

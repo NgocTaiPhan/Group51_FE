@@ -14,7 +14,6 @@ import { FaGift } from "react-icons/fa6";
 import { Avatar, Form, Button, List, Input } from "antd";
 import moment from "moment";
 import { useCart } from "./CartContext";
-import CartPopUp from "../cart/CartPopUp";
 
 export default function ProductDetail() {
   const [soupDetail, setSoupDetail] = useState<any>([]);
@@ -337,10 +336,7 @@ export default function ProductDetail() {
           <div className="flex justify-start py-20 px-10">{renderOthers()}</div>
         </div>
       </div>
-      <CartPopUp
-        visible={isPopupVisible}
-        onClose={() => setPopupVisible(false)}
-      />
+
     </div>
   );
 }
