@@ -1,116 +1,71 @@
 import React from 'react';
-import {Input, DatePicker} from "antd";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {Col, DatePicker, Row} from "antd";
 import './InforUser.scss';
 import Popup from '../Popup/Popup';
 import ForgotPass from "../Header/components/ForgotPass/ForgotPass";
+import {Form, Input} from 'antd';
+import Province from '../Province/Province'
 
 
 export function UserInfor() {
     return (
         <>
-            <div className="container-xl px-4 mt-4">
+            <div className="w-[900px]">
+                <div className="bg-white shadow-md rounded-lg p-4 mb-4">
+                    <h2 className="text-lg font-semibold mb-2">Thông tin người dùng</h2>
+                    <form>
+                        <Form layout="vertical">  {/* Sử dụng layout "vertical" cho form */}
+                            <Form.Item
+                                label="Tên đăng nhập">
+                                <Input className="input-custom" defaultValue="Phan Ngọc Tài" disabled/>
+                            </Form.Item>
 
-                <div className="row">
-                    <div className="col-xl-4">
-                        <div className="card mb-4 mb-xl-0">
-                            <div className="card-header">Điều hướng</div>
+                            <Row gutter={16}> {/* Sử dụng Row và Col để tạo layout grid */}
+                                <Col span={12}>
+                                    <Form.Item label="Họ và tên">
+                                        <Input className="input-custom" defaultValue="Phan Ngọc Tài" disabled/>
+                                    </Form.Item>
+                                </Col>
+                                <Col span={12}>
+                                    <Form.Item label="Email">
+                                        <Input className="input-custom" defaultValue="email@gmail.com" disabled/>
+                                    </Form.Item>
+                                </Col>
+                            </Row>
 
-                        </div>
-                    </div>
-                    <div className="col-xl-8">
-                        <div className="card mb-4">
-                            <div className="card-header">Thông tin người dùng</div>
-                            <div className="card-body">
+                            <Form.Item label="Địa chỉ">
+                                <Input className="input-custom"
+                                       defaultValue="ấp Gò Dỗ, xã Bình Hòa Tây, huyện Mộc Hóa, tỉnh Long An" disabled/>
+                            </Form.Item>
 
-                                <form>
-                                    {/* Form Group (username)*/}
-                                    <div className="mb-3">
-                                        <label className="small mb-1" htmlFor="inputUsername">
-                                            Tên đăng nhập
-                                        </label>
-                                        <Input disabled defaultValue="Phan Ngọc Tài" className="form-control"
-                                               id="inputUsername"/>
-                                    </div>
-                                    {/* Form Row*/}
-                                    <div className="row gx-3 mb-3">
-                                        {/* Form Group (first name)*/}
-                                        <div className="col-md-6">
-                                            <label className="small mb-1" htmlFor="inputFirstName">
-                                                Họ và tên
-                                            </label>
-                                            <Input disabled defaultValue="Phan Ngọc Tài" className="form-control"
-                                                   id="inputFirstName"/>
-                                        </div>
-                                        {/* Form Group (last name)*/}
-                                        <div className="col-md-6">
-                                            <label className="small mb-1" htmlFor="inputEmail">
-                                                Email
-                                            </label>
-                                            <Input disabled defaultValue="email@gmail.com" className="form-control"
-                                                   id="inputEmail"/>
-                                        </div>
-                                    </div>
+                            <Row gutter={16}>
+                                <Col span={12}>
+                                    <Form.Item label="Số điện thoại">
+                                        <Input className="input-custom" defaultValue="0345098986" type="number"
+                                               disabled/>
+                                    </Form.Item>
+                                </Col>
+                                <Col span={12}>
+                                    <Form.Item label="Ngày sinh">
+                                        <DatePicker className="input-custom" disabled/>
+                                    </Form.Item>
+                                </Col>
+                            </Row>
+                        </Form>
 
-                                    <div className="mb-3">
-                                        <label className="small mb-1" htmlFor="inputEmailAddress">
-                                            Địa chỉ
-                                        </label>
-                                        <Input disabled
-                                               defaultValue="ấp Gò Dỗ, xã Bình Hòa Tây, huyện Mộc Hóa, tỉnh Long An"
-                                               className="form-control"
-                                               id="inputEmail"/>
-                                    </div>
-
-                                    {/* Form Row*/}
-                                    <div className="row gx-3 mb-3">
-                                        {/* Form Group (phone number)*/}
-                                        <div className="col-md-6">
-                                            <label className="small mb-1"
-                                                   htmlFor="inputPhone">
-                                                Số điện thoại
-                                            </label>
-                                            <Input
-                                                disabled defaultValue="0345098986"
-                                                className="form-control"
-                                                id="inputEmail"
-                                                type="number"/>
-                                        </div>
-                                        {/* Form Group (birthday)*/}
-                                        <div className="col-md-6">
-                                            <label className="small mb-1"
-                                                   htmlFor="inputBirthday">
-                                                Ngày sinh
-                                            </label>
-                                            <Input
-                                                value='1999-01-01'
-                                                disabled
-                                                className="form-control"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="btngroup">
-                                        <div className="btn-changeinfor">
-
-                                            <Popup  btnText="Thay đổi thông tin" title="Thay đổi thông tin" content={
-                                                <FillUserInfor/>
-                                            }></Popup>
-                                        </div>
-                                        <div className="btn-forgotpass">
-
-                                            <Popup btnText="Đổi mật khẩu" title="Đổi mật khẩu" content={
-                                                <ForgotPass/>
-                                            }></Popup>
-                                        </div>
-                                    </div>
-
-
-                                </form>
+                        <div className=" mx-64 mt-[20px] grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="btn-changeinfor ml-30">
+                                <Popup btnText="Thay đổi thông tin" title="Thay đổi thông tin"
+                                       content={<FillUserInfor/>}/>
+                            </div>
+                            <div className="ml-20 forgotpass">
+                                <Popup btnText="Đổi mật khẩu" title="Đổi mật khẩu" content={<ForgotPass/>}/>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
+
 
         </>
 
@@ -120,76 +75,40 @@ export function UserInfor() {
 
 export function FillUserInfor() {
     return (
-        <>
-            <div className="container"></div>
-            <form>
-                {/* Form Group (username)*/}
-                <div className="mb-3">
-                    <label className="small mb-1" htmlFor="inputUsername">
-                        Tên đăng nhập
-                    </label>
-                    <Input defaultValue="Phan Ngọc Tài" className="form-control"
-                           id="inputUsername"/>
-                </div>
-                {/* Form Row*/}
-                <div className="row gx-3 mb-3">
-                    {/* Form Group (first name)*/}
-                    <div className="col-md-6">
-                        <label className="small mb-1" htmlFor="inputFirstName">
-                            Họ và tên
-                        </label>
-                        <Input defaultValue="Phan Ngọc Tài" className="form-control"
-                               id="inputFirstName"/>
-                    </div>
-                    {/* Form Group (last name)*/}
-                    <div className="col-md-6">
-                        <label className="small mb-1" htmlFor="inputEmail">
-                            Email
-                        </label>
-                        <Input defaultValue="email@gmail.com" className="form-control"
-                               id="inputEmail"/>
-                    </div>
-                </div>
+        <Form layout="vertical">  {/* Sử dụng layout "vertical" cho form */}
+            <Form.Item label="Tên đăng nhập">
+                <Input className="input-custom" defaultValue="Phan Ngọc Tài"/>
+            </Form.Item>
 
-                <div className="mb-3">
-                    <label className="small mb-1" htmlFor="inputEmailAddress">
-                        Địa chỉ
-                    </label>
-                    <Input
-                        defaultValue="ấp Gò Dỗ, xã Bình Hòa Tây, huyện Mộc Hóa, tỉnh Long An"
-                        className="form-control"
-                        id="inputEmail"/>
-                </div>
+            <Row gutter={16}> {/* Sử dụng Row và Col để tạo layout grid */}
+                <Col span={12}>
+                    <Form.Item label="Họ và tên">
+                        <Input className="input-custom" defaultValue="Phan Ngọc Tài"/>
+                    </Form.Item>
+                </Col>
+                <Col span={12}>
+                    <Form.Item label="Email">
+                        <Input className="input-custom" defaultValue="email@gmail.com"/>
+                    </Form.Item>
+                </Col>
+            </Row>
 
-                {/* Form Row*/}
-                <div className="row gx-3 mb-3">
-                    {/* Form Group (phone number)*/}
-                    <div className="col-md-6">
-                        <label className="small mb-1"
-                               htmlFor="inputPhone">
-                            Số điện thoại
-                        </label>
-                        <Input
-                            defaultValue="0345098986"
-                            className="form-control"
-                            id="inputEmail"
-                            type="number"/>
-                    </div>
-                    {/* Form Group (birthday)*/}
-                    <div className="col-md-6">
-                        <label className="small mb-1"
-                               htmlFor="inputBirthday">
-                            Ngày sinh
-                        </label>
-                        <DatePicker className="form-control"/>
-                    </div>
-                </div>
+            <Form.Item label="Địa chỉ" >
+                <Province  />
+            </Form.Item>
 
-
-            </form>
-
-
-        </>
-
+            <Row gutter={16}>
+                <Col span={12}>
+                    <Form.Item label="Số điện thoại">
+                        <Input className="input-custom" defaultValue="0345098986" type="number"/>
+                    </Form.Item>
+                </Col>
+                <Col span={12}>
+                    <Form.Item label="Ngày sinh">
+                        <DatePicker className="input-custom"/>
+                    </Form.Item>
+                </Col>
+            </Row>
+        </Form>
     );
 }
