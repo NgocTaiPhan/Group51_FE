@@ -1,5 +1,5 @@
-import { Link, redirect, useNavigate, useParams } from "react-router-dom";
-import data from "../../data/data";
+import { useParams } from "react-router-dom";
+import data from "../../data.json";
 import { useEffect, useState } from "react";
 import "./ProductDetail.scss";
 import { FaHome, FaStar } from "react-icons/fa";
@@ -8,19 +8,14 @@ import ShareIcon from "@mui/icons-material/Share";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaHandHoldingUsd } from "react-icons/fa";
-import { comment } from "../../interfaces/product";
-import { FaRegUserCircle } from "react-icons/fa";
 import { FaGift } from "react-icons/fa6";
-import { Avatar, Form, Button, List, Input } from "antd";
-import moment from "moment";
 import { useCart } from "./CartContext";
 
 export default function ProductDetail() {
-  const [soupDetail, setSoupDetail] = useState<any>([]);
+  // const [comments, setComments] = useState<any>([]);
+  // const [newCommentText, setNewCommentText] = useState<string>("");
   const { addToCart } = useCart();
   const [amount, setAmount] = useState(1);
-  const [comments, setComments] = useState<any>([]);
-  const [newCommentText, setNewCommentText] = useState<string>("");
   const [isPopupVisible, setPopupVisible] = useState<boolean>(false);
 
   const handleAddToCart = () => {
@@ -33,17 +28,13 @@ export default function ProductDetail() {
     };
     addToCart(productToAdd);
   };
-  const getSoupById = async (soupId: any) => {
-    return data.soups.find((soup) => (soup.id = soupId));
-  };
   const getProduct = async (id: number) => {
-    return data.menu.find((product) => product.id == id);
+    return data.find((product) => product.id == id);
   };
   const getOthers = async (id: number) => {
-    return data.menu.filter((product) => product.id != id);
+    return data.filter((product) => product.id != id);
   };
   const param = useParams();
-  const navigate = useNavigate();
   const [detail, setDetail] = useState<any>([]);
   const [others, setOthers] = useState<any>([]);
   useEffect(() => {
@@ -59,12 +50,9 @@ export default function ProductDetail() {
   };
   const fecthProductDetail = async () => {
     const result = await loadProduct(param);
-    const soup = await loadSoup(result?.soups);
     const others = await loadOthers(param);
-    console.log(result?.comments);
 
     setDetail(result);
-    setComments(result?.comments || []);
     setOthers(others.slice(0, 5));
   };
   const handleProductClick = (productId: number) => {
@@ -84,75 +72,64 @@ export default function ProductDetail() {
               </h3>
               <p className="py-1 text-color2">{element.description}</p>
               <p className="py-1 font-semibold">{element.price} VND</p>
-              <div className="flex items-center py-1">
-                <FaStar style={{ color: "#f9c951" }} />
-                <span>{element.rate}</span>
-              </div>
             </div>
           </div>
         </div>
       );
     });
   };
-  const renderComments = (comments: comment[]) => {
-    return (
-      <ul className="pl-0">
-        {comments.map((comment) => (
-          <li key={comment.id} className="flex items-center mb-3">
-            <FaRegUserCircle
-              style={{ width: 40, height: 40, marginRight: 20 }}
-            />
-            <div>
-              <p
-                style={{
-                  fontSize: 18,
-                  fontWeight: 500,
-                  marginBottom: 0,
-                  color: "#385898",
-                }}
-              >
-                {comment.author}
-              </p>
-              <p style={{ marginBottom: 0, fontSize: 14 }}>{comment.text}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    );
-  };
-  const handleAddComment = () => {
-    const newComment: comment = {
-      id: comments.length + 1,
-      text: newCommentText,
-      author: "QuyNguyen",
-    };
-    setComments([...comments, newComment]);
-    setNewCommentText("");
-  };
-  const loadSoup = async (id: any) => {
-    const product = await getSoupById(id);
-    return product;
-  };
-
+  // const renderComments = (comments: comment[]) => {
+  //   return (
+  //     <ul className="pl-0">
+  //       {comments.map((comment) => (
+  //         <li key={comment.id} className="flex items-center mb-3">
+  //           <FaRegUserCircle
+  //             style={{ width: 40, height: 40, marginRight: 20 }}
+  //           />
+  //           <div>
+  //             <p
+  //               style={{
+  //                 fontSize: 18,
+  //                 fontWeight: 500,
+  //                 marginBottom: 0,
+  //                 color: "#385898",
+  //               }}
+  //             >
+  //               {comment.author}
+  //             </p>
+  //             <p style={{ marginBottom: 0, fontSize: 14 }}>{comment.text}</p>
+  //           </div>
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // };
+  // const handleAddComment = () => {
+  //   const newComment: comment = {
+  //     id: comments.length + 1,
+  //     text: newCommentText,
+  //     author: "QuyNguyen",
+  //   };
+  //   setComments([...comments, newComment]);
+  //   setNewCommentText("");
+  // };
   return (
-    <div>
+    <div style={{paddingTop:80}}>
       <div>
-        <div className="px-20 flex items-center">
+        <div className="path flex items-center">
           <span className="mx-2">
             <FaHome />
           </span>
-          <span className="font-semibold">Home / Shop</span>
-          <span className="font-semibold" style={{ color: "rgb(199 199 199)" }}>
-            / Detail
-          </span>
+          <span style={{fontWeight:400}}>Home / Shop / Detail</span>
         </div>
-        <div className="px-20 py-20">
+
+        <div className="px-10 py-5">
           <div
-            className="detail_container mx-auto py-10 product-details flex justify-around	"
+            className="detail_container mx-auto py-10 product-details flex justify-center	"
             style={{ width: 1280, background: "#fff" }}
           >
             <div className="product_img">
-              <img src={detail.image} style={{ width: 350, height: 300 }} />
+              <img src={detail.image} style={{ width: 500, height: 530 }} />
               <div className="flex flex-wrap justify-center items-center py-10">
                 <button className="px-2 py-1 flex justify-center items-center font-semibold text-sm text-gray-700">
                   <ShareIcon />
@@ -174,17 +151,12 @@ export default function ProductDetail() {
               </p>
               <div>
                 <p className="text-base font-normal tracking-widest mx-2">
-                  Mã sản phẩm: {detail.id}{" "}
+                  Mã sản phẩm: {detail.id}
                 </p>
-              </div>
-              <div>
-                <span className="text-base font-normal tracking-widest mx-2">
-                  {detail.description}
-                </span>
               </div>
               <div className="py-3">
                 <span className="text-lg font-semibold tracking-widest mx-2 product_price">
-                  {detail.price} VND
+                  {detail.price}đ
                 </span>
               </div>
               <div
@@ -305,7 +277,7 @@ export default function ProductDetail() {
                 </ul>
               </div>
             </div>
-            <div className="line mx-5"></div>
+            {/* <div className="line mx-5"></div>
             <div className="comment">
               <h2 className="text-2xl">Hỏi đáp - Bình luận</h2>
               <p className="py-3 text-base font-medium">
@@ -326,7 +298,7 @@ export default function ProductDetail() {
                 </button>
               </div>
               <div className="line_1 my-2"></div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div>

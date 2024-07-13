@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "antd";
-import data from "../../data/data";
+import data from "../../data.json";
 import "./Product.scss";
 import {Link} from "react-router-dom";
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
 
 const getProduct = async () => {
-    return data.menu;
+    return data;
 };
 
 const formatPrice = (price: number): string => {
@@ -29,7 +29,7 @@ export default function Product() {
     return (
         <div>
             <section style={{ backgroundColor: 'white' }}>
-                <div className="container py-10">
+                <div className="container" style={{paddingTop:130}}>
                     <div className="row">
                         {products.map((product) => (
                             <div key={product.id} className="col-xl-3 col-md-4 col-sm-6">
