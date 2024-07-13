@@ -38,7 +38,7 @@ const CartPopUp: React.FC<CartProps> = ({ visible, onClose }) => {
             <List.Item.Meta
               avatar={<Avatar src={item.image} />}
               title={item.name}
-              description={`Price: ${item.price} VND`}
+              description={`Price: ${item.price}đ`}
             />
 
             <InputNumber
@@ -47,14 +47,14 @@ const CartPopUp: React.FC<CartProps> = ({ visible, onClose }) => {
               onChange={(value) => updateProductQuantity(item.id, Number(value))}
             />
             <div style={{ marginLeft: 16 }}>
-              {item.price * item.quantity} VND
+              {item.price * item.quantity}đ
             </div>
           </List.Item>
         )}
       />
             <Divider />
             <div style={{ textAlign: 'right', fontWeight: 'bold', marginTop: 550}}>
-                Tổng tiền: {total} VND
+                Tổng tiền: {total}đ
             </div>
             <Button type="primary" block style={{ marginTop: 20}}>
                 <NavLink className="checkout" to="/carts">

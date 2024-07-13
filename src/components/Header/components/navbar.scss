@@ -8,7 +8,6 @@ a{
   display: flex;
   justify-content: center !important;
   padding: 15px !important;
-  background-color: #87c84a;
   li {
     list-style: none;
     padding-right: 20px!important;
@@ -18,7 +17,7 @@ a{
       font-weight: 500;
       transition: all 0.3s;
       &:hover {
-        color: #fff;
+        color: #87c84a;
       }
     }
   }
