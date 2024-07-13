@@ -1,3 +1,4 @@
+
 import React, { Suspense } from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -15,6 +16,7 @@ function App() {
       </BrowserRouter>
     </CartProvider>
   );
+
 }
 
 export default App;

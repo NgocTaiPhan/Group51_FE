@@ -1,28 +1,31 @@
-import React, { lazy, useState } from "react";
-import { useRoutes, NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {Routes, Route, useRoutes} from "react-router-dom";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import Tracking from "../pages/Tracking/Tracking";
-import CartPopUp from "../pages/cart/CartPopUp";
-import Cart from "../pages/cart/Cart";
 import Account from "../pages/Account/Account";
 import Product from "../pages/product/Product";
+import Cart from "../pages/cart/Cart";
+import Order from "../pages/order/Order";
+
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const location = useLocation();
 
-  React.useEffect(() => {
-    if (location.pathname === "/cart") {
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    if (pathname === "/cart") {
       setIsCartVisible(true);
     } else {
       setIsCartVisible(false);
     }
-  }, [location.pathname]);
 
-  const routing = useRoutes([
+
+    // eslint-disable-next-line no-restricted-globals
+  }, [location.pathname]);
+  useRoutes([
     {
       path: "/",
       element: <HomeLayout />,
@@ -55,14 +58,6 @@ export default function Router() {
           element: <Register />,
         },
         {
-          path: "/cart",
-          element: <></>, // Empty component for routing
-        },
-        {
-          path: "/carts",
-          element: <Cart  />,
-        },
-        {
 
           path: "/account",
           element: <Account />,
@@ -71,25 +66,41 @@ export default function Router() {
           path: "/product",
           element: <Product />,
         },
-          {
-            path: "/",
-            element: (
-                <HomeLayout/>
-            ), children: [
-                {
-                    path: "/tracking",
-                    element: <Tracking/>,
-                },
-            ],
+        {
+
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/order",
+          element: <Order />,
+        },
+
+        {
+          path: "/",
+          element: (
+              <HomeLayout/>
+          ), children: [
+            {
+              path: "/tracking",
+              element: <Tracking/>,
+            },
+          ],
         }
       ],
     },
   ]);
-
   return (
-      <>
-        {routing}
-        <CartPopUp visible={isCartVisible} onClose={() => setIsCartVisible(false)} />
-      </>
+      <Routes>
+        <Route path="/" element={<HomeLayout />}>
+          <Route path="/product-detail/:productId" element={<ProductDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/product" element={<Product />} />
+        </Route>
+      </Routes>
   );
 }

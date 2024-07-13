@@ -10,7 +10,6 @@ import { MdOutlinePayment } from "react-icons/md";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaGift } from "react-icons/fa6";
 import { useCart } from "./CartContext";
-import CartPopUp from "../cart/CartPopUp";
 
 export default function ProductDetail() {
   // const [comments, setComments] = useState<any>([]);
@@ -115,7 +114,7 @@ export default function ProductDetail() {
   //   setNewCommentText("");
   // };
   return (
-    <div>
+    <div style={{paddingTop:80}}>
       <div>
         <div className="path flex items-center">
           <span className="mx-2">
@@ -309,10 +308,7 @@ export default function ProductDetail() {
           <div className="flex justify-start py-20 px-10">{renderOthers()}</div>
         </div>
       </div>
-      <CartPopUp
-        visible={isPopupVisible}
-        onClose={() => setPopupVisible(false)}
-      />
+
     </div>
   );
 }
