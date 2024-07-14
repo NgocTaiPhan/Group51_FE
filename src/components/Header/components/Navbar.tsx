@@ -2,7 +2,7 @@ import React from "react";
 import "./navbar.scss";
 export default function Navbar() {
   return (
-    <nav>
+    <nav style={{width:"40%"}}>
       <ul className="header_navbar">
         <li>
           <a href="#">
