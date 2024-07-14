@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { List, Avatar, InputNumber, Button, Form, Select, Input } from 'antd';
+import {List, Avatar, InputNumber, Button, Form, Select, Input, message} from 'antd';
 import { useCart } from '../ProductDetail/CartContext';
 import axios from "axios";
 import "./cart.scss";
@@ -9,38 +9,21 @@ const { Option } = Select;
 
 const Cart: React.FC = () => {
     const { products, getTotalPrice, removeProduct } = useCart();
-
-
     const formatPrice = (price: number): string => {
         return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
     };
 
-
-
-
-    const [form] = Form.useForm();
-    const [tinhData, setTinhData] = useState<any[]>([]);
-    const [quanData, setQuanData] = useState<any[]>([]);
-    const [phuongData, setPhuongData] = useState<any[]>([]);
-    const [selectedTinh, setSelectedTinh] = useState<string>('');
-    const [selectedQuan, setSelectedQuan] = useState<string>('');
     const [isInfoVisible, setIsInfoVisible] = useState<boolean>(false);
 
-    useEffect(() => {
-        const fetchTinhData = async () => {
-            try {
-                const response = await axios.get('https://esgoo.net/api-tinhthanh/1/0.htm');
-                setTinhData(response.data.data);
-            } catch (error) {
-                console.error('Error fetching tinh data:', error);
-            }
-        };
-        fetchTinhData();
-    }, []);
 
 
-    const handlePaymentButtonClick = () => {
-        setIsInfoVisible(true);
+    const handlePaymentButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (products.length === 0) {
+            message.error('Chưa có sản phẩm nào trong giỏ hàng!');
+            e.preventDefault(); 
+        } else {
+            setIsInfoVisible(true);
+        }
     };
 
 

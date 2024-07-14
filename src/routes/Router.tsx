@@ -9,6 +9,7 @@ import Account from "../pages/Account/Account";
 import Product from "../pages/product/Product";
 import Cart from "../pages/cart/Cart";
 import Order from "../pages/order/Order";
+import OrderDetails from "../pages/order/OrderDetails";
 
 
 export default function Router() {
@@ -75,6 +76,10 @@ export default function Router() {
           path: "/order",
           element: <Order />,
         },
+        {
+          path: "/orderDetail",
+          element: <OrderDetails />,
+        },
 
         {
           path: "/",
@@ -98,6 +103,7 @@ export default function Router() {
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/orderDetail" element={<OrderDetails />} />
           <Route path="/account" element={<Account />} />
           <Route path="/product" element={<Product />} />
         </Route>

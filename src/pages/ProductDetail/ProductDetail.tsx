@@ -11,7 +11,7 @@ import { FaHandHoldingUsd } from "react-icons/fa";
 import { comment } from "../../interfaces/product";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaGift } from "react-icons/fa6";
-import { Avatar, Form, Button, List, Input } from "antd";
+import {Avatar, Form, Button, List, Input, message} from "antd";
 import moment from "moment";
 import { useCart } from "./CartContext";
 
@@ -32,6 +32,7 @@ export default function ProductDetail() {
       image: detail.image,
     };
     addToCart(productToAdd);
+    message.success("Thêm sản phẩm vào giỏ hàng thành công")
   };
   const getSoupById = async (soupId: any) => {
     return data.soups.find((soup) => (soup.id = soupId));
