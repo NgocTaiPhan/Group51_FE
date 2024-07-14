@@ -5,22 +5,21 @@ import logo from "../../assets/img/logo.png";
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useCart } from "../../pages/ProductDetail/CartContext";
-import CartPopUp from "../../pages/cart/CartPopUp"; // Đảm bảo đường dẫn chính xác
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
 
 const Header: React.FC = () => {
-  const navigate = useNavigate();
-  const { cartItemCount } = useCart();
-  const [isVisible, setIsVisible] = useState(false);
-  const [isCartVisible, setIsCartVisible] = useState(false);
+    const navigate = useNavigate();
+    const { cartItemCount } = useCart();
+    const [isVisible, setIsVisible] = useState(false);
+    const [isCartVisible, setIsCartVisible] = useState(false);
 
-  const handleToggle = () => {
-    setIsVisible(!isVisible);
-  };
+    const handleToggle = () => {
+        setIsVisible(!isVisible);
+    };
 
-  const handleCartToggle = () => {
-    setIsCartVisible(!isCartVisible);
-  };
+    const handleCartToggle = () => {
+        setIsCartVisible(!isCartVisible);
+    };
 
   return (
     <div className="header">
@@ -95,6 +94,7 @@ const Header: React.FC = () => {
       <CartPopUp visible={isCartVisible} onClose={handleCartToggle} />
     </div>
   );
+
 };
 
 export default Header;

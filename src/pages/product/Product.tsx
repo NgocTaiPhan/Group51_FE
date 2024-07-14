@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "antd";
 import data from "../../data.json";
 import "./Product.scss";
-import {Link} from "react-router-dom";
-
-// Định nghĩa kiểu dữ liệu cho sản phẩm
+import { Link } from "react-router-dom";
 
 const getProduct = async () => {
     return data;
@@ -13,8 +11,12 @@ const getProduct = async () => {
 const formatPrice = (price: number): string => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
 };
+
 export default function Product() {
-    const [products, setProducts] = useState<any[]>([]); // Sử dụng kiểu dữ liệu any
+    const [products, setProducts] = useState<any[]>([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 8;
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -26,12 +28,20 @@ export default function Product() {
         };
         fetchProducts();
     }, []);
+
+    // Tính toán chỉ mục sản phẩm bắt đầu và kết thúc của trang hiện tại
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
     return (
         <div>
             <section style={{ backgroundColor: 'white' }}>
                 <div className="container" style={{paddingTop:130}}>
                     <div className="row">
-                        {products.map((product) => (
+                        {currentProducts.map((product) => (
                             <div key={product.id} className="col-xl-3 col-md-4 col-sm-6">
                                 <div className="card">
                                     <img
@@ -47,7 +57,6 @@ export default function Product() {
                                             <h5 className="text-dark mb-0">{formatPrice(product.price)}</h5>
                                         </div>
                                         <div className="d-flex justify-content-center align-items-center">
-                                            {/* eslint-disable-next-line react/jsx-no-undef */}
                                             <Link to={`/product-detail/${product.id}`}>
                                                 <Button className="detail text-white">
                                                     Xem chi tiết
@@ -57,6 +66,17 @@ export default function Product() {
                                     </div>
                                 </div>
                             </div>
+                        ))}
+                    </div>
+                    <div className="pagination justify-content-center mt-4">
+                        {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, index) => (
+                            <Button
+                                key={index}
+                                onClick={() => paginate(index + 1)}
+                                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                            >
+                                {index + 1}
+                            </Button>
                         ))}
                     </div>
                 </div>

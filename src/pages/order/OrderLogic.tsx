@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useCart } from '../ProductDetail/CartContext';
-import {message} from "antd";
-
-interface Province {
-    id: string;
-    full_name: string;
-}
+import { message } from 'antd';
 
 interface District {
     id: string;
@@ -20,7 +15,6 @@ interface Ward {
 
 interface FormValues {
     sonha: string;
-    tinh: string;
     huyen: string;
     xa: string;
     phone: string;
@@ -29,39 +23,28 @@ interface FormValues {
 
 export const useOrderLogic = () => {
     const { products, clearCart, getTotalPrice } = useCart();
-    const [provinces, setProvinces] = useState<Province[]>([]);
     const [districts, setDistricts] = useState<District[]>([]);
     const [wards, setWards] = useState<Ward[]>([]);
-    const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
     const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
-    const [shippingFee, setShippingFee] = useState<number>(0); // State to store shipping fee
 
     useEffect(() => {
-        const fetchProvinces = async () => {
+        const fetchDistricts = async () => {
             try {
-                const response = await axios.get('https://esgoo.net/api-tinhthanh/1/0.htm');
-                setProvinces(response.data.data);
+                // Replace with the appropriate API endpoint to fetch districts of TP.HCM
+                const response = await axios.get('https://esgoo.net/api-tinhthanh/2/79.htm'); // '79' is the ID for TP.HCM
+                // Filter districts to only include those in TP.HCM
+                const hcmDistricts = response.data.data.filter((district: District) => {
+                    // Adjust condition to filter districts of TP.HCM
+                    return district.full_name.includes('Quận') || district.full_name.includes('Huyện');
+                });
+                setDistricts(hcmDistricts);
+                setWards([]);
             } catch (error) {
-                console.error('Error fetching provinces:', error);
+                console.error('Error fetching districts:', error);
             }
         };
-        fetchProvinces();
+        fetchDistricts();
     }, []);
-
-    useEffect(() => {
-        if (selectedProvince) {
-            const fetchDistricts = async () => {
-                try {
-                    const response = await axios.get(`https://esgoo.net/api-tinhthanh/2/${selectedProvince}.htm`);
-                    setDistricts(response.data.data);
-                    setWards([]);
-                } catch (error) {
-                    console.error('Error fetching districts:', error);
-                }
-            };
-            fetchDistricts();
-        }
-    }, [selectedProvince]);
 
     useEffect(() => {
         if (selectedDistrict) {
@@ -85,23 +68,15 @@ export const useOrderLogic = () => {
         return getTotalPrice();
     };
 
-    const updateShipping = (tinh: string, shipping: number): number => {
-        // Your logic to calculate shipping fee based on province or other factors
-        if (tinh === 'Tỉnh Bình Định') {
-            return 10000; // Example: Shipping fee is 10,000 VND if province is tp.hcm
-        } else {
-            return 0; // Default shipping fee or other calculation logic
-        }
-    };
+
 
     const handleFinish = (values: FormValues) => {
         const orderData = {
             products,
             totalAmount: getTotalAmount(),
-            status: "Đang xử lý",
+            status: 'Đang xử lý',
             address: {
                 sonha: values.sonha,
-                tinh: provinces.find((p) => p.id === values.tinh)?.full_name,
                 huyen: districts.find((d) => d.id === values.huyen)?.full_name,
                 xa: wards.find((w) => w.id === values.xa)?.full_name,
                 phone: values.phone,
@@ -114,19 +89,30 @@ export const useOrderLogic = () => {
         message.success('Đặt hàng thành công!');
         clearCart();
     };
+    const thoiGianDuKien = async (huyen: string): Promise<string> => {
+        try {
+            if (!huyen) {
+                throw new Error('Missing district information');
+            }
+
+            // Replace with the appropriate API endpoint for estimated delivery time
+            const response = await axios.get(`https://api.now.vn/estimated-delivery-time?district=${selectedDistrict}`);
+            return response.data.estimatedTime || 'Không xác định';
+        } catch (error) {
+            console.error('Error fetching estimated delivery time:', error);
+            return 'Không xác định';
+        }
+    };
 
     return {
         products,
-        provinces,
         districts,
         wards,
-        selectedProvince,
-        setSelectedProvince,
         selectedDistrict,
         setSelectedDistrict,
         formatPrice,
         getTotalAmount,
-        updateShipping,
         handleFinish,
+        thoiGianDuKien,
     };
 };
