@@ -4,301 +4,301 @@
     "name": "C01 Mì tươi Gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_80bfcc18d1be43468950e56b0f517853_large.jpg",
     "price": 39000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 2,
     "name": "C02 Mì tươi Đùi gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_467b878e8a174f53996af406f7a278c1_large.jpg",
     "price": 69000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 3,
     "name": "C03 Mì tươi Cá (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c03_c23_ec299dd19c67488094dfb4e1383bda1d_large.jpg",
     "price": 59000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 4,
     "name": "C04 Mì tươi Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c04_c24_80c432275589428dbd9f7ac4c71c6195_large.jpg",
     "price": 65000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 5,
     "name": "C05 Mì tươi Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c05_c25_4c246959518640d2aa6d86740395ecf1_large.jpg",
     "price": 65000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 6,
     "name": "C06 Mì tươi Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c06_c26_b085ba0263d749cb8b44e6c1336811e3_large.jpg",
     "price": 69000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 7,
     "name": "C07 Mì tươi Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c07_c27_760c4f08ab074e1a9d504948b365d478_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 8,
     "name": "C08 Mì tươi Tôm (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c08_c28_acd0990a37d64ed49c552be898e65c6f_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 9,
     "name": "C09 Mì tươi Đùi gà xé Bào ngư đặc biệt (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c09_c29_c95807f9d0554bba81e020a6dc9974a3_large.jpg",
     "price": 149000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 10,
     "name": "C10 Mì tươi Gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c10_c11_c30_c31_15bfea7286a949eb80804791aa7c663e_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 11,
     "name": "C11 Mì tươi Đùi gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c10_c11_c30_c31_ac30d941c3674e0a9fee4554f8825d34_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 12,
     "name": "C12 Mì tươi Gà xé Xá xíu sốt XO (khô)",
     "image": "//product.hstatic.net/200000892317/product/c12_c13_bd3d1a062cb045f096a147389d0886d5_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 13,
     "name": "C13 Mì tươi Đùi gà xé Xá xíu sốt XO (khô)",
     "image": "//product.hstatic.net/200000892317/product/c12_c13_5997d5cf801d4c82bbdc6b3c0c5e57cb_large.jpg",
     "price": 99000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 14,
     "name": "C14 Mì tươi Gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c14_c15_c32_c33_6120492e442341b6b45ff4be109983b9_large.jpg",
     "price": 75000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 15,
     "name": "C15 Mì tươi Đùi gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c14_c15_c32_c33_03189a53c0bb46a5b7bb3c9869956753_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 16,
     "name": "C16 Mì tươi Gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c16_c17_c34_c35_34f1d883815e438682b47fb607d94b01_large.jpg",
     "price": 75000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 17,
     "name": "C17 Mì tươi Đùi gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c16_c17_c34_c35_e2bc3371ca0348f59bf129bed36b1b19_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 18,
     "name": "C18 Mì tươi Gà xé Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c18_c19_9a7670fac3c84b109da9aa0a6a8f82f0_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 19,
     "name": "C19 Mì tươi Đùi gà xé Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c18_c19_fdceff6374d5426bb0bcf4b4d6352865_large.jpg",
     "price": 95000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 20,
     "name": "C20 Mì tươi Tôm Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c20_c38_905eb7f7b22844c39577e0f5d7056929_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 21,
     "name": "C21 Hủ tiếu Gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_2676a4ce86ac4784bc7e1a12bf47d0ee_large.jpg",
     "price": 59000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 22,
     "name": "C22 Hủ tiếu Đùi gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_3ced567b62c947a6a7e5163fa9ca1ee4_large.jpg",
     "price": 69000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 23,
     "name": "C23 Hủ tiếu Cá (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c03_c23_ad7a54b6e4d04f8182cafdfcfe4792cd_large.jpg",
     "price": 59000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 24,
     "name": "C24 Hủ tiếu Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c04_c24_412be66574394f01a63128a12c8ec5be_large.jpg",
     "price": 65000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 25,
     "name": "C25 Hủ tiếu Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c05_c25_9d26a14e97d84729957ca4f795e24fe2_large.jpg",
     "price": 65000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 26,
     "name": "C26 Hủ tiếu Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c06_c26_0c3c18dc32054629ac04a08ba47e7722_large.jpg",
     "price": 69000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 27,
     "name": "C27 Hủ tiếu Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c07_c27_4863526480334ec5850d2d15b464efd8_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 28,
     "name": "C28 Hủ tiếu Tôm (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c08_c28_7db415e57ccf4d7f8ae96b3c7110cf26_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 29,
     "name": "C29 Hủ tiếu Đùi gà xé Bào ngư đặc biệt (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c09_c29_c1d93834fa59436399b6e8a245d6e8f9_large.jpg",
     "price": 149000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 30,
     "name": "C30 Hủ tiếu Gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c30_c31_aa52029563314ce9803dbe05f037544a_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 31,
     "name": "C31 Hủ tiếu Đùi gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c30_c31_901853f40b4544cb986dced323dc382a_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 32,
     "name": "C32 Hủ tiếu Gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c14_c15_c32_c33_64462448969f4867ae874c98375db6dd_large.jpg",
     "price": 75000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 33,
     "name": "C33 Hủ tiếu Đùi gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c14_c15_c32_c33_308d001539734d97959dcd528832e007_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 34,
     "name": "C34 Hủ tiếu Gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c16_c17_c34_c35_883f8016483e46f08d3384dfbc3116ff_large.jpg",
     "price": 75000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 35,
     "name": "C35 Hủ tiếu Đùi gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c16_c17_c34_c35_1598f076f38140a898a04a9b36e4ce64_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 36,
     "name": "C36 Hủ tiếu Gà xé Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c36_c37_35bd3ed7aafc4182ad7f3aeff92e8b5f_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 37,
     "name": "C37 Hủ tiếu Đùi gà xé Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c36_c37_a5decef542514b8487b1b1333b1ad7e5_large.jpg",
     "price": 95000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 38,
     "name": "C38 Hủ tiếu Tôm Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c20_c38_0c12170805c744579d6c739b27fdbbb1_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 39,
     "name": "C39 Thịt gà xé",
     "image": "//product.hstatic.net/200000892317/product/c39_c40_92f330cd03fa42a7bffec9f1bae4f13f_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 40,
     "name": "C40 Đùi gà xé",
     "image": "//product.hstatic.net/200000892317/product/c39_c40_601360f2940340da8cc569cb45acad2a_large.jpg",
     "price": 35000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 41,
     "name": "C41 Cá",
     "image": "//product.hstatic.net/200000892317/product/c41_9f070c8e4cc64982b621111e31e8ef9d_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 42,
     "name": "C42 Xá xíu",
     "image": "//product.hstatic.net/200000892317/product/c42_4f0c5ab390794f01b577f537b764fcbf_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 43,
     "name": "C43 Bò viên",
     "image": "//product.hstatic.net/200000892317/product/c43_b864c2ad05c04f80ab651c2e3d7f7b8c_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 44,
@@ -312,329 +312,329 @@
     "name": "C45 Hoành thánh",
     "image": "//product.hstatic.net/200000892317/product/c45_c55e8beda63b4fbf912edf1d68b15c34_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 46,
     "name": "C46 Tôm",
     "image": "//product.hstatic.net/200000892317/product/c46_676d098e0e5049ccaa95786281960495_large.jpg",
     "price": 35000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 47,
     "name": "C47 Bào ngư",
     "image": "//product.hstatic.net/200000892317/product/c47_0d11866adc85475aadfc1deb0e26b263_large.jpg",
     "price": 99000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 48,
     "name": "C48 Mì",
     "image": "//product.hstatic.net/200000892317/product/c48_8696e6afbaee440c9cc4ce757ab6036c_large.jpg",
     "price": 12000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 49,
     "name": "C50 Café Phin Đen",
     "image": "//product.hstatic.net/200000892317/product/c50_e3f6347a084b4077b726ae423ba205ee_large.jpg",
     "price": 20000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
     "id": 50,
     "name": "C51 Café Phin sữa",
     "image": "//product.hstatic.net/200000892317/product/c51_1bb86d9bd6dc4d109013a58b9bb34212_large.jpg",
     "price": 25000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
     "id": 51,
     "name": "C52 Coca",
     "image": "//product.hstatic.net/200000892317/product/c52_8d31e6a6ea5d4fc196dc02368333e211_large.jpg",
     "price": 15000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
     "id": 52,
     "name": "C53 7up",
     "image": "//product.hstatic.net/200000892317/product/c53_dfe75443efeb45bbba20ba818c27b939_large.jpg",
     "price": 15000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
     "id": 53,
     "name": "C54 Dasani",
     "image": "//product.hstatic.net/200000892317/product/c54_1780cd4781694cb4b4bbb5166c5fe95b_large.jpg",
     "price": 10000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
     "id": 54,
     "name": "CM1 Combo Mì tươi Gà xé Xá xíu (khô/nước) + Café sữa/đen đá",
     "image": "//product.hstatic.net/200000892317/product/cm1_cm4_f16ef372792246fd83698287f8feeb5f_large.jpg",
     "price": 59000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
     "id": 55,
     "name": "CM2 Combo Mì tươi Gà xé Hoành thánh (khô/nước) + Café sữa/đen đá",
     "image": "//product.hstatic.net/200000892317/product/cm2_cm5_898481baedbf4b85a7a0295406361577_large.jpg",
     "price": 59000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
     "id": 56,
     "name": "CM3 Combo Mì tươi Gà xé Bò viên (khô/nước) + Café sữa/đen đá",
     "image": "//product.hstatic.net/200000892317/product/cm3_cm6_5380c4c433294070a6170fe9be3cb22a_large.jpg",
     "price": 59000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
     "id": 57,
     "name": "CM4 Combo Hủ tiếu Gà xé Xá xíu (khô/nước) + Café sữa/đen đá",
     "image": "//product.hstatic.net/200000892317/product/cm1_cm4_b2a585348f4645b5ba4025d81349286a_large.jpg",
     "price": 59000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
     "id": 58,
     "name": "CM5 Combo Hủ tiếu Gà xé Hoành thánh (khô/nước) + Café sữa/đen đá",
     "image": "//product.hstatic.net/200000892317/product/cm2_cm5_530f698fd76441f7ad14b549a923460c_large.jpg",
     "price": 59000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
     "id": 59,
     "name": "CM6 Combo Hủ tiếu Gà xé Bò viên (khô/nước) + Café sữa/đen đá",
     "image": "//product.hstatic.net/200000892317/product/cm3_cm6_5308fde5cb38421484e7d098c4a28b2e_large.jpg",
     "price": 59000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
     "id": 60,
     "name": "H01 Cơm Gà Hải Nam",
     "image": "//product.hstatic.net/200000892317/product/h01_64a6f6854e94475782e4f4de9b7ac3b7_large.jpg",
     "price": 39000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 61,
     "name": "H02 Cơm Xá xíu",
     "image": "//product.hstatic.net/200000892317/product/h02_5d16cbe40cf24ea68f613381d40f9559_large.jpg",
     "price": 59000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 62,
     "name": "H03 Cơm Phá lấu Thập Cẩm",
     "image": "//product.hstatic.net/200000892317/product/h03_f3b17d9ca7f8470db3f6763af0665d8b_large.jpg",
     "price": 69000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 63,
     "name": "H06 Cơm Đùi gà",
     "image": "//product.hstatic.net/200000892317/product/h06_56d7332d67b645c198dca9d9679f703f_large.jpg",
     "price": 69000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 64,
     "name": "H07 Cơm Gà xé nấm truffle",
     "image": "//product.hstatic.net/200000892317/product/h07_e2f65fd306a94167af412dde88cc431d_large.jpg",
     "price": 79000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 65,
     "name": "H13 Cơm Gà Trứng phá lấu",
     "image": "//product.hstatic.net/200000892317/product/h13_h15_0b0499a7627b40a5bcfa1419bbb8d8e5_large.jpg",
     "price": 65000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 66,
     "name": "H14 Cơm Xá xíu Trứng phá lấu",
     "image": "//product.hstatic.net/200000892317/product/h14_39e1a5f7c5da436db89c5784af580590_large.jpg",
     "price": 65000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 67,
     "name": "H15 Cơm Đùi gà Trứng phá lấu",
     "image": "//product.hstatic.net/200000892317/product/h13_h15_521af86bc0114553973424334e95ed18_large.jpg",
     "price": 75000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 68,
     "name": "H16 Cơm Phá lấu Thập cẩm Trứng",
     "image": "//product.hstatic.net/200000892317/product/h16_2d633f7247bb48ffb66c1e9df4d668b5_large.jpg",
     "price": 75000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 69,
     "name": "H23 Cơm Gà Xá xíu Cải Hongkong dầu hào",
     "image": "//product.hstatic.net/200000892317/product/h23_h24_2a457d2fcc9347d9825acd58a58a59de_large.jpg",
     "price": 69000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 70,
     "name": "H24 Cơm Đùi gà Xá xíu Cải Hongkong dầu hào",
     "image": "//product.hstatic.net/200000892317/product/h23_h24_b7b53a6cc7d64fd69a58ca9a3290dd01_large.jpg",
     "price": 79000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 71,
     "name": "H25 Cơm Gà Phá lấu Thập cẩm Cải Hongkong dầu hào",
     "image": "//product.hstatic.net/200000892317/product/h25_h26_3c04e61c8a1a4948b450f687077ad3d4_large.jpg",
     "price": 79000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 72,
     "name": "H26 Cơm Đùi gà Phá lấu Thập cẩm Cải Hongkong dầu hào",
     "image": "//product.hstatic.net/200000892317/product/h25_h26_b8ae54494bb54182b72ed219f77b5380_large.jpg",
     "price": 89000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 73,
     "name": "H27 Cơm chiên Singapore",
     "image": "//product.hstatic.net/200000892317/product/h27_3d44b9ba0d5e49889854c645ad0f1fe9_large.jpg",
     "price": 65000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 74,
     "name": "H28 Cơm chiên xanh gà xé",
     "image": "//product.hstatic.net/200000892317/product/h28_0cf4a514e4db402aadb416d0ce52978f_large.jpg",
     "price": 65000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 75,
     "name": "H29 Cơm chiên xanh gà xé nấm truffle",
     "image": "//product.hstatic.net/200000892317/product/h29_d0fe74a9010944d9bb297265a1914f6a_large.jpg",
     "price": 89000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 76,
     "name": "H30 Cơm chiên xanh Tôm",
     "image": "//product.hstatic.net/200000892317/product/h30_75d08ab7ebdf4a15ae66a19d3a8eca78_large.jpg",
     "price": 109000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 77,
     "name": "H31 Cơm chiên Tôm sốt XO",
     "image": "//product.hstatic.net/200000892317/product/h31_8c2ea56ad682482eb7ba0a204acda018_large.jpg",
     "price": 129000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
     "id": 78,
     "name": "H32 Miến tay cầm Tôm",
     "image": "//product.hstatic.net/200000892317/product/h32_9764b0b81f4a4d399c5641c70282e719_large.jpg",
     "price": 109000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 79,
     "name": "H33 Miến tay cầm Tôm sốt XO",
     "image": "//product.hstatic.net/200000892317/product/h33_00d48be0354047969289be589621cbde_large.jpg",
     "price": 129000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 80,
     "name": "H34 Mì tươi Gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h34_h39_67591a6bf44a43a99d476b95159732c0_large.jpg",
     "price": 69000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 81,
     "name": "H35 Mì tươi Gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h35_h40_f3c33f9f4d5640c58d0a586866e5b6f3_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 82,
     "name": "H36 Mì tươi Gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h36_h41_fe5863fe80d241969e10fb259c768bf8_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 83,
     "name": "H37 Mì tươi Gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h37_h42_374951ed7a894f28960c14e403515591_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 84,
     "name": "H39 Mì tươi Đùi gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h34_h39_f84fef4c0bd4465292945a9636085adb_large.jpg",
     "price": 79000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 85,
     "name": "H40 Mì tươi Đùi gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h35_h40_eed5f8d14e814b42bc9adf21657bab30_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 86,
     "name": "H41 Mì tươi Đùi gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h36_h41_af1891bf941d438fbcc580838498a72e_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 87,
     "name": "H42 Mì tươi Đùi gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/h37_h42_3e0ec472a875414ab0ddb413ef53f517_large.jpg",
     "price": 89000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
     "id": 88,
     "name": "H44 Gà luộc nguyên con",
     "image": "//product.hstatic.net/200000892317/product/h44_h45_bc681e1fea804bc2af8970bffae82f34_large.jpg",
     "price": 399000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 89,
     "name": "H45 Gà luộc nửa con",
     "image": "//product.hstatic.net/200000892317/product/h44_h45_f8d305e0eff14ff092d32bca4c8063e8_large.jpg",
     "price": 199000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 90,
     "name": "H46 Đùi gà luộc góc tư",
     "image": "//product.hstatic.net/200000892317/product/h46_fad683fe5a674df0b2107d2a51c87154_large.jpg",
     "price": 99000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 91,
     "name": "H47 Xá xíu (200gr)",
     "image": "//product.hstatic.net/200000892317/product/h47_9da819aea5904dbeb68c96be8abd96b3_large.jpg",
     "price": 99000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 92,
@@ -648,230 +648,209 @@
     "name": "H49 Cải Hongkong xào dầu hào",
     "image": "//product.hstatic.net/200000892317/product/h49_bc751a6982564676b3b3378afb3f8f12_large.jpg",
     "price": 39000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 94,
     "name": "H50 Cải Hongkong xào tóp mỡ",
     "image": "//product.hstatic.net/200000892317/product/h50_315430da2d7341dc9f09225c052e7e17_large.jpg",
     "price": 39000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 95,
     "name": "H51 Cải bó xôi xào dầu hào",
     "image": "//product.hstatic.net/200000892317/product/h51_b503d0b691b3402c90853a16bb9d4998_large.jpg",
     "price": 39000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 96,
     "name": "H52 Cải bó xôi xào tóp mỡ",
     "image": "//product.hstatic.net/200000892317/product/h52_a50770df79fe4505bff48a3cb00ffa21_large.jpg",
     "price": 39000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 97,
     "name": "H53 Canh rong biển",
     "image": "//product.hstatic.net/200000892317/product/h53_45a0ace3ed604d32aba14d6bdacfbeb4_large.jpg",
     "price": 19000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 98,
     "name": "H54 Canh cải bó xôi",
     "image": "//product.hstatic.net/200000892317/product/h54_3c0bf025deda467193435f6970e81d1c_large.jpg",
     "price": 19000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
     "id": 99,
-    "name": "H55 Canh củ sen sườn non",
-    "image": "//product.hstatic.net/200000892317/product/h55_da59b823c7dd403a9b74ab79b5a1ad30_large.jpg",
-    "price": 49000,
-    "type": "đồ ăn thêm"
-  },
-  {
-    "id": 100,
     "name": "H56 Canh chân gà đậu phộng",
     "image": "//product.hstatic.net/200000892317/product/h56_e400a512f4d64b95b8a9e2678d88b87b_large.jpg",
     "price": 49000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 101,
-    "name": "H57 Canh bắp mỹ củ năng sườn non",
-    "image": "//product.hstatic.net/200000892317/product/h57_9179bbea0f764593a731f0215cc9ad3b_large.jpg",
-    "price": 49000,
-    "type": "đồ ăn thêm"
-  },
-  {
-    "id": 102,
-    "name": "H58 Canh cá trứng bắc thảo",
-    "image": "//product.hstatic.net/200000892317/product/h58_5f33359e95df4fbaa353039b591487d5_large.jpg",
-    "price": 49000,
-    "type": "đồ ăn thêm"
-  },
-  {
-    "id": 103,
+    "id": 100,
     "name": "H59 Đùi gà",
     "image": "//product.hstatic.net/200000892317/product/h59_65808760c6204aeeb37a033ac8b55f9f_large.jpg",
     "price": 65000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 104,
+    "id": 101,
     "name": "H60 Gà luộc",
     "image": "//product.hstatic.net/200000892317/product/h60_506bd9375cf348c4b5d0182373fe1c45_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 105,
+    "id": 102,
     "name": "H61 Gà xé",
     "image": "//product.hstatic.net/200000892317/product/h61_h62_b563439569944dfe9ef6e26d986472d8_large.jpg",
     "price": 25000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 106,
+    "id": 103,
     "name": "H62 Đùi gà xé",
     "image": "//product.hstatic.net/200000892317/product/h61_h62_1eb3bfd5da7c4097869bb9f6e00a7ca6_large.jpg",
     "price": 35000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 107,
+    "id": 104,
     "name": "H63 Xá xíu",
     "image": "//product.hstatic.net/200000892317/product/h63_09f8e437e35a4b739e348e5f313dec1f_large.jpg",
     "price": 35000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 108,
+    "id": 105,
     "name": "H64 Phá lấu Thập cẩm",
     "image": "//product.hstatic.net/200000892317/product/h64_988a7c2609354cea922e36345f4dd465_large.jpg",
     "price": 35000,
     "type": "Phá lấu"
   },
   {
-    "id": 109,
+    "id": 106,
     "name": "H65 Phá lấu Bao tử",
     "image": "//product.hstatic.net/200000892317/product/h65_4176eb2da80a424b9800310085a8a2b2_large.jpg",
     "price": 35000,
     "type": "Phá lấu"
   },
   {
-    "id": 110,
+    "id": 107,
     "name": "H66 Phá lấu Tai heo",
     "image": "//product.hstatic.net/200000892317/product/h66_ec94017647a544ceb90e178a9c9c3299_large.jpg",
     "price": 35000,
     "type": "Phá lấu"
   },
   {
-    "id": 111,
+    "id": 108,
     "name": "H67 Trứng phá lấu",
     "image": "//product.hstatic.net/200000892317/product/h67_f79ac0ad0bd2474890d0fc833258f231_large.jpg",
     "price": 5000,
-    "type": "đồ ăn thêm"
+    "type": "Các món khác"
   },
   {
-    "id": 112,
+    "id": 109,
     "name": "H68 Cơm thêm",
     "image": "//product.hstatic.net/200000892317/product/h68_e4cd7042d0524a11979d21d7ff57a2fe_large.jpg",
     "price": 15000,
-    "type": "cơm"
+    "type": "Cơm"
   },
   {
-    "id": 113,
+    "id": 110,
     "name": "H69 Mì thêm",
     "image": "//product.hstatic.net/200000892317/product/h69_6b3fab3ea62b49ca96ff3737b576f595_large.jpg",
     "price": 12000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "Mì, Hủ tiếu, Miến"
   },
   {
-    "id": 114,
+    "id": 111,
     "name": "H75 Café Phin đen",
     "image": "//product.hstatic.net/200000892317/product/h75_110610db0e7148a3a7ab0902191edb56_large.jpg",
     "price": 20000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
-    "id": 115,
+    "id": 112,
     "name": "H76 Café Phin sữa",
     "image": "//product.hstatic.net/200000892317/product/h76_37c27ebaac6b44f09125aea64535bffa_large.jpg",
     "price": 25000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
-    "id": 116,
+    "id": 113,
     "name": "H77 Coca",
     "image": "//product.hstatic.net/200000892317/product/h77_70a825c9a8fd4a6996cc641627d5104d_large.jpg",
     "price": 15000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
-    "id": 117,
+    "id": 114,
     "name": "H78 7up",
     "image": "//product.hstatic.net/200000892317/product/h78_a445c53cf28141bcaf9e880cecfaab34_large.jpg",
     "price": 15000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
-    "id": 118,
+    "id": 115,
     "name": "H79 Dasani",
     "image": "//product.hstatic.net/200000892317/product/h79_b9433fe1500641f8a7dc747dec923556_large.jpg",
     "price": 10000,
-    "type": "nước"
+    "type": "Nước giải khát"
   },
   {
-    "id": 119,
+    "id": 116,
     "name": "HC1 Combo Cơm gà (Cơm gà luộc - Trứng phá lấu - Cafe đen/sữa)",
     "image": "//product.hstatic.net/200000892317/product/hc1_26cf530699934c5884dd91f07492e75a_large.jpg",
     "price": 69000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
-    "id": 120,
+    "id": 117,
     "name": "HC2 Combo Cơm gà (Cơm xá xíu - Trứng phá lấu - Cafe đen/sữa)",
     "image": "//product.hstatic.net/200000892317/product/hc2_2c6bfe50924d4745a14440d512f83dcf_large.jpg",
     "price": 69000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
-    "id": 121,
+    "id": 118,
     "name": "HC3 Combo Cơm gà (Cơm gà luộc, Xá xíu, Trứng phá lấu, Canh hầm mỗi ngày)",
     "image": "//product.hstatic.net/200000892317/product/hc3_7575c675f18441d99b8db71532c3fa41_large.jpg",
     "price": 89000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
-    "id": 122,
+    "id": 119,
     "name": "HC4 Combo Cơm gà (Cơm gà luộc, Phá lấu thập cẩm, Trứng phá lấu, Canh hầm mỗi ngày)",
     "image": "//product.hstatic.net/200000892317/product/hc4_dbe40acd1176465cb3cb468a1ee9f0d3_large.jpg",
     "price": 89000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
-    "id": 123,
+    "id": 120,
     "name": "HC5 Combo Cơm chiên (Cơm chiên Singapore, Canh hầm mỗi ngày)",
     "image": "//product.hstatic.net/200000892317/product/hc5_d0f748bffd9d48f5853697a79aeb26fe_large.jpg",
     "price": 99000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
-    "id": 124,
+    "id": 121,
     "name": "HC6 Combo Cơm chiên (Cơm chiên xanh Gà xé, Canh hầm mỗi ngày)",
     "image": "//product.hstatic.net/200000892317/product/hc6_9e67735e79734d3bb169e06ff3c887ad_large.jpg",
     "price": 99000,
-    "type": "combo"
+    "type": "Combo"
   },
   {
-    "id": 125,
+    "id": 122,
     "name": "HC7 Combo Gia Đình (Gà luộc, Xá xíu, Phá lấu thập cẩm, Trứng phá lấu, Bó xôi xào dầu hào, 3 Phần cơm, 3 Canh hầm mỗi ngày)",
     "image": "//product.hstatic.net/200000892317/product/hc7_fe1b2495805b48cda1fe4498c59c55d9_large.jpg",
     "price": 259000,
-    "type": "combo"
+    "type": "Combo"
   }
 ]

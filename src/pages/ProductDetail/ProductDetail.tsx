@@ -166,7 +166,6 @@ export default function ProductDetail() {
                 <div
                   style={{
                     background: "#f33828",
-                    width: "70%",
                     borderRadius: 5,
                     display: "flex",
                     alignItems: "center",
