@@ -1,25 +1,29 @@
-.header_container {
+.header {
+  font-family: "Quicksand", sans-serif;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px !important;
+  background-color: #fff;
+  z-index: 100000;
+}
+.header .header_container {
   display: flex;
-  background-color: #006600;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  font-size: 22px;
-  color: white;
 }
-.header_container img {
-  border-radius: 50%;
-  margin: 10px 0;
-}
-.header_container .ant-input-search-button {
+.header .header_container .ant-input-search-button {
   background-color: #87c84a;
 }
-.header_container .ant-input-search-button:hover {
-  background: #fcbc34 !important;
+.header .header_container .ant-input-search-button:hover {
+  background: #b5e389 !important;
 }
-.header_container .skip-account {
+.header .header_container .skip-account {
   text-decoration: none;
 }
-.header_container .account_option {
+.header .header_container .account_option {
   position: absolute;
   background: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 25.5px 4.5px;
@@ -28,24 +32,28 @@
   opacity: 0;
   transition: all 0.2s;
 }
-.header_container .account_option li {
+.header .header_container .account_option li {
   list-style: none;
   padding-bottom: 10px;
 }
-.header_container .account_option li a {
+.header .header_container .account_option li a {
   text-decoration: none;
   color: black;
   transition: all 0.3s;
 }
-.header_container .account_option li a:hover {
-  color: #fcbc34;
+.header .header_container .account_option li a:hover {
+  color: #87c84a;
 }
-.header_container .account_option.visible {
+.header .header_container .account_option.visible {
   opacity: 1;
 }
-.header_container .account:hover,
-.header_container .cart:hover {
-  color: #fcbc34;
+.header .header_container .account:hover,
+.header .header_container .cart:hover {
+  color: #87c84a;
+}
+.header .header_container .cart-count {
+  position: absolute;
+  right: 320px;
 }
 
 /*# sourceMappingURL=Header.css.map */
