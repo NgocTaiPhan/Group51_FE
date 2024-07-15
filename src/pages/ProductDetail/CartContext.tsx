@@ -1,4 +1,3 @@
-// CartContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { Product } from '../../interfaces/product';
 
@@ -28,18 +27,18 @@ interface CartProviderProps {
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cartItemCount, setCartItemCount] = useState<number>(() => {
-    const savedCount = localStorage.getItem('cartItemCount');
+    const savedCount = sessionStorage.getItem('cartItemCount');
     return savedCount ? parseInt(savedCount, 10) : 0;
   });
 
   const [products, setProducts] = useState<Product[]>(() => {
-    const savedProducts = localStorage.getItem('cartProducts');
+    const savedProducts = sessionStorage.getItem('cartProducts');
     return savedProducts ? JSON.parse(savedProducts) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('cartItemCount', cartItemCount.toString());
-    localStorage.setItem('cartProducts', JSON.stringify(products));
+    sessionStorage.setItem('cartItemCount', cartItemCount.toString());
+    sessionStorage.setItem('cartProducts', JSON.stringify(products));
   }, [cartItemCount, products]);
 
   const addToCart = (product: Product) => {
@@ -74,15 +73,15 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       return updatedProducts;
     });
   };
+
   const clearCart = () => {
     setProducts([]);
     setCartItemCount(0);
   };
+
   const getTotalPrice = () => {
     return products.reduce((total, product) => total + product.price * product.quantity, 0);
   };
-
-
 
   return (
     <CartContext.Provider value={{ cartItemCount, addToCart, products, updateProductQuantity, removeProduct, getTotalPrice, clearCart }}>

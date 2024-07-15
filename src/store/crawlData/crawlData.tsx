@@ -27,15 +27,15 @@ const fetchData = async () => {
     };
     const determineType = (name: string): string => {
       if (name.includes("HC") || name.includes("CM")) {
-        return "combo";
+        return "Combo";
       } else if (name.includes("Cơm")) {
-        return "cơm";
+        return "Cơm";
       } else if (
         name.includes("Mì") ||
         name.includes("Hủ tiếu") ||
         name.includes("Miến")
       ) {
-        return "mì, hủ tiếu, miến";
+        return "Mì, Hủ tiếu, Miến";
       } else if (name.includes("Phá lấu")) {
         return "Phá lấu";
       } else if (
@@ -44,9 +44,9 @@ const fetchData = async () => {
         name.includes("7up") ||
         name.includes("Dasani")
       ) {
-        return "nước";
+        return "Nước giải khát";
       } else {
-        return "đồ ăn thêm";
+        return "Các món khác";
       }
     };
 

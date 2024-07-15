@@ -1,10 +1,23 @@
-.card{
+.card {
   margin-bottom: 10px;
 }
-.detail{
-  background: #87c84a;
-
+.detail {
+  border: 1px solid #87c84a;
+  background: #fff;
+  color: #87c84a;
+  transition: all 0.3s;
+  &:hover {
+    background: #87c84a !important;
+    border: none;
+    color: #fff !important;
+  }
 }
-.mb-0{
+.mb-0 {
   font-size: 120%;
 }
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector,
+.ant-select-focused .ant-select-selector {
+  border-color: #52c41a !important;
+}
+
+
