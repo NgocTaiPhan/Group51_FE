@@ -6,6 +6,7 @@ import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useCart } from "../../pages/ProductDetail/CartContext";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
+import CartPopUp from "../../pages/cart/CartPopUp";
 
 const Header: React.FC = () => {
     const navigate = useNavigate();

@@ -1,4 +1,3 @@
-// CartContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { Product } from '../../interfaces/product';
 
@@ -87,7 +86,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const sumQuantity = () => {
     return products.reduce((total, product) => total + product.quantity, 0);
   };
-
   return (
       <CartContext.Provider value={{sumQuantity, cartItemCount, addToCart, products, updateProductQuantity, removeProduct, getTotalPrice, clearCart }}>
         {children}

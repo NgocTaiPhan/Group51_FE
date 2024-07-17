@@ -206,6 +206,15 @@ export default function ProductDetail() {
                   style={{padding: 10, background: "#f8f8f8", borderRadius: 10}}
               >
                 <div
+                  style={{
+                    background: "#f33828",
+                    borderRadius: 5,
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <FaGift style={{ color: "#fff", marginLeft: 10 }} />
+                  <p
                     style={{
                       background: "#f33828",
                       width: "70%",
