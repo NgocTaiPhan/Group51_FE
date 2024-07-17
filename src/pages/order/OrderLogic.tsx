@@ -1,17 +1,6 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useCart } from '../ProductDetail/CartContext';
 import { message } from 'antd';
-
-interface District {
-    id: string;
-    full_name: string;
-}
-
-interface Ward {
-    id: string;
-    full_name: string;
-}
+import { useCart } from '../ProductDetail/CartContext';
 
 interface FormValues {
     sonha: string;
@@ -19,46 +8,20 @@ interface FormValues {
     xa: string;
     phone: string;
     name: string;
+    phiShip:number;
+    thoiGian:string;
 }
 
+// Cấu hình thông báo
+message.config({
+    top: 100,
+    duration: 3,
+    maxCount: 3,
+});
+
 export const useOrderLogic = () => {
-    const { products, clearCart, getTotalPrice } = useCart();
-    const [districts, setDistricts] = useState<District[]>([]);
-    const [wards, setWards] = useState<Ward[]>([]);
-    const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchDistricts = async () => {
-            try {
-                // Replace with the appropriate API endpoint to fetch districts of TP.HCM
-                const response = await axios.get('https://esgoo.net/api-tinhthanh/2/79.htm'); // '79' is the ID for TP.HCM
-                // Filter districts to only include those in TP.HCM
-                const hcmDistricts = response.data.data.filter((district: District) => {
-                    // Adjust condition to filter districts of TP.HCM
-                    return district.full_name.includes('Quận') || district.full_name.includes('Huyện');
-                });
-                setDistricts(hcmDistricts);
-                setWards([]);
-            } catch (error) {
-                console.error('Error fetching districts:', error);
-            }
-        };
-        fetchDistricts();
-    }, []);
-
-    useEffect(() => {
-        if (selectedDistrict) {
-            const fetchWards = async () => {
-                try {
-                    const response = await axios.get(`https://esgoo.net/api-tinhthanh/3/${selectedDistrict}.htm`);
-                    setWards(response.data.data);
-                } catch (error) {
-                    console.error('Error fetching wards:', error);
-                }
-            };
-            fetchWards();
-        }
-    }, [selectedDistrict]);
+    const { products, clearCart, getTotalPrice, sumQuantity} = useCart();
+    const selectedDistrict = "TP.Thủ Đức"; // Cố định huyện là Thủ Đức
 
     const formatPrice = (price: number): string => {
         return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
@@ -68,51 +31,95 @@ export const useOrderLogic = () => {
         return getTotalPrice();
     };
 
-
-
     const handleFinish = (values: FormValues) => {
+        // Tính phí ship và thời gian
+        const { phiShip, thoiGian } = getShippingAndTime(values.xa);
         const orderData = {
             products,
             totalAmount: getTotalAmount(),
             status: 'Đang xử lý',
             address: {
                 sonha: values.sonha,
-                huyen: districts.find((d) => d.id === values.huyen)?.full_name,
-                xa: wards.find((w) => w.id === values.xa)?.full_name,
+                huyen: values.huyen,
+                xa: values.xa,
                 phone: values.phone,
                 name: values.name,
             },
+            phiShip,
+            thoiGian,
         };
 
-        localStorage.setItem('orderData', JSON.stringify(orderData));
-        console.log('Order saved:', orderData);
+        sessionStorage.setItem('orderData', JSON.stringify(orderData));
+        // console.log('Order saved:', orderData);
         message.success('Đặt hàng thành công!');
         clearCart();
     };
-    const thoiGianDuKien = async (huyen: string): Promise<string> => {
-        try {
-            if (!huyen) {
-                throw new Error('Missing district information');
-            }
 
-            // Replace with the appropriate API endpoint for estimated delivery time
-            const response = await axios.get(`https://api.now.vn/estimated-delivery-time?district=${selectedDistrict}`);
-            return response.data.estimatedTime || 'Không xác định';
-        } catch (error) {
-            console.error('Error fetching estimated delivery time:', error);
-            return 'Không xác định';
+    const getShippingAndTime = (xa: string): { phiShip: number; thoiGian: string } => {
+        const sumQuantityValue = sumQuantity();
+        if (sumQuantityValue >= 5) {
+            switch (xa) {
+                case "Phường Linh Xuân":
+                    return { phiShip: 0, thoiGian: "17 phút" };
+                case "Phường Linh Trung":
+                    return { phiShip: 0, thoiGian: "16 phút" };
+                case "Phường Trường Thọ":
+                    return { phiShip: 0, thoiGian: "23 phút" };
+                case "Phường Tam Phú":
+                    return { phiShip: 0, thoiGian: "27 phút" };
+                case "Phường Tam Bình":
+                    return { phiShip: 0, thoiGian: "25 phút" };
+                case "Phường Linh Tây":
+                    return { phiShip: 0, thoiGian: "22 phút" };
+                case "Phường Linh Đông":
+                    return { phiShip: 0, thoiGian: "30 phút" };
+                case "Phường Hiệp Bình Phước":
+                    return { phiShip: 0, thoiGian: "35 phút" };
+                case "Phường Hiệp Bình Chánh":
+                    return { phiShip: 0, thoiGian: "36 phút" };
+                case "Phường Bình Thọ":
+                    return { phiShip: 0, thoiGian: "21 phút" };
+                case "Phường Bình Chiểu":
+                    return { phiShip: 0, thoiGian: "27 phút" };
+                default:
+                    return { phiShip: 0, thoiGian: "" };
+            }
+        } else {
+            switch (xa) {
+                case "Phường Linh Xuân":
+                    return { phiShip: 10000, thoiGian: "17 phút" };
+                case "Phường Linh Trung":
+                    return { phiShip: 10000, thoiGian: "16 phút" };
+                case "Phường Trường Thọ":
+                    return { phiShip: 15000, thoiGian: "23 phút" };
+                case "Phường Tam Phú":
+                    return { phiShip: 20000, thoiGian: "27 phút" };
+                case "Phường Tam Bình":
+                    return { phiShip: 15000, thoiGian: "25 phút" };
+                case "Phường Linh Tây":
+                    return { phiShip: 15000, thoiGian: "22 phút" };
+                case "Phường Linh Đông":
+                    return { phiShip: 20000, thoiGian: "30 phút" };
+                case "Phường Hiệp Bình Phước":
+                    return { phiShip: 25000, thoiGian: "35 phút" };
+                case "Phường Hiệp Bình Chánh":
+                    return { phiShip: 20000, thoiGian: "36 phút" };
+                case "Phường Bình Thọ":
+                    return { phiShip: 15000, thoiGian: "21 phút" };
+                case "Phường Bình Chiểu":
+                    return { phiShip: 20000, thoiGian: "27 phút" };
+                default:
+                    return { phiShip: 0, thoiGian: "" };
+            }
         }
     };
 
+
     return {
         products,
-        districts,
-        wards,
         selectedDistrict,
-        setSelectedDistrict,
         formatPrice,
         getTotalAmount,
         handleFinish,
-        thoiGianDuKien,
     };
 };

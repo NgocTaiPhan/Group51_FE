@@ -163,10 +163,23 @@ const Product: React.FC = () => {
                         {formatPrice(product.price)}
                       </h5>
                     </div>
+<!-- <<<<<<< hoa
+                    <div style={{marginBottom: "50px"}} className="pagination justify-content-center mt-4">
+                        {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, index) => (
+                            <Button
+                                key={index}
+                                onClick={() => paginate(index + 1)}
+                                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                            >
+                                {index + 1}
+                            </Button>
+                        ))}
+<!-- ======= --> -->
                     <div className="d-flex justify-content-center align-items-center">
                       <Link to={`/product-detail/${product.id}`}>
                         <Button className="detail">Xem chi tiết</Button>
                       </Link>
+<!-- >>>>>>> master -->
                     </div>
                   </div>
                 </div>
