@@ -4,6 +4,7 @@
     "name": "C01 Mì tươi Gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_80bfcc18d1be43468950e56b0f517853_large.jpg",
     "price": 39000,
+    "detail": "Mì tươi: mì sợi tươi được làm từ bột mì và nước.\nGà xé: thường là thịt gà đã được nấu chín và xé nhỏ.\nRau sống: các loại rau sống như rau thơm, rau xà lách.\nNước dùng (nếu là món nước): nước dùng được nấu từ xương gà và gia vị để tạo hương vị đặc trưng cho món mì.\nGia vị: bao gồm muối, tiêu, dầu ăn.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -11,6 +12,7 @@
     "name": "C02 Mì tươi Đùi gà xé (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_467b878e8a174f53996af406f7a278c1_large.jpg",
     "price": 69000,
+    "detail": "Mì tươi: mì sợi tươi được làm từ bột mì và nước.\nĐùi gà xé: thịt đùi gà đã được nấu chín và xé nhỏ.\nRau sống: các loại rau sống như rau thơm, rau xà lách.\nNước dùng (nếu là món nước): nước dùng được nấu từ xương gà và gia vị để tạo hương vị đặc trưng cho món mì.\nGia vị: bao gồm muối, tiêu, dầu ăn.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -18,6 +20,7 @@
     "name": "C03 Mì tươi Cá (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c03_c23_ec299dd19c67488094dfb4e1383bda1d_large.jpg",
     "price": 59000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nCá: cá đã nấu chín và đã tách xương.\nRau sống: rau thơm và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương cá và gia vị.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -25,6 +28,7 @@
     "name": "C04 Mì tươi Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c04_c24_80c432275589428dbd9f7ac4c71c6195_large.jpg",
     "price": 65000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nXá xíu: thịt xá xíu đã nấu chín và thái thành từng lát mỏng.\nRau sống: rau thơm và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị.\nGia vị: muối, tiêu, dầu ăn và các gia vị khác theo khẩu vị.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -32,6 +36,7 @@
     "name": "C05 Mì tươi Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c05_c25_4c246959518640d2aa6d86740395ecf1_large.jpg",
     "price": 65000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nBò viên: viên bò đã được nấu chín và thái thành từng miếng nhỏ.\nRau sống: rau thơm và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -39,6 +44,7 @@
     "name": "C06 Mì tươi Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c06_c26_b085ba0263d749cb8b44e6c1336811e3_large.jpg",
     "price": 69000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nHoành thánh: các viên hoành thánh đã được nhồi nhân và nấu chín.\nRau sống: rau thơm và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị để tạo hương vị đặc trưng cho món mì.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -46,6 +52,7 @@
     "name": "C07 Mì tươi Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c07_c27_760c4f08ab074e1a9d504948b365d478_large.jpg",
     "price": 79000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nPhá lấu: các miếng thịt như phá lấu, gan, mật, thịt ba chỉ đã được nấu chín.\nRau sống: có thể bao gồm các loại rau thơm như ngò gai, rau mùi và rau xà lách.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -53,6 +60,7 @@
     "name": "C08 Mì tươi Tôm (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c08_c28_acd0990a37d64ed49c552be898e65c6f_large.jpg",
     "price": 89000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nTôm: tôm đã được nấu chín và làm sạch.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương tôm và gia vị.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -60,6 +68,7 @@
     "name": "C09 Mì tươi Đùi gà xé Bào ngư đặc biệt (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c09_c29_c95807f9d0554bba81e020a6dc9974a3_large.jpg",
     "price": 149000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nĐùi gà xé: thịt đùi gà đã được nấu chín và xé nhỏ.\nBào ngư: sụn bào ngư đã được chuẩn bị sẵn.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách có thể được sử dụng.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị để tạo hương vị đặc trưng.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -67,6 +76,7 @@
     "name": "C10 Mì tươi Gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c10_c11_c30_c31_15bfea7286a949eb80804791aa7c663e_large.jpg",
     "price": 79000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nGà xé: thịt gà đã được nấu chín và xé nhỏ.\nXá xíu: thịt xá xíu đã được nấu chín và thái thành từng lát mỏng.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị để tạo hương vị đặc trưng.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -74,6 +84,7 @@
     "name": "C11 Mì tươi Đùi gà xé Xá xíu (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c10_c11_c30_c31_ac30d941c3674e0a9fee4554f8825d34_large.jpg",
     "price": 89000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nĐùi gà xé: thịt đùi gà đã được nấu chín và xé nhỏ.\nXá xíu: thịt xá xíu đã được nấu chín và thái thành từng lát mỏng.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị để tạo hương vị đặc trưng.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -81,6 +92,7 @@
     "name": "C12 Mì tươi Gà xé Xá xíu sốt XO (khô)",
     "image": "//product.hstatic.net/200000892317/product/c12_c13_bd3d1a062cb045f096a147389d0886d5_large.jpg",
     "price": 89000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nGà xé: thịt gà đã được nấu chín và xé nhỏ.\nXá xíu: thịt xá xíu đã được nấu chín và thái thành từng lát mỏng.\nSốt XO: sốt XO đậm đà và thơm ngon.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -88,6 +100,7 @@
     "name": "C13 Mì tươi Đùi gà xé Xá xíu sốt XO (khô)",
     "image": "//product.hstatic.net/200000892317/product/c12_c13_5997d5cf801d4c82bbdc6b3c0c5e57cb_large.jpg",
     "price": 99000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nĐùi gà xé: thịt đùi gà đã được nấu chín và xé nhỏ.\nXá xíu: thịt xá xíu đã được nấu chín và thái thành từng lát mỏng.\nSốt XO: sốt XO đậm đà và thơm ngon.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -95,6 +108,7 @@
     "name": "C14 Mì tươi Gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c14_c15_c32_c33_6120492e442341b6b45ff4be109983b9_large.jpg",
     "price": 75000,
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nGà xé: thịt gà đã được nấu chín và xé nhỏ.\nBò viên: bò viên đã được nấu chín.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị để tạo hương vị đặc trưng.",
     "type": "mì, hủ tiếu, miến"
   },
   {
@@ -102,29 +116,37 @@
     "name": "C15 Mì tươi Đùi gà xé Bò viên (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c14_c15_c32_c33_03189a53c0bb46a5b7bb3c9869956753_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "mì, hủ tiếu, miến",
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nĐùi gà xé: thịt đùi gà đã được nấu chín và xé nhỏ.\nBò viên: bò viên đã được nấu chín.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách.\nNước dùng (nếu là món nước): nước dùng từ xương và gia vị để tạo hương vị đặc trưng."
   },
+
   {
     "id": 16,
     "name": "C16 Mì tươi Gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c16_c17_c34_c35_34f1d883815e438682b47fb607d94b01_large.jpg",
     "price": 75000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "mì, hủ tiếu, miến",
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nGà xé: thịt gà đã được nấu chín và xé nhỏ.\nHoành thánh: hoành thánh đã được nấu chín.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách."
   },
+
   {
     "id": 17,
     "name": "C17 Mì tươi Đùi gà xé Hoành thánh (khô/nước)",
     "image": "//product.hstatic.net/200000892317/product/c16_c17_c34_c35_e2bc3371ca0348f59bf129bed36b1b19_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "mì, hủ tiếu, miến",
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nĐùi gà xé: thịt đùi gà đã được nấu chín và xé nhỏ.\nHoành thánh: hoành thánh đã được nấu chín.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách."
   },
+
   {
     "id": 18,
     "name": "C18 Mì tươi Gà xé Phá lấu (khô)",
     "image": "//product.hstatic.net/200000892317/product/c18_c19_9a7670fac3c84b109da9aa0a6a8f82f0_large.jpg",
     "price": 85000,
-    "type": "mì, hủ tiếu, miến"
+    "type": "mì, hủ tiếu, miến",
+    "detail": "Mì tươi: mì sợi tươi làm từ bột mì và nước.\nGà xé: thịt gà đã được nấu chín và xé nhỏ.\nPhá lấu: lòng mề gà đã được nấu chín.\nRau sống: các loại rau thơm như ngò gai, rau mùi và rau xà lách."
   },
+
   {
     "id": 19,
     "name": "C19 Mì tươi Đùi gà xé Phá lấu (khô)",

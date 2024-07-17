@@ -73,25 +73,27 @@ const Header: React.FC = () => {
               </NavLink>
             </li>
           </ul>
+            <NavLink to={"/cart"}>
+                <ShoppingCartOutlined
+                    className="cart"
+                    style={{
+                        position: "relative",
+                        transition: "all 0.3s",
+                        fontSize: 28,
+                        marginRight: 15,
+                        cursor: "pointer",
+                        padding: 6,
+                        borderRadius: "50%",
+                        backgroundColor: "#e6e6e6",
+                    }}
 
-          <ShoppingCartOutlined
-            className="cart"
-            style={{
-              position: "relative",
-              transition: "all 0.3s",
-              fontSize: 28,
-              marginRight: 15,
-              cursor: "pointer",
-              padding: 6,
-              borderRadius: "50%",
-              backgroundColor: "#e6e6e6",
-            }}
-            onClick={handleCartToggle} // Thêm sự kiện onClick để mở popup cart
-          />
+                />
+
+            </NavLink>
+
           <span className="cart-count">{cartItemCount}</span>
         </div>
       </div>
-      <CartPopUp visible={isCartVisible} onClose={handleCartToggle} />
     </div>
   );
 

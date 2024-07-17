@@ -1,6 +1,5 @@
 .header {
   font-family: "Quicksand", sans-serif;
-  position: relative;
   position: fixed;
   top: 0;
   left: 0;
@@ -51,9 +50,15 @@
 .header .header_container .cart:hover {
   color: #87c84a;
 }
+.header .header_container .cart {
+  color: black;
+}
 .header .header_container .cart-count {
   position: absolute;
   right: 320px;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=Header.css.map */

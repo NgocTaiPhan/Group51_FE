@@ -76,6 +76,7 @@ export default function Router() {
           path: "/order",
           element: <Order />,
         },
+
         {
           path: "/orderDetail",
           element: <OrderDetails />,

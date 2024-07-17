@@ -1,6 +1,6 @@
 .main {
   display: flex;
-  margin-top: 25px;
+  margin-top: 100px;
 }
 .main .orderContainer {
   height: 700px;

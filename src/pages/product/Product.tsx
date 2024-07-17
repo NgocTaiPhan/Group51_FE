@@ -68,7 +68,7 @@ export default function Product() {
                             </div>
                         ))}
                     </div>
-                    <div className="pagination justify-content-center mt-4">
+                    <div style={{marginBottom: "50px"}} className="pagination justify-content-center mt-4">
                         {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, index) => (
                             <Button
                                 key={index}
