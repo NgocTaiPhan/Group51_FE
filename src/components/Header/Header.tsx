@@ -68,7 +68,7 @@ const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <NavLink className="myAccount" to="/information">
+              <NavLink className="myAccount" to="/account">
                 My Account
               </NavLink>
             </li>
