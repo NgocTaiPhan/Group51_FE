@@ -102,34 +102,33 @@ const Product: React.FC = () => {
           </div>
           <div className="flex justify-between items-center">
             {/* Dropdown select để chọn type */}
-          <div style={{ marginBottom: 20 }}>
-            <Select
-              value={selectedType}
-              onChange={handleTypeChange}
-              style={{ width: 200 }}
-              placeholder="Chọn loại sản phẩm"
-            >
-              <Select.Option value={undefined}>Tất cả</Select.Option>
-              {productTypes.map((type, index) => (
-                <Select.Option key={index} value={type}>
-                  {type}
-                </Select.Option>
-              ))}
-            </Select>
+            <div style={{ marginBottom: 20 }}>
+              <Select
+                value={selectedType}
+                onChange={handleTypeChange}
+                style={{ width: 200 }}
+                placeholder="Chọn loại sản phẩm"
+              >
+                <Select.Option value={undefined}>Tất cả</Select.Option>
+                {productTypes.map((type, index) => (
+                  <Select.Option key={index} value={type}>
+                    {type}
+                  </Select.Option>
+                ))}
+              </Select>
+            </div>
+            {/* Thanh tìm kiếm */}
+            <div style={{ marginBottom: 20 }}>
+              <Input.Search
+                value={searchTerm}
+                onChange={(e) => handleSearch(e.target.value)}
+                placeholder="Tìm kiếm theo tên món ăn"
+                style={{ width: 500 }}
+                size="large"
+                className="search-input"
+              />
+            </div>
           </div>
-          {/* Thanh tìm kiếm */}
-          <div style={{ marginBottom: 20 }}>
-            <Input.Search
-              value={searchTerm}
-              onChange={(e) => handleSearch(e.target.value)}
-              placeholder="Tìm kiếm theo tên món ăn"
-              style={{ width: 500 }}
-              size="large"
-              className="search-input"
-            />
-          </div>
-          </div>
-          
           <div className="row">
             {currentProducts.map((product) => (
               <div

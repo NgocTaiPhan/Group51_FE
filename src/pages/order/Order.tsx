@@ -1,29 +1,23 @@
-
 import React, { useState } from 'react';
 import { List, Avatar, InputNumber, Button, Form, Select, Input } from 'antd';
 import { useOrderLogic } from './OrderLogic';
 import './Order.scss';
-import OrderDetails from "./OrderDetails";
+import OrderDetails from './OrderDetails'; // Đảm bảo đường dẫn import đúng cho OrderDetails
 
 const Order: React.FC = () => {
     const {
         products,
-        districts,
-        wards,
         selectedDistrict,
-        setSelectedDistrict,
         formatPrice,
         handleFinish,
     } = useOrderLogic();
-    const [showOrderDetails, setShowOrderDetails] = useState(false); // State to control OrderDetails visibility
+    const [showOrderDetails, setShowOrderDetails] = useState(false); // State để điều khiển sự hiển thị của OrderDetails
 
-    const handleDistrictChange = (value: string) => {
-        setSelectedDistrict(value);
-    };
     const onFinish = (values: any) => {
         handleFinish(values);
         setShowOrderDetails(true);
     };
+
     return (
         <div className="large-font">
             <List
@@ -31,7 +25,7 @@ const Order: React.FC = () => {
                 itemLayout="horizontal"
                 dataSource={products}
                 renderItem={(product) => (
-                    <List.Item>
+                    <List.Item key={product.id}>
                         <List.Item.Meta
                             avatar={<Avatar src={product.image} />}
                             title={product.name}
@@ -52,70 +46,67 @@ const Order: React.FC = () => {
                             <Form.Item
                                 label="Tỉnh"
                                 initialValue="TP.HCM"
-                                // rules={[{ required: true, message: 'Vui lòng chọn Tỉnh Thành!' }]}
                             >
-                                <Input disabled value={"TP.HCM"}/>
+                                <Input disabled value={"TP.HCM"} />
                             </Form.Item>
                             <Form.Item
                                 name="huyen"
                                 label="Huyện"
-                                rules={[{required: true, message: 'Vui lòng chọn Huyện!'}]}
+                                initialValue="TP.Thủ Đức"
                             >
-                                <Select value={selectedDistrict} onChange={(value) => handleDistrictChange(value)}>
-                                    <Select.Option value="">Chọn Huyện</Select.Option>
-                                    {districts.map(({full_name, id}) => (
-                                        <Select.Option key={id} value={id}>
-                                            {full_name}
-                                        </Select.Option>
-                                    ))}
-                                </Select>
+                                <Input disabled value={selectedDistrict} />
                             </Form.Item>
                             <Form.Item
                                 name="xa"
                                 label="Xã"
-                                rules={[{required: true, message: 'Vui lòng chọn Xã!'}]}
+                                rules={[{ required: true, message: 'Vui lòng chọn Xã!' }]}
                             >
                                 <Select>
                                     <Select.Option value="">Chọn Xã</Select.Option>
-                                    {wards.map(({full_name, id}) => (
-                                        <Select.Option key={id} value={id}>
-                                            {full_name}
-                                        </Select.Option>
-                                    ))}
+                                    <Select.Option value={"Phường Linh Xuân"}>Phường Linh Xuân</Select.Option>
+                                    <Select.Option value={"Phường Linh Trung"}>Phường Linh Trung</Select.Option>
+                                    <Select.Option value={"Phường Trường Thọ"}>Phường Trường Thọ</Select.Option>
+                                    <Select.Option value={"Phường Tam Phú"}>Phường Tam Phú</Select.Option>
+                                    <Select.Option value={"Phường Tam Bình"}>Phường Tam Bình</Select.Option>
+                                    <Select.Option value={"Phường Linh Tây"}>Phường Linh Tây</Select.Option>
+                                    <Select.Option value={"Phường Linh Đông"}>Phường Linh Đông</Select.Option>
+                                    <Select.Option value={"Phường Hiệp Bình Phước"}>Phường Hiệp Bình Phước</Select.Option>
+                                    <Select.Option value={"Phường Hiệp Bình Chánh"}>Phường Hiệp Bình Chánh</Select.Option>
+                                    <Select.Option value={"Phường Bình Thọ"}>Phường Bình Thọ</Select.Option>
+                                    <Select.Option value={"Phường Bình Chiểu"}>Phường Bình Chiểu</Select.Option>
                                 </Select>
                             </Form.Item>
                         </div>
                         <Form.Item
                             name="sonha"
                             label="Số nhà"
-                            rules={[{required: true, message: 'Vui lòng nhập số nhà!'}]}
+                            rules={[{ required: true, message: 'Vui lòng nhập số nhà!' }]}
                         >
-                            <Input/>
+                            <Input />
                         </Form.Item>
                         <Form.Item
                             name="phone"
                             label="Số điện thoại"
-                            rules={[{required: true, message: 'Vui lòng điền số điện thoại!'}]}
+                            rules={[{ required: true, message: 'Vui lòng điền số điện thoại!' }]}
                         >
-                            <Input/>
+                            <Input />
                         </Form.Item>
                         <Form.Item
                             name="name"
                             label="Tên"
-                            rules={[{required: true, message: 'Vui lòng điền tên!'}]}
+                            rules={[{ required: true, message: 'Vui lòng điền tên!' }]}
                         >
-                            <Input/>
+                            <Input />
                         </Form.Item>
-                        <Form.Item wrapperCol={{xs: {span: 24, offset: 0}, sm: {span: 16, offset: 8}}}>
+                        <Form.Item wrapperCol={{ xs: { span: 24, offset: 0 }, sm: { span: 16, offset: 8 } }}>
                             <Button className="submit" type="primary" htmlType="submit">
                                 Xác nhận đơn hàng
                             </Button>
                         </Form.Item>
                     </Form>
-                    <div style={{marginLeft: "-1300px", marginTop: "-535px", position: "absolute"}}>
-                         {showOrderDetails && <OrderDetails/>}
+                    <div style={{ position: "absolute", marginLeft: "-1300px", marginTop: "-535px" }}>
+                        {showOrderDetails && <OrderDetails />}
                     </div>
-                    {/* <div>Phí ship: {formatPrice(shippingFee)}</div> */}
                 </div>
             </div>
         </div>

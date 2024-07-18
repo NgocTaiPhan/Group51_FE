@@ -15,9 +15,8 @@
 .mb-0 {
   font-size: 120%;
 }
-.ant-select:not(.ant-select-disabled):hover .ant-select-selector,
-.ant-select-focused .ant-select-selector {
-  border-color: #52c41a !important;
+.pagination-btn:hover {
+  background-color: green; /* Màu xanh lá */
+  color: green; /* Màu chữ (tùy chọn) */
 }
-
 
