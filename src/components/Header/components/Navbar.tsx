@@ -12,7 +12,7 @@ export default function Navbar() {
         </li>
         <li>
           <a href="#">
-            <span>Sản phẩm</span>
+            <span>Thực đơn</span>
             <i className="fa fa-chevron-down"/>
           </a>
         </li>

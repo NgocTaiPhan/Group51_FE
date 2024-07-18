@@ -1,22 +1,25 @@
 import { useParams } from "react-router-dom";
 import data from "../../data.json";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import "./ProductDetail.scss";
-import { FaHome, FaStar } from "react-icons/fa";
+import { FaHome, FaRegUserCircle, FaStar } from "react-icons/fa";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaGift } from "react-icons/fa6";
-import {Avatar, Form, Button, List, Input, message} from "antd";
+import { Avatar, Form, Button, List, Input, message } from "antd";
 import moment from "moment";
 
 import { useCart } from "./CartContext";
+import { Comment } from "../../interfaces/product";
+import { HeartOutlined, UndoOutlined, UserOutlined } from "@ant-design/icons";
 
 export default function ProductDetail() {
-  // const [comments, setComments] = useState<any>([]);
-  // const [newCommentText, setNewCommentText] = useState<string>("");
+  const [comments, setComments] = useState<any>([]);
+  const [newCommentText, setNewCommentText] = useState<string>("");
+  const [initialized, setInitialized] = useState(false);
   const { addToCart } = useCart();
   const [amount, setAmount] = useState(1);
   const [isPopupVisible, setPopupVisible] = useState<boolean>(false);
@@ -30,7 +33,7 @@ export default function ProductDetail() {
       image: detail.image,
     };
     addToCart(productToAdd);
-    message.success("Thêm sản phẩm vào giỏ hàng thành công")
+    message.success("Thêm sản phẩm vào giỏ hàng thành công");
   };
   const getProduct = async (id: number) => {
     return data.find((product) => product.id == id);
@@ -44,6 +47,18 @@ export default function ProductDetail() {
   useEffect(() => {
     fecthProductDetail();
   }, [param.productId]);
+  useEffect(() => {
+    if (!initialized) {
+      const storedComments = sessionStorage.getItem(
+        `comments-${param.productId}`
+      );
+      if (storedComments) {
+        setComments(JSON.parse(storedComments));
+      }
+      setInitialized(true);
+    }
+  }, [param.productId, initialized]);
+
   const loadOthers = async (param: any) => {
     const product = await getOthers(param.productId);
     return product;
@@ -82,49 +97,148 @@ export default function ProductDetail() {
       );
     });
   };
-  // const renderComments = (comments: comment[]) => {
-  //   return (
-  //     <ul className="pl-0">
-  //       {comments.map((comment) => (
-  //         <li key={comment.id} className="flex items-center mb-3">
-  //           <FaRegUserCircle
-  //             style={{ width: 40, height: 40, marginRight: 20 }}
-  //           />
-  //           <div>
-  //             <p
-  //               style={{
-  //                 fontSize: 18,
-  //                 fontWeight: 500,
-  //                 marginBottom: 0,
-  //                 color: "#385898",
-  //               }}
-  //             >
-  //               {comment.author}
-  //             </p>
-  //             <p style={{ marginBottom: 0, fontSize: 14 }}>{comment.text}</p>
-  //           </div>
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // };
-  // const handleAddComment = () => {
-  //   const newComment: comment = {
-  //     id: comments.length + 1,
-  //     text: newCommentText,
-  //     author: "QuyNguyen",
-  //   };
-  //   setComments([...comments, newComment]);
-  //   setNewCommentText("");
-  // };
+  const renderComments = (comments: any[]) => {
+    return (
+      <ul className="px-20">
+        {comments.map((comment) => (
+          <li
+            key={comment.id}
+            style={{
+              marginBottom: 20,
+              padding: 10,
+              borderRadius: "5px",
+              background: "#fff",
+            }}
+          >
+            <div className="flex items-center mb-3">
+              <UserOutlined
+                style={{
+                  fontWeight: 400,
+                  marginRight: 20,
+                  marginLeft: 20,
+                  fontSize: 30,
+                  padding: 3,
+                  border: "2px solid",
+                  borderRadius: "50%",
+                  color: "#0000009e",
+                }}
+              />
+              <div>
+                <p
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 500,
+                    marginBottom: 0,
+                    color: "#385898",
+                  }}
+                >
+                  {comment.author}
+                </p>
+                <p style={{ fontSize: 12, color: "#999", marginBottom: 0 }}>
+                  {moment(comment.createdAt).fromNow()}
+                </p>
+              </div>
+            </div>
+            <div className="line_1" style={{ marginBottom: 10 }}></div>
+            <p style={{ marginBottom: 30, fontSize: 20, marginLeft: 20 }}>
+              {comment.text}
+            </p>
+            <div className="line_1" style={{ marginBottom: 10 }}></div>
+            <div className="flex items-center mx-3 py-2">
+              <div
+                className="flex items-center mr-4"
+                style={{ cursor: "pointer" }}
+                onClick={() => handleLikeClick(comment.id)}
+              >
+                <HeartOutlined
+                  style={{
+                    color: likedComments[comment.id] ? "red" : "inherit",
+                  }}
+                />
+                <span
+                  style={{
+                    marginLeft: 5,
+                    color: likedComments[comment.id] ? "red" : "inherit",
+                  }}
+                >
+                  Thích
+                </span>
+              </div>
+              <div
+                className="flex items-center ml-4"
+                style={{ cursor: "pointer" }}
+                onClick={() => handleRevokeClick(comment.id)}
+              >
+                <UndoOutlined />
+                <span style={{ marginLeft: 5 }}>Thu hồi</span>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const handleAddComment = () => {
+    if (newCommentText.trim() === "") return;
+    const newComment = {
+      id: comments.length + 1,
+      text: newCommentText,
+      author: "QuyNguyen",
+      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
+    };
+    // Cập nhật state comments và lưu vào sessionStorage
+    setComments([...comments, newComment]);
+    const updatedComments = [...comments, newComment];
+    sessionStorage.setItem(
+      `comments-${param.productId}`,
+      JSON.stringify(updatedComments)
+    );
+
+    setNewCommentText(""); // Đặt lại input sau khi thêm bình luận
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewCommentText(e.target.value);
+  };
+  const [likedComments, setLikedComments] = useState<{
+    [key: number]: boolean;
+  }>({});
+
+  useEffect(() => {
+    // Khởi tạo likedComments ban đầu từ comments
+    const initialLikedComments: { [key: number]: boolean } = {};
+    comments.forEach((comment: Comment) => {
+      initialLikedComments[comment.id] = false; // Mặc định chưa thích
+    });
+    setLikedComments(initialLikedComments);
+  }, [comments]);
+
+  const handleLikeClick = (commentId: number) => {
+    setLikedComments({
+      ...likedComments,
+      [commentId]: !likedComments[commentId],
+    });
+  };
+  const handleRevokeClick = (commentId: number) => {
+    const updatedComments = comments.filter(
+      (comment: Comment) => comment.id !== commentId
+    );
+    setComments(updatedComments);
+    // Lưu danh sách comment đã được cập nhật vào session storage
+    sessionStorage.setItem(
+      `comments-${param.productId}`,
+      JSON.stringify(updatedComments)
+    );
+  };
   return (
-    <div style={{paddingTop:80}}>
+    <div style={{ paddingTop: 80 }}>
       <div>
         <div className="path flex items-center">
           <span className="mx-2">
             <FaHome />
           </span>
-          <span style={{fontWeight:400}}>Home / Shop / Detail</span>
+          <span style={{ fontWeight: 400 }}>Home / Shop / Detail</span>
         </div>
 
         <div className="px-10 py-5">
@@ -280,38 +394,35 @@ export default function ProductDetail() {
                 </ul>
               </div>
             </div>
-            {/* <div className="line mx-5"></div>
-            <div className="comment">
-              <h2 className="text-2xl">Hỏi đáp - Bình luận</h2>
-              <p className="py-3 text-base font-medium">
-                {comments.length} bình luận
-              </p>
-              <div className="line_1 my-2"></div>
-              <div>{renderComments(comments)}</div>
-              <div>
-                <h4 style={{ marginTop: 50 }}>Add a Comment</h4>
-                <input
-                  className="setNewComment"
-                  placeholder="Your Comment..."
-                  value={newCommentText}
-                  onChange={(e) => setNewCommentText(e.target.value)}
-                />
-                <button className="submit_comment" onClick={handleAddComment}>
-                  Submit
-                </button>
-              </div>
-              <div className="line_1 my-2"></div>
-            </div> */}
+          </div>
+        </div>
+        <div className="line"></div>
+        <div className="comment">
+          <h2 className="text-2xl">Hỏi đáp - Bình luận</h2>
+          <p className="text-base font-medium" style={{ marginBottom: 50 }}>
+            {comments.length} bình luận
+          </p>
+          <div>{renderComments(comments)}</div>
+          <div>
+            <h4 style={{ marginTop: 50 }}>Add a Comment</h4>
+            <input
+              className="setNewComment"
+              placeholder="Your Comment..."
+              value={newCommentText}
+              onChange={handleInputChange}
+            />
+            <button className="submit_comment" onClick={handleAddComment}>
+              Submit
+            </button>
           </div>
         </div>
         <div>
-          <div className="px-20 py-3 other_products">
+          <div className="py-1 other_products">
             <h3 className="text-2xl font-semibold text-white">Sản phẩm khác</h3>
           </div>
           <div className="flex justify-start py-20 px-10">{renderOthers()}</div>
         </div>
       </div>
-
     </div>
   );
 }

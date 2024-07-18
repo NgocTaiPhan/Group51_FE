@@ -2,6 +2,16 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import cheerio from "cheerio";
 import path from "path";
+import fs from "fs";
+
+interface Product {
+  id: number;
+  name: string;
+  image: string | undefined;
+  price: number;
+  type: string;
+  comments: string[];
+}
 
 const fetchData = async () => {
   try {
@@ -13,29 +23,22 @@ const fetchData = async () => {
       "https://thefreshkitchen.vn/collections/tat-ca-san-pham?page=5",
     ];
 
-    let allData: {
-      id: number;
-      name: string;
-      image: string | undefined;
-      price: number;
-      type: string;
-    }[] = [];
+    let allData: Product[] = [];
+
     const convertPriceToNumber = (priceString: string): number => {
-      // Loại bỏ ký tự "đ" và khoảng trắng, sau đó chuyển chuỗi thành số
-      const cleanedPrice = priceString.replace(/[đ,\s]/g, '');
+      const cleanedPrice = priceString.replace(/[đ,\s]/g, "");
       return parseFloat(cleanedPrice);
     };
+
     const determineType = (name: string): string => {
       if (name.includes("HC") || name.includes("CM")) {
         return "Combo";
       } else if (name.includes("Cơm")) {
         return "Cơm";
-      } else if (
-        name.includes("Mì") ||
-        name.includes("Hủ tiếu") ||
-        name.includes("Miến")
-      ) {
-        return "Mì, Hủ tiếu, Miến";
+      } else if (name.includes("Mì")) {
+        return "Mì";
+      } else if (name.includes("Miến")) {
+        return "Miến";
       } else if (name.includes("Phá lấu")) {
         return "Phá lấu";
       } else if (
@@ -64,16 +67,16 @@ const fetchData = async () => {
           const priceString = $(el).find(".proloop-price span").text().trim();
           const price = convertPriceToNumber(priceString);
           const type = determineType(name);
+          const comments: string[] = [];
 
-          allData.push({ id, name, image, price, type });
+          allData.push({ id, name, image, price, type, comments });
         });
       } else {
         console.error(`Không thể lấy dữ liệu từ trang ${url}.`);
       }
     }
 
-    const fs = require("fs");
-    const dataFilePath = 'C:\\Users\\HP\\Desktop\\Group51_FE\\src\\data.json';
+    const dataFilePath = "C:\\Users\\HP\\Desktop\\Group51_FE\\src\\data.json";
     fs.writeFileSync(dataFilePath, JSON.stringify(allData, null, 2));
   } catch (error) {
     console.error("Lỗi khi tải dữ liệu:", error);
@@ -81,3 +84,4 @@ const fetchData = async () => {
 };
 
 fetchData();
+

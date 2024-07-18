@@ -1,7 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
-import logo from "../../assets/img/logo.png";
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useCart } from "../../pages/ProductDetail/CartContext";
@@ -27,7 +26,7 @@ const Header: React.FC = () => {
       <div className="header_container">
         <div className="mtw_banner_top_content" style={{ width: "5%" }}>
           <a href="#">
-            <img src={logo} width="80" height="80" alt="logo" />
+            <img src="/img/logo.png" width="80" height="80" alt="logo" />
           </a>
         </div>
         <Navbar />

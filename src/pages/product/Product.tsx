@@ -3,7 +3,6 @@ import { Button, Pagination, Select, Input } from "antd";
 import data from "../../data.json";
 import "./Product.scss";
 import { Link } from "react-router-dom";
-import banner from "../../assets/img/image.png";
 import { SearchOutlined } from "@ant-design/icons";
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
@@ -86,7 +85,7 @@ const Product: React.FC = () => {
     <div>
       <section style={{ backgroundColor: "white" }}>
         <div className="banner">
-          <img src={banner} alt="" />
+          <img src="/img/image.png" alt="" />
         </div>
         <div className="container">
           <div className="heading_list">
@@ -98,7 +97,7 @@ const Product: React.FC = () => {
                 fontWeight: 500,
               }}
             >
-              Tất cả sản phẩm
+              Thực đơn
             </h1>
           </div>
           <div className="flex justify-between items-center">
@@ -123,7 +122,7 @@ const Product: React.FC = () => {
             <Input.Search
               value={searchTerm}
               onChange={(e) => handleSearch(e.target.value)}
-              placeholder="Tìm kiếm theo tên sản phẩm"
+              placeholder="Tìm kiếm theo tên món ăn"
               style={{ width: 500 }}
               size="large"
               className="search-input"
