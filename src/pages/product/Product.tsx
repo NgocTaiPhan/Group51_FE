@@ -3,7 +3,6 @@ import { Button, Pagination, Select, Input } from "antd";
 import data from "../../data.json";
 import "./Product.scss";
 import { Link } from "react-router-dom";
-import banner from "../../assets/img/image.png";
 import { SearchOutlined } from "@ant-design/icons";
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
@@ -86,7 +85,7 @@ const Product: React.FC = () => {
     <div>
       <section style={{ backgroundColor: "white" }}>
         <div className="banner">
-          <img src={banner} alt="" />
+          <img src="/img/image.png" alt="" />
         </div>
         <div className="container">
           <div className="heading_list">
@@ -98,39 +97,38 @@ const Product: React.FC = () => {
                 fontWeight: 500,
               }}
             >
-              Tất cả sản phẩm
+              Thực đơn
             </h1>
           </div>
           <div className="flex justify-between items-center">
             {/* Dropdown select để chọn type */}
-          <div style={{ marginBottom: 20 }}>
-            <Select
-              value={selectedType}
-              onChange={handleTypeChange}
-              style={{ width: 200 }}
-              placeholder="Chọn loại sản phẩm"
-            >
-              <Select.Option value={undefined}>Tất cả</Select.Option>
-              {productTypes.map((type, index) => (
-                <Select.Option key={index} value={type}>
-                  {type}
-                </Select.Option>
-              ))}
-            </Select>
+            <div style={{ marginBottom: 20 }}>
+              <Select
+                value={selectedType}
+                onChange={handleTypeChange}
+                style={{ width: 200 }}
+                placeholder="Chọn loại sản phẩm"
+              >
+                <Select.Option value={undefined}>Tất cả</Select.Option>
+                {productTypes.map((type, index) => (
+                  <Select.Option key={index} value={type}>
+                    {type}
+                  </Select.Option>
+                ))}
+              </Select>
+            </div>
+            {/* Thanh tìm kiếm */}
+            <div style={{ marginBottom: 20 }}>
+              <Input.Search
+                value={searchTerm}
+                onChange={(e) => handleSearch(e.target.value)}
+                placeholder="Tìm kiếm theo tên món ăn"
+                style={{ width: 500 }}
+                size="large"
+                className="search-input"
+              />
+            </div>
           </div>
-          {/* Thanh tìm kiếm */}
-          <div style={{ marginBottom: 20 }}>
-            <Input.Search
-              value={searchTerm}
-              onChange={(e) => handleSearch(e.target.value)}
-              placeholder="Tìm kiếm theo tên sản phẩm"
-              style={{ width: 500 }}
-              size="large"
-              className="search-input"
-            />
-          </div>
-          </div>
-          
           <div className="row">
             {currentProducts.map((product) => (
               <div
@@ -163,23 +161,10 @@ const Product: React.FC = () => {
                         {formatPrice(product.price)}
                       </h5>
                     </div>
-<!-- <<<<<<< hoa
-                    <div style={{marginBottom: "50px"}} className="pagination justify-content-center mt-4">
-                        {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, index) => (
-                            <Button
-                                key={index}
-                                onClick={() => paginate(index + 1)}
-                                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
-                            >
-                                {index + 1}
-                            </Button>
-                        ))}
-<!-- ======= --> -->
                     <div className="d-flex justify-content-center align-items-center">
                       <Link to={`/product-detail/${product.id}`}>
                         <Button className="detail">Xem chi tiết</Button>
                       </Link>
-<!-- >>>>>>> master -->
                     </div>
                   </div>
                 </div>

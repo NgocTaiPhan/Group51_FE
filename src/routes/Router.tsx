@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Routes, Route, useRoutes} from "react-router-dom";
+import { Routes, Route, useRoutes } from "react-router-dom";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Login from "../pages/login/Login";
@@ -10,7 +10,7 @@ import Product from "../pages/product/Product";
 import Cart from "../pages/cart/Cart";
 import Order from "../pages/order/Order";
 import OrderDetails from "../pages/order/OrderDetails";
-
+import Home from "../pages/Home/Home";
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -23,7 +23,6 @@ export default function Router() {
       setIsCartVisible(false);
     }
 
-
     // eslint-disable-next-line no-restricted-globals
   }, [location.pathname]);
   useRoutes([
@@ -32,9 +31,12 @@ export default function Router() {
       element: <HomeLayout />,
       children: [
         {
+          path: "/",
+          element: <Home />,
+        },
+        {
           path: "/product-detail/:productId",
           element: <ProductDetail />,
-
         },
       ],
     },
@@ -59,7 +61,6 @@ export default function Router() {
           element: <Register />,
         },
         {
-
           path: "/account",
           element: <Account />,
         },
@@ -68,7 +69,6 @@ export default function Router() {
           element: <Product />,
         },
         {
-
           path: "/cart",
           element: <Cart />,
         },
@@ -84,30 +84,30 @@ export default function Router() {
 
         {
           path: "/",
-          element: (
-              <HomeLayout/>
-          ), children: [
+          element: <HomeLayout />,
+          children: [
             {
               path: "/tracking",
-              element: <Tracking/>,
+              element: <Tracking />,
             },
           ],
-        }
+        },
       ],
     },
   ]);
   return (
-      <Routes>
-        <Route path="/" element={<HomeLayout />}>
-          <Route path="/product-detail/:productId" element={<ProductDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/orderDetail" element={<OrderDetails />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/product" element={<Product />} />
-        </Route>
-      </Routes>
+    <Routes>
+      <Route path="/" element={<HomeLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/product-detail/:productId" element={<ProductDetail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/orderDetail" element={<OrderDetails />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/product" element={<Product />} />
+      </Route>
+    </Routes>
   );
 }
