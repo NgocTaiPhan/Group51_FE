@@ -10,9 +10,9 @@ import Product from "../pages/product/Product";
 import Cart from "../pages/cart/Cart";
 import Order from "../pages/order/Order";
 import OrderDetails from "../pages/order/OrderDetails";
-import OrderHistory from "../pages/history/OrderHistory";
 import Home from "../pages/Home/Home";
-
+import OrderHistoryPage from "../pages/history/OrderHistory";
+import withAuthGuard from "../guards/AuthGuard";
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -68,7 +68,7 @@ export default function Router() {
         },
         {
           path: "/order-history",
-          element: <OrderHistory />,
+          element: <OrderHistoryPage />,
         },
         {
           path: "/product",
@@ -102,20 +102,40 @@ export default function Router() {
     },
   ]);
   return (
-      <Routes>
-        <Route path="/" element={<HomeLayout />}>
-          <Route path="/product-detail/:productId" element={<ProductDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/orderDetail" element={<OrderDetails />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="order-history" element={<OrderHistory />} />
-          <Route path="/product" element={<Product />} />
-           <Route path="/account" element={<Account />} />
-        </Route>
-      </Routes>
-
+    <Routes>
+      <Route path="/" element={<HomeLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/product-detail/:productId"
+          element={React.createElement(withAuthGuard(ProductDetail))}
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="/cart"
+          element={React.createElement(withAuthGuard(Cart))}
+        />
+        <Route
+          path="/order"
+          element={React.createElement(withAuthGuard(Order))}
+        />
+        <Route
+          path="/orderDetail"
+          element={React.createElement(withAuthGuard(OrderDetails))}
+        />
+        <Route
+          path="/account"
+          element={React.createElement(withAuthGuard(Account))}
+        />
+        <Route
+          path="/order-history"
+          element={React.createElement(withAuthGuard(OrderHistoryPage))}
+        />
+        <Route
+          path="/product"
+          element={React.createElement(withAuthGuard(Product))}
+        />
+      </Route>
+    </Routes>
   );
 }

@@ -5,19 +5,10 @@ import "./Home.scss";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import { CiMenuBurger } from "react-icons/ci";
+import { listProduct } from "../../interfaces/product";
+import { productService } from "../../services/product";
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
-interface listProduct {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  type: string; // Thêm kiểu dữ liệu cho type
-}
-
-const getProduct = async () => {
-  return data;
-};
 
 const formatPrice = (price: number): string => {
   return new Intl.NumberFormat("vi-VN", {
@@ -28,22 +19,18 @@ const formatPrice = (price: number): string => {
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<listProduct[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const pageSize = 24; // Số sản phẩm mỗi trang
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsData = await getProduct();
-        setProducts(productsData);
+        const result = await productService.fetchProductApi();
+        console.log(result.data);
+        setProducts(result.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
     fetchProducts();
   }, []);
-
-  // Phân loại sản phẩm theo type
   const groupByType = () => {
     const groupedProducts: { [key: string]: listProduct[] } = {};
     products.forEach((product) => {
