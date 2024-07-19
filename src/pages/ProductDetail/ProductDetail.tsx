@@ -482,15 +482,15 @@ export default function ProductDetail() {
           </p>
           <div>{renderComments(comments)}</div>
           <div>
-            <h4 style={{ marginTop: 50 }}>Add a Comment</h4>
+            <h4 style={{ marginTop: 50 }}>Thêm bình luận</h4>
             <input
               className="setNewComment"
-              placeholder="Your Comment..."
+              placeholder="Bình luận..."
               value={newCommentText}
               onChange={handleInputChange}
             />
             <button className="submit_comment" onClick={handleAddComment}>
-              Submit
+              Thêm
             </button>
           </div>
         </div>

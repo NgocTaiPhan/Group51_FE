@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Form, Input, Button, DatePicker, Select} from 'antd';
+import {Form, Input, Button, DatePicker, Select, message} from 'antd';
 import "./register.scss";
 
 const {Option} = Select;
@@ -45,7 +45,7 @@ const Register: React.FC = () => {
         axios.post('http://localhost:3001/users', values)
             .then(response => {
                 console.log('Registration successful:', response.data);
-                // Thực hiện các hành động sau khi đăng ký thành công
+            message.success("Đăng kí thành công!")
             })
             .catch(error => {
                 console.error('There was an error!', error);
@@ -86,7 +86,7 @@ const Register: React.FC = () => {
             </Form.Item>
 
             <Form.Item
-                name="nickname"
+                name="username"
                 label="Tên đăng nhập"
                 tooltip="Tên bạn muốn người khác gọi bạn?"
                 rules={[{required: true, message: 'Hãy nhập tên đăng nhập!', whitespace: true}]}
@@ -96,7 +96,7 @@ const Register: React.FC = () => {
 
             {/* Select Tỉnh Thành */}
             <Form.Item
-                name="tinh"
+                name="province"
                 label="Tỉnh Thành"
                 rules={[{required: true, message: 'Hãy chọn tỉnh thành!'}]}
             >

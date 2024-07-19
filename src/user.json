@@ -3,6 +3,7 @@
     {
       "id": "1",
       "fullname": "Phan Ngọc Tài",
+      "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user01",
       "password": "User01@",
       "address": "123 Đường Hoàng Diệu, Phường Linh Trung, Thủ Đức, TP.HCM",
@@ -12,6 +13,7 @@
     {
       "id": "2",
       "fullname": "Nguyễn Văn An",
+      "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user02",
       "password": "User02@",
       "address": "456 Đường Võ Văn Ngân, Phường Bình Thọ, Thủ Đức, TP.HCM",
@@ -21,6 +23,7 @@
     {
       "id": "3",
       "fullname": "Trần Thị Bình",
+      "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user03",
       "password": "User03@",
       "address": "789 Đường Kha Vạn Cân, Phường Hiệp Bình Chánh, Thủ Đức, TP.HCM",
@@ -30,6 +33,7 @@
     {
       "id": "4",
       "fullname": "Lê Minh Cường",
+      "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user04",
       "password": "User04@",
       "address": "123 Đường Phạm Văn Đồng, Phường Linh Tây, Thủ Đức, TP.HCM",
@@ -39,6 +43,7 @@
     {
       "id": "5",
       "fullname": "Phạm Thị Duyên",
+      "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user05",
       "password": "User05@",
       "address": "456 Đường Tô Ngọc Vân, Phường Linh Đông, Thủ Đức, TP.HCM",
@@ -55,6 +60,39 @@
       "phuong": "30340",
       "phone": "0365374458",
       "date-picker": "2024-07-08T17:00:00.000Z"
+    },
+    {
+      "id": "8d4d",
+      "email": "21130164@st.hcmuaf.edu.vn",
+      "password": "HHHFdhhdghdhggggfg",
+      "nickname": "userMaster",
+      "tinh": "77",
+      "quan": "750",
+      "phuong": "26590",
+      "phone": "0365374458",
+      "date-picker": "2003-04-30T17:00:00.000Z"
+    },
+    {
+      "id": "db28",
+      "email": "21130164@st.hcmuaf.edu.vn",
+      "password": "HHHFdhhdghdhggggfg",
+      "nickname": "userMaster",
+      "tinh": "77",
+      "quan": "750",
+      "phuong": "26590",
+      "phone": "0365374458",
+      "date-picker": "2003-04-30T17:00:00.000Z"
+    },
+    {
+      "id": "0bd3",
+      "email": "21130164@st.hcmuaf.edu.vn",
+      "password": "gggggggefsdsf",
+      "username": "fdfdfdf",
+      "province": "24",
+      "quan": "217",
+      "phuong": "07405",
+      "phone": "0365374458",
+      "date-picker": "2024-06-30T17:00:00.000Z"
     }
   ]
 }

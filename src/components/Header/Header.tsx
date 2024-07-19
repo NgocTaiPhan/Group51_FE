@@ -69,24 +69,24 @@ const Header: React.FC = () => {
             {isLoggedIn ? (
               <li>
                 <a className="logout" href="#" onClick={handleLogout}>
-                  Logout
+                  Đăng xuất
                 </a>
               </li>
             ) : (
               <li>
                 <NavLink className="loginPage" to="/login">
-                  Login
+                 Đăng nhập
                 </NavLink>
               </li>
             )}
             <li>
               <a className="cartPage" href="#" onClick={handleCartToggle}>
-                Cart
+               Giỏ hàng
               </a>
             </li>
             <li>
               <NavLink className="myAccount" to="/account">
-                My Account
+              Tài khoản
               </NavLink>
             </li>
           </ul>

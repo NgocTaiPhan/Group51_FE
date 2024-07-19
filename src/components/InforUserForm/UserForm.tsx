@@ -47,7 +47,7 @@ const FillUserForm: React.FC<FillUserFormProps> = ({user}) => {
             </Row>
 
             <Form.Item label="Địa chỉ">
-                {/* Thay đổi cách truyền dữ liệu cho Province nếu cần */}
+                <Province/>
             </Form.Item>
 
             <Row gutter={16}>
