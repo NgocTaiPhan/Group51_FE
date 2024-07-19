@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './Account.scss';
 import UserForm from '../../components/InforUserForm/UserForm';
-import SideBar from "../../components/InforUserForm/SideBar/SideBar";
+import SideBar from '../../components/InforUserForm/SideBar/SideBar';
+
 
 
 export default function Account() {
