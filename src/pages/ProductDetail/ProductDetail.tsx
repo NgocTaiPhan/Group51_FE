@@ -1,4 +1,4 @@
-import {Link, useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import data from "../../data.json";
 import { ChangeEvent, useEffect, useState } from "react";
 import "./ProductDetail.scss";
@@ -23,9 +23,7 @@ export default function ProductDetail() {
   const { addToCart } = useCart();
   const [amount, setAmount] = useState(1);
   const [isPopupVisible, setPopupVisible] = useState<boolean>(false);
-  const formatPrice = (price: number): string => {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
-  };
+
   const handleAddToCart = () => {
     const productToAdd = {
       id: detail.id.toString(),
@@ -37,22 +35,6 @@ export default function ProductDetail() {
     addToCart(productToAdd);
     message.success("Thêm sản phẩm vào giỏ hàng thành công");
   };
-
-  const handleBuyNow = () => {
-    // Lấy ra thông tin sản phẩm từ trang chi tiết
-    const productToAdd = {
-      id: detail.id.toString(),
-      name: detail.name,
-      price: detail.price,
-      quantity: amount,
-      image: detail.image,
-    };
-    // Chuyển hướng sang trang khác và truyền thông tin sản phẩm qua đường dẫn
-    window.location.href = `/checkoutPage/${productToAdd.id}`;
-
-
-  };
-
   const getProduct = async (id: number) => {
     return data.find((product) => product.id == id);
   };
@@ -98,23 +80,24 @@ export default function ProductDetail() {
   const renderOthers = () => {
     return others.map((element: any) => {
       return (
-        <div key={element.id} className="px-5 py-5 mx-5 others">
-          <div onClick={() => handleProductClick(element.id)}>
-            <div>
-              <img src={element.image} />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-color1 py-2">
-                {element.name}
-              </h3>
-              <p className="py-1 text-color2">{element.description}</p>
-              <p className="py-1 font-semibold">{formatPrice(element.price)} VND</p>
+          <div key={element.id} className="px-5 py-5 mx-5 others">
+            <div onClick={() => handleProductClick(element.id)}>
+              <div>
+                <img src={element.image} />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-color1 py-2">
+                  {element.name}
+                </h3>
+                <p className="py-1 text-color2">{element.description}</p>
+                <p className="py-1 font-semibold">{element.price} VND</p>
+              </div>
             </div>
           </div>
-        </div>
       );
     });
   };
+
   const renderComments = (comments: any[]) => {
     return (
       <ul className="px-20">
@@ -276,56 +259,45 @@ export default function ProductDetail() {
           </span>
           <span style={{ fontWeight: 400 }}>Home / Shop / Detail</span>
         </div>
-
-        <div className="px-10 py-5">
-          <div
-              className="detail_container mx-auto py-10 product-details flex justify-center	"
-              style={{width: 1280, background: "#fff"}}
-          >
-            <div className="product_img">
-              <img src={detail.image} style={{width: 500, height: 530}}/>
-              <div className="flex flex-wrap justify-center items-center py-10">
-                <button className="px-2 py-1 flex justify-center items-center font-semibold text-sm text-gray-700">
-                  <ShareIcon/>
-                  <span className="ml-2">Chia sẻ</span>
-                </button>
-                <button className="px-2 py-1 flex justify-center items-center font-semibold text-sm text-gray-700">
-                  <FavoriteBorderIcon/>
-                  <span className="ml-2">Yêu thích</span>
-                </button>
+          <div className="px-10 py-5">
+            <div
+                className="detail_container mx-auto py-10 product-details flex justify-center	"
+                style={{ width: 1280, background: "#fff" }}
+            >
+              <div className="product_img">
+                <img src={detail.image} style={{ width: 500, height: 530 }} />
+                <div className="flex flex-wrap justify-center items-center py-10">
+                  <button className="px-2 py-1 flex justify-center items-center font-semibold text-sm text-gray-700">
+                    <ShareIcon />
+                    <span className="ml-2">Chia sẻ</span>
+                  </button>
+                  <button className="px-2 py-1 flex justify-center items-center font-semibold text-sm text-gray-700">
+                    <FavoriteBorderIcon />
+                    <span className="ml-2">Yêu thích</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div>
-              <p className="mb-2">
-                <button className="mr-3"></button>
-                <span className="font-semibold text-xl sm:text-3xl tracking-widest leading-relaxed text-gray-900">
+
+              <div>
+                <p className="mb-2">
+                  <button className="mr-3"> </button>
+                  <span className="font-semibold text-xl sm:text-3xl tracking-widest leading-relaxed text-gray-900">
                   {detail.name}
                 </span>
-              </p>
-              <h5>Thành phần:</h5>
-              <div style={{width: "430px", marginLeft: "20px"}}>{detail.detail}</div>
-
-              {/*<div>*/}
-              {/*  <p className="text-base font-normal tracking-widest mx-2">*/}
-              {/*    Mã sản phẩm: {detail.id}*/}
-              {/*  </p>*/}
-              {/*</div>*/}
-              <div className="py-3">
+                </p>
+                <div>
+                  <p className="text-base font-normal tracking-widest mx-2">
+                    Mã sản phẩm: {detail.id}
+                  </p>
+                </div>
+                <div className="py-3">
                 <span className="text-lg font-semibold tracking-widest mx-2 product_price">
-                  {formatPrice(detail.price)}
+                  {detail.price}đ
                 </span>
-              </div>
-              <div
-                  className="my-3"
-                  style={{padding: 10, background: "#f8f8f8", borderRadius: 10}}
-              >
+                </div>
                 <div
-                  style={{
-                    background: "#f33828",
-                    borderRadius: 5,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
+                    className="my-3"
+                    style={{ padding: 10, background: "#f8f8f8", borderRadius: 10 }}
                 >
                   <FaGift style={{ color: "#fff", marginLeft: 10 }} />
                   {/* <p
@@ -340,108 +312,118 @@ export default function ProductDetail() {
                   <FaGift style={{color: "#fff", marginLeft: 10}}/>
                   <p
                       style={{
-                        padding: "5px 10px",
-                        color: "#fff",
-                        fontWeight: 500,
-                        margin: 0,
+                        background: "#f33828",
+                        borderRadius: 5,
+                        display: "flex",
+                        alignItems: "center",
                       }}
                   >
-                    Thân chúc quý khách dùng ngon miệng
-                  </p>
-                </div>
+                    <FaGift style={{ color: "#fff", marginLeft: 10 }} />
+                    <p
+                        style={{
+                          padding: "5px 10px",
+                          color: "#fff",
+                          fontWeight: 500,
+                          margin: 0,
+                        }}
+                    >
+                      Thân chúc quý khách dùng ngon miệng
+                    </p>
+                  </div>
 
-                <ul
-                    className="promotion_box"
-                    style={{
-                      padding: 10,
-                      background: "#fff",
-                      marginTop: 10,
-                      listStyleType: "disc",
-                    }}
-                >
-                  <li>Freeship với đơn hàng 5 phần trở lên</li>
-                  <li>Tặng kèm trái cây tráng miệng mỗi ngày</li>
-                  <li>Cuối tuần tặng kèm nước uống</li>
-                </ul>
-              </div>
-              <div className="flex items-center pt-3">
-                <div className="flex" style={{marginRight: 20}}>
-                  <button
-                      className="decrease"
-                      onClick={() =>
-                          setAmount((prev) => (prev > 1 ? prev - 1 : prev))
-                      }
+                  <ul
+                      className="promotion_box"
+                      style={{
+                        padding: 10,
+                        background: "#fff",
+                        marginTop: 10,
+                        listStyleType: "disc",
+                      }}
                   >
-                    -
-                  </button>
-                  <span className="amount">{amount}</span>
-                  <button
-                      className="increase"
-                      onClick={() => setAmount((prev) => prev + 1)}
-                  >
-                    +
-                  </button>
+                    <li>Freeship với đơn hàng 5 phần trở lên</li>
+                    <li>Tặng kèm trái cây tráng miệng mỗi ngày</li>
+                    <li>Cuối tuần tặng kèm nước uống</li>
+                  </ul>
+                </div>
+                <div className="flex items-center pt-3">
+                  <div className="flex" style={{ marginRight: 20 }}>
+                    <button
+                        className="decrease"
+                        onClick={() =>
+                            setAmount((prev) => (prev > 1 ? prev - 1 : prev))
+                        }
+                    >
+                      -
+                    </button>
+                    <span className="amount">{amount}</span>
+                    <button
+                        className="increase"
+                        onClick={() => setAmount((prev) => prev + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div>
+                    <button className="addToCart" onClick={handleAddToCart}>
+                      Thêm vào giỏ hàng
+                    </button>
+                  </div>
                 </div>
                 <div>
-                  <button className="addToCart" onClick={handleAddToCart}>
-                    Thêm vào giỏ hàng
-                  </button>
-                </div>
-              </div>
-                <div onClick={handleBuyNow}>
                   <button className="buyNow">Mua ngay</button>
                 </div>
-
-              <p
-                  className="text-center"
-                  style={{padding: "20px 10px", width: 480}}
-              >
-                Gọi đặt mua{" "}
-                <span style={{color: "#87c84a", fontWeight: 500}}>
+                <p
+                    className="text-center"
+                    style={{ padding: "20px 10px", width: 480 }}
+                >
+                  Gọi đặt mua{" "}
+                  <span style={{ color: "#87c84a", fontWeight: 500 }}>
                   0902.504.708
                 </span>{" "}
-                (7:30 - 12:00)
-              </p>
-              <div style={{width: 480}}>
-                <ul className="product-policises list-unstyled py-3 px-3 m-0">
-                  <li>
-                    <div>
-                      <TbTruckDelivery
-                          style={{
-                            width: 45,
-                            fontSize: 30,
-                            color: "rgb(75 128 26)",
-                          }}
-                      />
-                    </div>
-                    <div>Giao hàng siêu tốc trong 1h</div>
-                  </li>
-                  <li>
-                    <div>
-                      <FaHandHoldingUsd
-                          style={{
-                            width: 45,
-                            fontSize: 30,
-                            color: "rgb(75 128 26)",
-                          }}
-                      />
-                    </div>
-                    <div>Combo 2 món đa dạng mỗi ngày</div>
-                  </li>
-                  <li>
-                    <div>
-                      <MdOutlinePayment
-                          style={{
-                            width: 45,
-                            fontSize: 25,
-                            color: "rgb(75 128 26)",
-                          }}
-                      />
-                    </div>
-                    <div>Thanh toán đa nền tảng</div>
-                  </li>
-                </ul>
+                  (7:30 - 12:00)
+                </p>
+                <div style={{ width: 480 }}>
+                  <ul className="product-policises list-unstyled py-3 px-3 m-0">
+                    <li>
+                      <div>
+                        <TbTruckDelivery
+                            style={{
+                              width: 45,
+                              fontSize: 30,
+                              color: "rgb(75 128 26)",
+                            }}
+                        />
+                      </div>
+                      <div>Giao hàng siêu tốc trong 1h</div>
+                    </li>
+                    <li>
+                      <div>
+                        <FaHandHoldingUsd
+                            style={{
+                              width: 45,
+                              fontSize: 30,
+                              color: "rgb(75 128 26)",
+                            }}
+                        />
+                      </div>
+                      <div>Combo 2 món đa dạng mỗi ngày</div>
+                    </li>
+                    <li>
+                      <div>
+                        <MdOutlinePayment
+                            style={{
+                              width: 45,
+                              fontSize: 25,
+                              color: "rgb(75 128 26)",
+                            }}
+                        />
+                      </div>
+                      <div>Thanh toán đa nền tảng</div>
+                    </li>
+                  </ul>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -471,8 +453,8 @@ export default function ProductDetail() {
           <div className="px-20 py-3 other_products">
             <h3 className="text-2xl font-semibold text-white">Sản phẩm khác</h3>
           </div>
-          <div className="flex justify-start py-20 px-10">{renderOthers()}</div>
         </div>
+
       </div>
     </div>
   );

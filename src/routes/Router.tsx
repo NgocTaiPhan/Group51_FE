@@ -10,7 +10,9 @@ import Product from "../pages/product/Product";
 import Cart from "../pages/cart/Cart";
 import Order from "../pages/order/Order";
 import OrderDetails from "../pages/order/OrderDetails";
+import OrderHistory from "../pages/history/OrderHistory";
 import Home from "../pages/Home/Home";
+
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -65,6 +67,10 @@ export default function Router() {
           element: <Account />,
         },
         {
+          path: "/order-history",
+          element: <OrderHistory />,
+        },
+        {
           path: "/product",
           element: <Product />,
         },
@@ -96,18 +102,20 @@ export default function Router() {
     },
   ]);
   return (
-    <Routes>
-      <Route path="/" element={<HomeLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/product-detail/:productId" element={<ProductDetail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/orderDetail" element={<OrderDetails />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/product" element={<Product />} />
-      </Route>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<HomeLayout />}>
+          <Route path="/product-detail/:productId" element={<ProductDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/orderDetail" element={<OrderDetails />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="order-history" element={<OrderHistory />} />
+          <Route path="/product" element={<Product />} />
+           <Route path="/account" element={<Account />} />
+        </Route>
+      </Routes>
+
   );
 }
