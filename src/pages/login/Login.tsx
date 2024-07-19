@@ -1,18 +1,17 @@
 import "./login.scss";
 import React from 'react';
 import axios from 'axios';
-import {Button, Checkbox, Form, Input} from 'antd';
+import {Button, Checkbox, CheckboxProps, Form, Input, message} from 'antd';
 import {NavLink, useNavigate} from 'react-router-dom';
 
 interface LoginFormValues {
     username: string;
     password: string;
-    remember: boolean;
+    rememberMe: boolean;
 }
 
 const Login: React.FC = () => {
     const navigate = useNavigate(); // Hook để chuyển hướng
-
     const onFinish = async (values: LoginFormValues) => {
         console.log('Input:', values);
         try {
@@ -25,20 +24,19 @@ const Login: React.FC = () => {
             const user = response.data.find((user: any) => user.username === values.username && user.password === values.password);
             if (user) {
                 console.log('Login successful:', user);
+                message.success("Đăng nhập thành công!")
                 // Lưu thông tin người dùng vào localStorage hoặc sessionStorage tùy thuộc vào trường remember
-                if (values.remember) {
-                    localStorage.setItem('user', JSON.stringify(user));
-                } else {
-                    sessionStorage.setItem('user', JSON.stringify(user));
-                }
+                localStorage.setItem('user', JSON.stringify(user));
                 // Chuyển hướng đến trang chính
                 navigate('/');
             } else {
                 console.error('Invalid username or password');
+                message.error("Sai tài khoản hoặc mật khẩu!");
                 // Xử lý khi đăng nhập thất bại (hiển thị thông báo lỗi, v.v.)
             }
         } catch (error) {
             console.error('There was an error!', error);
+            message.error("Lỗi hệ thống");
             // Xử lý khi đăng nhập thất bại (hiển thị thông báo lỗi, v.v.)
         }
     };
@@ -49,10 +47,11 @@ const Login: React.FC = () => {
 
     return (
         <Form
+            className="mx-auto"
             name="basic"
             labelCol={{span: 5}}
             wrapperCol={{span: 16}}
-            style={{ maxWidth: '550px', marginTop: '5%', }}
+            style={{maxWidth: '550px', marginTop: '7rem', paddingTop: '40px'}}
             initialValues={{remember: true}}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
@@ -79,9 +78,9 @@ const Login: React.FC = () => {
                 valuePropName=""
                 wrapperCol={{offset: 8, span: 16}}
             >
-                <Checkbox>Lưu đăng nhập</Checkbox>
+                <Checkbox name="rememberMe">Lưu đăng nhập</Checkbox>
                 <NavLink className="register" to="/register">
-                    Register
+                    Đăng kí
                 </NavLink>
             </Form.Item>
 
