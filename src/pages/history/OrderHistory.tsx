@@ -9,7 +9,16 @@ const OrderHistoryPage: React.FC = () => {
     const { formatPrice } = useOrderLogic(); // Sử dụng hook để định dạng giá
 
     useEffect(() => {
-        // Lấy danh sách đơn hàng từ API khi component được render
+        // Lấy userId từ sessionStorage
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        const userId = user.id;
+
+        if (!userId) {
+            console.error('User ID không tồn tại.');
+            return;
+        }
+
+        // Lấy danh sách đơn hàng từ API
         const fetchOrders = async () => {
             try {
                 const response = await fetch('http://localhost:3003/orders');
@@ -18,9 +27,13 @@ const OrderHistoryPage: React.FC = () => {
                 }
                 const data = await response.json();
 
-                data.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+                // Lọc các đơn hàng của người dùng hiện tại
+                const userOrders = data.filter((order: any) => order.userId === userId);
 
-                setOrders(data);
+                // Sắp xếp đơn hàng theo ngày tạo
+                userOrders.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
+                setOrders(userOrders);
             } catch (error) {
                 console.error('Failed to fetch orders:', error);
             }
@@ -35,23 +48,44 @@ const OrderHistoryPage: React.FC = () => {
     };
 
     if (orders.length === 0) {
-        return <div>Loading...</div>; // Hiển thị thông báo nếu không có đơn hàng
+        return <div>Không có đơn hàng nào.</div>; // Hiển thị thông báo nếu không có đơn hàng
     }
 
     return (
         <div className="orderHistoryContainer">
-            <h2 style={{ textAlign: 'center' }}>Lịch sử đơn hàng</h2>
-            <div className="orderList">
+            <h2 style={{ textAlign: 'center', color: "#006600", marginBottom: "50px" }}>Lịch sử đơn hàng</h2>
+            <table className="orderTable">
+                <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Trạng thái</th>
+                    <th>Phí vận chuyển</th>
+                    <th>Tổng tiền</th>
+                    <th>Chi tiết</th>
+                </tr>
+                </thead>
+                <tbody>
                 {orders.map((order: any, index: number) => (
-                    <div key={index} className="orderItem">
-                        <h3>Đơn hàng #{index + 1}</h3>
-                        <p>Trạng thái: {order.status}</p>
-                        <p>Phí vận chuyển: {formatPrice(order.phiShip)}</p>
-                        <p>Tổng tiền: {formatPrice(order.totalAmount + order.phiShip)}</p>
-                        <button onClick={() => handleViewDetails(order)}>Xem chi tiết</button>
-                    </div>
+                    <tr key={index}>
+                        <td>
+                            {order.products.length > 0 && (
+                                <img
+                                    src={order.products[0].image}
+                                    alt={order.products[0].name}
+                                    className="productImage"
+                                />
+                            )}
+                        </td>
+                        <td>{order.status}</td>
+                        <td>{formatPrice(order.phiShip)}</td>
+                        <td>{formatPrice(order.totalAmount + order.phiShip)}</td>
+                        <td>
+                            <button className={"button"} style={{background: "green", width: "140px", padding: "10px", borderRadius: "10px", color: "white"}} onClick={() => handleViewDetails(order)}>Xem chi tiết</button>
+                        </td>
+                    </tr>
                 ))}
-            </div>
+                </tbody>
+            </table>
         </div>
     );
 };

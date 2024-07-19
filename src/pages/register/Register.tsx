@@ -86,7 +86,7 @@ const Register: React.FC = () => {
             </Form.Item>
 
             <Form.Item
-                name="nickname"
+                name="username"
                 label="Tên đăng nhập"
                 tooltip="Tên bạn muốn người khác gọi bạn?"
                 rules={[{required: true, message: 'Hãy nhập tên đăng nhập!', whitespace: true}]}

@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     const onFinish = async (values: LoginFormValues) => {
         console.log('Input:', values);
         try {
-            const response = await axios.get('http://localhost:3002/users', {
+            const response = await axios.get('http://localhost:3001/users', {
                 params: {
                     username: values.username,
                     password: values.password
