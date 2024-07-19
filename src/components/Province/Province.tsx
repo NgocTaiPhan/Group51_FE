@@ -42,7 +42,7 @@ function Province() {
         const level = selectedOptions.length;
         const parentId = targetOption.value;
 
-        const res = await fetch(`https://esgoo.net/api-tinhthanh/${level}/${parentId}.htm`);
+        const res = await fetch(`https://esgoo.net/api-tinhthanh/${level + 1}/${parentId}.htm`);
         const data = await res.json();
 
         if (data.error === 0) {
@@ -50,9 +50,11 @@ function Province() {
             targetOption.children = data.data.map((item: ProvinceData) => ({
                 value: item.id,
                 label: item.full_name,
-                isLeaf: level === 3, // Mark ward as the final selection
+                isLeaf: level === 2, // Mark ward as the final selection
             }));
             setOptions([...options]); // Update options to refresh Cascader
+        } else {
+            targetOption.loading = false;
         }
     };
 

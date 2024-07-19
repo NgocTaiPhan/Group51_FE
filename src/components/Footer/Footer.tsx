@@ -23,30 +23,26 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer_item">
-          <h3>INFORMATION</h3>
+          <h3>Thông tin</h3>
           <ul>
-            <li>About Us</li>
-            <li>Checkout</li>
-            <li>Contact</li>
-            <li>Surivius</li>
+            <li>Về chúng tôi</li>
+            <li>Thanh toán</li>
+            <li>Liên hệ</li>
           </ul>
         </div>
         <div className="footer_item">
-          <h3>MY ACCOUNT</h3>
+          <h3>Tài khoản</h3>
           <ul>
-            <li>My account</li>
-            <li>Contact</li>
-            <li>Shopping Cart</li>
-            <li>Shop</li>
+            <li>Tài khoản</li>
+            <li>Giỏ hàng</li>
+            <li>Thực đơn</li>
           </ul>
         </div>
         <div className="footer_item">
-          <h3>QUICK SHOP</h3>
+          <h3>HỖ TRỢ</h3>
           <ul>
-            <li>Shipping & Return</li>
-            <li>Contact</li>
-            <li>Secure Shopping</li>
-            <li>Affiliates</li>
+            <li>Giao trả hàng</li>
+            <li>Bảo mật</li>
           </ul>
         </div>
       </div>

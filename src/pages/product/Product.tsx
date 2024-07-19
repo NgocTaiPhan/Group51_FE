@@ -46,10 +46,9 @@ const Product: React.FC = () => {
   };
 
   const handleSearch = (value: string) => {
-    setSearchTerm(value.trim().toLowerCase()); // Chuyển đổi giá trị tìm kiếm về chữ thường và loại bỏ khoảng trắng thừa
-    setCurrentPage(1); // Reset page khi tìm kiếm
+    setSearchTerm(value.toLowerCase()); // Chỉ chuyển đổi về chữ thường mà không loại bỏ khoảng trắng
+    setCurrentPage(1);
   };
-
   const filteredProducts = selectedType
     ? products.filter((product) => product.type === selectedType)
     : products;
