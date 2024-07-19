@@ -11,7 +11,7 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/product">
             <span>Thực đơn</span>
             <i className="fa fa-chevron-down" />
           </a>

@@ -76,12 +76,12 @@ const fetchData = async () => {
       }
     }
 
+    const outputData = { products: allData };
     const dataFilePath = "C:\\Users\\HP\\Desktop\\Group51_FE\\src\\data.json";
-    fs.writeFileSync(dataFilePath, JSON.stringify(allData, null, 2));
+    fs.writeFileSync(dataFilePath, JSON.stringify(outputData, null, 2));
   } catch (error) {
     console.error("Lỗi khi tải dữ liệu:", error);
   }
 };
 
 fetchData();
-

@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button, Pagination, Select, Input } from "antd";
-import data from "../../data.json";
 import "./Product.scss";
 import { Link } from "react-router-dom";
 import { SearchOutlined } from "@ant-design/icons";
+import { productService } from "../../services/product";
+import { listProduct } from "../../interfaces/product";
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
-interface listProduct {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  type: string; // Thêm kiểu dữ liệu cho type
-}
-
-const getProduct = async () => {
-  return data;
-};
 
 const formatPrice = (price: number): string => {
   return new Intl.NumberFormat("vi-VN", {
@@ -27,25 +17,25 @@ const formatPrice = (price: number): string => {
 
 const Product: React.FC = () => {
   const [products, setProducts] = useState<listProduct[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [selectedType, setSelectedType] = useState<string | undefined>(
-    undefined
-  );
-  const [searchTerm, setSearchTerm] = useState<string>(""); // State cho thanh tìm kiếm
-  const pageSize = 24; // Số sản phẩm mỗi trang
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsData = await getProduct();
-        setProducts(productsData);
+        const result = await productService.fetchProductApi();
+        console.log(result.data);
+        setProducts(result.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
     fetchProducts();
   }, []);
-
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [selectedType, setSelectedType] = useState<string | undefined>(
+    undefined
+  );
+  const [searchTerm, setSearchTerm] = useState<string>(""); // State cho thanh tìm kiếm
+  const pageSize = 24; // Số sản phẩm mỗi trang
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
