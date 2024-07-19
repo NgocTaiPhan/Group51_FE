@@ -1,8 +1,8 @@
-export interface comment {
-    id: number;
-    text: string;
-    author: string;
-  }
+export interface Comment {
+  id: number;
+  author: string;
+  text: string;
+}
 export interface Product {
   id: string;
   name: string;

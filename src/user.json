@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullname": "Phan Ngọc Tài",
+      "username": "user01",
+      "password": "User01@",
+      "address": "123 Đường Hoàng Diệu, Phường Linh Trung, Thủ Đức, TP.HCM",
+      "phone": "0901234567",
+      "birthDate": "1990-01-01"
+    },
+    {
+      "id": "2",
+      "fullname": "Nguyễn Văn An",
+      "username": "user02",
+      "password": "User02@",
+      "address": "456 Đường Võ Văn Ngân, Phường Bình Thọ, Thủ Đức, TP.HCM",
+      "phone": "0902233445",
+      "birthDate": "1992-02-02"
+    },
+    {
+      "id": "3",
+      "fullname": "Trần Thị Bình",
+      "username": "user03",
+      "password": "User03@",
+      "address": "789 Đường Kha Vạn Cân, Phường Hiệp Bình Chánh, Thủ Đức, TP.HCM",
+      "phone": "0903234567",
+      "birthDate": "1994-03-03"
+    },
+    {
+      "id": "4",
+      "fullname": "Lê Minh Cường",
+      "username": "user04",
+      "password": "User04@",
+      "address": "123 Đường Phạm Văn Đồng, Phường Linh Tây, Thủ Đức, TP.HCM",
+      "phone": "0904234567",
+      "birthDate": "1988-04-04"
+    },
+    {
+      "id": "5",
+      "fullname": "Phạm Thị Duyên",
+      "username": "user05",
+      "password": "User05@",
+      "address": "456 Đường Tô Ngọc Vân, Phường Linh Đông, Thủ Đức, TP.HCM",
+      "phone": "0905234567",
+      "birthDate": "1996-05-05"
+    },
+    {
+      "id": "772d",
+      "email": "21130164@st.hcmuaf.edu.vn",
+      "password": "ggdsgsgdfgfdgdfg",
+      "nickname": "sdsddsd",
+      "tinh": "89",
+      "quan": "886",
+      "phuong": "30340",
+      "phone": "0365374458",
+      "date-picker": "2024-07-08T17:00:00.000Z"
+    }
+  ]
+}

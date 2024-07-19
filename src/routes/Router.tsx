@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Routes, Route, useRoutes} from "react-router-dom";
+import { Routes, Route, useRoutes } from "react-router-dom";
 import HomeLayout from "../layout/HomeLayout/HomeLayout";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Login from "../pages/login/Login";
@@ -11,6 +11,7 @@ import Cart from "../pages/cart/Cart";
 import Order from "../pages/order/Order";
 import OrderDetails from "../pages/order/OrderDetails";
 import OrderHistory from "../pages/history/OrderHistory";
+import Home from "../pages/Home/Home";
 
 
 export default function Router() {
@@ -24,7 +25,6 @@ export default function Router() {
       setIsCartVisible(false);
     }
 
-
     // eslint-disable-next-line no-restricted-globals
   }, [location.pathname]);
   useRoutes([
@@ -33,9 +33,12 @@ export default function Router() {
       element: <HomeLayout />,
       children: [
         {
+          path: "/",
+          element: <Home />,
+        },
+        {
           path: "/product-detail/:productId",
           element: <ProductDetail />,
-
         },
       ],
     },
@@ -60,7 +63,6 @@ export default function Router() {
           element: <Register />,
         },
         {
-
           path: "/account",
           element: <Account />,
         },
@@ -73,7 +75,6 @@ export default function Router() {
           element: <Product />,
         },
         {
-
           path: "/cart",
           element: <Cart />,
         },
@@ -89,15 +90,14 @@ export default function Router() {
 
         {
           path: "/",
-          element: (
-              <HomeLayout/>
-          ), children: [
+          element: <HomeLayout />,
+          children: [
             {
               path: "/tracking",
-              element: <Tracking/>,
+              element: <Tracking />,
             },
           ],
-        }
+        },
       ],
     },
   ]);
@@ -113,7 +113,9 @@ export default function Router() {
           <Route path="/account" element={<Account />} />
           <Route path="order-history" element={<OrderHistory />} />
           <Route path="/product" element={<Product />} />
+           <Route path="/account" element={<Account />} />
         </Route>
       </Routes>
+
   );
 }
