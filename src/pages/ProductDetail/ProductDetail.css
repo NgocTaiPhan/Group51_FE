@@ -95,20 +95,33 @@
 
 .other_products {
   background-color: #87c84a;
+  padding-left: 10px;
 }
 
 .line {
-  width: 1px;
-  height: 500px;
+  height: 1px;
+  width: 80%;
+  margin: auto;
   background-color: rgba(203, 203, 203, 0.631372549);
+  margin-bottom: 50px;
 }
 
 .line_1 {
-  width: 400px;
+  width: 96%;
+  margin: auto;
   height: 1px;
   background-color: rgba(203, 203, 203, 0.631372549);
 }
 
+.comment {
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 100px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  width: 70%;
+  background-color: rgba(212, 212, 212, 0.18);
+}
 .comment .setNewComment {
   padding: 10px;
   width: 100%;
