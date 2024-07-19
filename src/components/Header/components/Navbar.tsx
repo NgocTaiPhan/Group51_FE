@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.scss";
+import {Link} from "react-router-dom";
 export default function Navbar() {
   return (
     <nav style={{ width: "40%" }}>
@@ -17,10 +18,12 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#">
-            <span>Lịch sử mua hàng</span>
-            <i className="fa fa-chevron-down" />
-          </a>
+          <Link to={"order-history"}>
+            <a href="#">
+              <span>Lịch sử mua hàng</span>
+              <i className="fa fa-chevron-down"/>
+            </a>
+          </Link>
         </li>
         <li>
           <a href="#">

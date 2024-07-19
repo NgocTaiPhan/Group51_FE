@@ -32,7 +32,8 @@ export default function ProductDetail() {
   const { productId } = useParams<{ productId: string }>();
   const [loadingOthers, setLoadingOthers] = useState<boolean>(true);
   const [loadingProduct, setLoadingProduct] = useState<boolean>(true);
-
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const author = user.fullname || "Unknown";
   const formatPrice = (price: number): string => {
     return new Intl.NumberFormat("vi-VN", {
       style: "currency",
@@ -139,7 +140,8 @@ export default function ProductDetail() {
         quantity: amount,
         image: data.image,
       };
-      window.location.href = `/checkoutPage/${productToAdd.id}`;
+      addToCart(productToAdd);
+      window.location.href = `/order`;
     }
   };
 
@@ -148,7 +150,7 @@ export default function ProductDetail() {
     const newComment = {
       id: comments.length + 1,
       text: newCommentText,
-      author: "QuyNguyen",
+      author: author,
       createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
     };
     const updatedComments = [...comments, newComment];

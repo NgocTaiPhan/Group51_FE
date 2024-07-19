@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './OrderDteails.scss';
+import { useEffect, useState } from 'react';
+import "./OrderDteails.scss";
 import { Link } from 'react-router-dom';
 import { useOrderLogic } from './OrderLogic';
 
@@ -9,7 +9,7 @@ const OrderDetailsPage: React.FC = () => {
     const [orderData, setOrderData] = useState<any>(null);
 
     useEffect(() => {
-        // Lấy dữ liệu đơn hàng từ localStorage khi component được render
+        // Lấy dữ liệu đơn hàng từ sessionStorage khi component được render
         const storedOrder = sessionStorage.getItem('orderData');
         if (storedOrder) {
             const parsedOrder = JSON.parse(storedOrder);

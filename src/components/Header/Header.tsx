@@ -2,25 +2,34 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
 import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../../pages/ProductDetail/CartContext";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
 import CartPopUp from "../../pages/cart/CartPopUp";
 
 const Header: React.FC = () => {
-    const navigate = useNavigate();
-    const { cartItemCount } = useCart();
-    const [isVisible, setIsVisible] = useState(false);
-    const [isCartVisible, setIsCartVisible] = useState(false);
+  const navigate = useNavigate();
+  const { cartItemCount } = useCart();
+  const [isVisible, setIsVisible] = useState(false);
+  const [isCartVisible, setIsCartVisible] = useState(false);
 
-    const handleToggle = () => {
-        setIsVisible(!isVisible);
-    };
+  const handleToggle = () => {
+    setIsVisible(!isVisible);
+  };
 
-    const handleCartToggle = () => {
-        setIsCartVisible(!isCartVisible);
-    };
+  const handleCartToggle = () => {
+    setIsCartVisible(!isCartVisible);
+  };
 
+  const isLoggedIn = !!(
+    localStorage.getItem("user") || sessionStorage.getItem("user")
+  );
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
+    navigate("/login");
+  };
   return (
     <div className="header">
       <div className="header_container">
@@ -38,7 +47,7 @@ const Header: React.FC = () => {
             style={{ fontSize: 40, paddingRight: 8, color: "#87c84a" }}
           />
           <div>
-            <p style={{marginBottom:0}}>Giao hàng tận nơi</p>
+            <p style={{ marginBottom: 0 }}>Giao hàng tận nơi</p>
             <p style={{ color: "#87c84a" }}>0902.504.708</p>
           </div>
         </div>
@@ -57,46 +66,51 @@ const Header: React.FC = () => {
             onClick={handleToggle}
           />
           <ul className={`account_option ${isVisible ? "visible" : "hidden"}`}>
-            <li>
-              <NavLink className="loginPage" to="/login">
-                Login
-              </NavLink>
-            </li>
+            {isLoggedIn ? (
+              <li>
+                <a className="logout" href="#" onClick={handleLogout}>
+                  Logout
+                </a>
+              </li>
+            ) : (
+              <li>
+                <NavLink className="loginPage" to="/login">
+                  Login
+                </NavLink>
+              </li>
+            )}
             <li>
               <a className="cartPage" href="#" onClick={handleCartToggle}>
                 Cart
               </a>
             </li>
             <li>
-              <NavLink className="myAccount" to="/information">
+              <NavLink className="myAccount" to="/account">
                 My Account
               </NavLink>
             </li>
           </ul>
-            <NavLink to={"/cart"}>
-                <ShoppingCartOutlined
-                    className="cart"
-                    style={{
-                        position: "relative",
-                        transition: "all 0.3s",
-                        fontSize: 28,
-                        marginRight: 15,
-                        cursor: "pointer",
-                        padding: 6,
-                        borderRadius: "50%",
-                        backgroundColor: "#e6e6e6",
-                    }}
-
-                />
-
-            </NavLink>
+          <NavLink to={"/cart"}>
+            <ShoppingCartOutlined
+              className="cart"
+              style={{
+                position: "relative",
+                transition: "all 0.3s",
+                fontSize: 28,
+                marginRight: 15,
+                cursor: "pointer",
+                padding: 6,
+                borderRadius: "50%",
+                backgroundColor: "#e6e6e6",
+              }}
+            />
+          </NavLink>
 
           <span className="cart-count">{cartItemCount}</span>
         </div>
       </div>
     </div>
   );
-
 };
 
 export default Header;

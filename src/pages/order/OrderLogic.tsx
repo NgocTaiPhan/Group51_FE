@@ -31,8 +31,7 @@ export const useOrderLogic = () => {
         return getTotalPrice();
     };
 
-    const handleFinish = (values: FormValues) => {
-        // Tính phí ship và thời gian
+    const handleFinish = async (values: FormValues) => {
         const { phiShip, thoiGian } = getShippingAndTime(values.xa);
         const orderData = {
             products,
@@ -49,11 +48,27 @@ export const useOrderLogic = () => {
             thoiGian,
         };
 
-        sessionStorage.setItem('orderData', JSON.stringify(orderData));
-        // console.log('Order saved:', orderData);
-        message.success('Đặt hàng thành công!');
-        clearCart();
+        try {
+            // Gửi dữ liệu đơn hàng đến API
+            await fetch('http://localhost:3000/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData),
+            });
+
+            // Lưu dữ liệu đơn hàng vào sessionStorage
+            sessionStorage.setItem('orderData', JSON.stringify(orderData));
+
+            message.success('Đặt hàng thành công!');
+            clearCart();
+        } catch (error) {
+            message.error('Đặt hàng thất bại!');
+        }
     };
+
+
 
     const getShippingAndTime = (xa: string): { phiShip: number; thoiGian: string } => {
         const sumQuantityValue = sumQuantity();
