@@ -50,39 +50,7 @@
       "phone": "0905234567",
       "birthDate": "1996-05-05"
     },
-    {
-      "id": "772d",
-      "email": "21130164@st.hcmuaf.edu.vn",
-      "password": "ggdsgsgdfgfdgdfg",
-      "nickname": "sdsddsd",
-      "tinh": "89",
-      "quan": "886",
-      "phuong": "30340",
-      "phone": "0365374458",
-      "date-picker": "2024-07-08T17:00:00.000Z"
-    },
-    {
-      "id": "8d4d",
-      "email": "21130164@st.hcmuaf.edu.vn",
-      "password": "HHHFdhhdghdhggggfg",
-      "nickname": "userMaster",
-      "tinh": "77",
-      "quan": "750",
-      "phuong": "26590",
-      "phone": "0365374458",
-      "date-picker": "2003-04-30T17:00:00.000Z"
-    },
-    {
-      "id": "db28",
-      "email": "21130164@st.hcmuaf.edu.vn",
-      "password": "HHHFdhhdghdhggggfg",
-      "nickname": "userMaster",
-      "tinh": "77",
-      "quan": "750",
-      "phuong": "26590",
-      "phone": "0365374458",
-      "date-picker": "2003-04-30T17:00:00.000Z"
-    },
+ 
     {
       "id": "0bd3",
       "email": "21130164@st.hcmuaf.edu.vn",

@@ -1,11 +1,10 @@
-// OrderDetailsPage
 import { useEffect, useState } from 'react';
-import './OrderDteails.scss';
+import "./OrderDteails.scss"
 import { Link } from 'react-router-dom';
 import { useOrderLogic } from './OrderLogic';
 
 const OrderDetailsPage: React.FC = () => {
-    const { formatPrice, selectedDistrict } = useOrderLogic();
+    const { formatPrice } = useOrderLogic();
     const [orderData, setOrderData] = useState<any>(null);
 
     useEffect(() => {
@@ -24,30 +23,52 @@ const OrderDetailsPage: React.FC = () => {
         <div className="orderDetailContainer">
             <div className="order-details">
                 <Link to="/product">
-                    <button className="back">Quay lại</button>
+                    <button className="back">X</button>
                 </Link>
-                <h3 style={{color: '#006600', textAlign: 'center'}}>Thông tin đơn hàng</h3>
-                <p>Sản phẩm:</p>
-                <ul>
-                    {orderData.products.map((product: any, index: number) => (
-                        <li key={index}>
-                            {product.name}: {product.quantity} x {formatPrice(product.price)}
-                        </li>
-                    ))}
-                </ul>
-                <p>Trạng thái: {orderData.status}</p>
-                <p>Phí vận chuyển: {formatPrice(orderData.phiShip)}</p>
-                <p>Thời gian dự kiến nhận hàng: {orderData.thoiGian}</p>
-                <p>Tổng tiền: {formatPrice(orderData.totalAmount + orderData.phiShip)}</p>
+                <h3 className="info" style={{textAlign: 'center'}}>Thông tin đơn hàng</h3>
 
-                <p>Địa chỉ nhận hàng:</p>
-                <ul>
-                    <li>
+                <div className="order-detail-section">
+                    <span className="detail-title">Sản phẩm:</span>
+                    <ul>
+                        {orderData.products.map((product: any, index: number) => (
+                            <li key={index}>
+                                {product.name}: {product.quantity} x {formatPrice(product.price)}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="order-detail-section">
+                    <span className="detail-title">Trạng thái:</span>
+                    <span className="detail-info">{orderData.status}</span>
+                </div>
+                <div className="order-detail-section">
+                    <span className="detail-title">Phí vận chuyển:</span>
+                    <span className="detail-info">{formatPrice(orderData.phiShip)}</span>
+                </div>
+
+                <div className="order-detail-section">
+                    <span className="detail-title">Tổng tiền:</span>
+                    <span className="detail-info">{formatPrice(orderData.totalAmount + orderData.phiShip)}</span>
+                </div>
+                <div className="order-detail-section">
+                    <span className="detail-title">Thời gian dự kiến nhận hàng:</span>
+                    <span className="detail-info">{orderData.thoiGian}</span>
+                </div>
+                <div className="order-detail-section">
+                    <span className="detail-title">Địa chỉ nhận hàng:</span>
+                    <span className="detail-info">
                         {orderData.address.sonha} - {orderData.address.xa} - {orderData.address.huyen} - {orderData.address.tinh}
-                    </li>
-                    <li>Số điện thoại: {orderData.address.phone}</li>
-                    <li>Tên: {orderData.address.name}</li>
-                </ul>
+                    </span>
+                </div>
+                <div className="order-detail-section">
+                    <span className="detail-title">Số điện thoại:</span>
+                    <span className="detail-info">{orderData.address.phone}</span>
+                </div>
+                <div className="order-detail-section">
+                    <span className="detail-title">Tên:</span>
+                    <span className="detail-info">{orderData.address.name}</span>
+                </div>
             </div>
         </div>
     );

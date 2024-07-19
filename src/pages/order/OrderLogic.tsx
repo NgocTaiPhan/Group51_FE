@@ -33,9 +33,14 @@ export const useOrderLogic = () => {
     const getTotalAmount = (): number => {
         return getTotalPrice();
     };
+    const getUserId = (): string | null => {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        return user.id || null; // Lấy ID người dùng từ sessionStorage
+    };
 
     const handleFinish = async (values: FormValues) => {
         const { phiShip, thoiGian } = getShippingAndTime(values.xa);
+        const userId = getUserId(); // Lấy ID người dùng
         const orderData = {
             products,
             totalAmount: getTotalAmount(),
@@ -50,6 +55,7 @@ export const useOrderLogic = () => {
             },
             phiShip,
             thoiGian,
+            userId,
         };
 
         try {
