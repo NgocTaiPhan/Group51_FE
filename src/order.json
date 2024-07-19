@@ -1,34 +1,34 @@
 {
   "orders": [
     {
-      "id": "33e6",
+      "id": "2ba4",
       "products": [
         {
-          "id": "6",
-          "name": "C06 Mì tươi Hoành thánh (khô/nước)",
-          "price": 69000,
+          "id": "1",
+          "name": "C01 Mì tươi Gà xé",
+          "price": 39000,
           "quantity": 1,
-          "image": "//product.hstatic.net/200000892317/product/c06_c26_b085ba0263d749cb8b44e6c1336811e3_large.jpg"
+          "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_80bfcc18d1be43468950e56b0f517853_large.jpg"
         }
       ],
-      "totalAmount": 69000,
+      "totalAmount": 39000,
       "status": "Đang xử lý",
       "address": {
         "sonha": "10",
         "huyen": "TP.Thủ Đức",
-        "xa": "Phường Linh Xuân",
+        "xa": "Phường Trường Thọ",
         "phone": "0348429274",
         "name": "Hoa Pham"
       },
-      "phiShip": 10000,
-      "thoiGian": "17 phút"
+      "phiShip": 15000,
+      "thoiGian": "23 phút"
     },
     {
-      "id": "4a01",
+      "id": "f5ce",
       "products": [
         {
           "id": "3",
-          "name": "C03 Mì tươi Cá (khô/nước)",
+          "name": "C03 Mì tươi Cá",
           "price": 59000,
           "quantity": 1,
           "image": "//product.hstatic.net/200000892317/product/c03_c23_ec299dd19c67488094dfb4e1383bda1d_large.jpg"
@@ -39,81 +39,13 @@
       "address": {
         "sonha": "10",
         "huyen": "TP.Thủ Đức",
-        "xa": "Phường Tam Phú",
-        "phone": "0348429274",
-        "name": "Hoa Pham"
-      },
-      "phiShip": 20000,
-      "thoiGian": "27 phút"
-    },
-    {
-      "id": "7ffb",
-      "products": [
-        {
-          "id": "8",
-          "name": "C08 Mì tươi Tôm (khô/nước)",
-          "price": 89000,
-          "quantity": 1,
-          "image": "//product.hstatic.net/200000892317/product/c08_c28_acd0990a37d64ed49c552be898e65c6f_large.jpg"
-        }
-      ],
-      "totalAmount": 89000,
-      "status": "Đang xử lý",
-      "address": {
-        "sonha": "10",
-        "huyen": "TP.Thủ Đức",
         "xa": "Phường Linh Trung",
         "phone": "0348429274",
-        "name": "Hoa Pham"
+        "name": "Hoa Pham",
+        "tinh": "TP.HCM"
       },
       "phiShip": 10000,
       "thoiGian": "16 phút"
-    },
-    {
-      "id": "2ffd",
-      "products": [
-        {
-          "id": "2",
-          "name": "C02 Mì tươi Đùi gà xé (khô/nước)",
-          "price": 69000,
-          "quantity": 1,
-          "image": "//product.hstatic.net/200000892317/product/c01_c02_c21_c22_467b878e8a174f53996af406f7a278c1_large.jpg"
-        }
-      ],
-      "totalAmount": 69000,
-      "status": "Đang xử lý",
-      "address": {
-        "sonha": "10",
-        "huyen": "TP.Thủ Đức",
-        "xa": "Phường Linh Trung",
-        "phone": "0348429274",
-        "name": "Hoa Pham"
-      },
-      "phiShip": 10000,
-      "thoiGian": "16 phút"
-    },
-    {
-      "id": "bfe9",
-      "products": [
-        {
-          "id": "60",
-          "name": "H01 Cơm Gà Hải Nam",
-          "price": 39000,
-          "quantity": 5,
-          "image": "//product.hstatic.net/200000892317/product/h01_64a6f6854e94475782e4f4de9b7ac3b7_large.jpg"
-        }
-      ],
-      "totalAmount": 195000,
-      "status": "Đang xử lý",
-      "address": {
-        "sonha": "10",
-        "huyen": "TP.Thủ Đức",
-        "xa": "Phường Linh Xuân",
-        "phone": "0348429274",
-        "name": "Hoa Pham"
-      },
-      "phiShip": 0,
-      "thoiGian": "17 phút"
     }
   ]
 }

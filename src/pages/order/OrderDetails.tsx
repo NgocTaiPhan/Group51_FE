@@ -1,15 +1,14 @@
+// OrderDetailsPage
 import { useEffect, useState } from 'react';
-import "./OrderDteails.scss";
+import './OrderDteails.scss';
 import { Link } from 'react-router-dom';
 import { useOrderLogic } from './OrderLogic';
 
 const OrderDetailsPage: React.FC = () => {
-    const { formatPrice } = useOrderLogic(); // Sử dụng hook useOrderLogic để lấy thông tin cần thiết
-
+    const { formatPrice, selectedDistrict } = useOrderLogic();
     const [orderData, setOrderData] = useState<any>(null);
 
     useEffect(() => {
-        // Lấy dữ liệu đơn hàng từ sessionStorage khi component được render
         const storedOrder = sessionStorage.getItem('orderData');
         if (storedOrder) {
             const parsedOrder = JSON.parse(storedOrder);
@@ -18,7 +17,7 @@ const OrderDetailsPage: React.FC = () => {
     }, []);
 
     if (!orderData) {
-        return <div>Loading...</div>; // Hiển thị thông báo loading nếu đang chờ dữ liệu
+        return <div>Loading...</div>;
     }
 
     return (
@@ -44,8 +43,7 @@ const OrderDetailsPage: React.FC = () => {
                 <p>Địa chỉ nhận hàng:</p>
                 <ul>
                     <li>
-                        {orderData.address.sonha} - {orderData.address.xa} - {orderData.address.huyen} - {'TP.HCM'}
-                        {orderData.address.tinh}
+                        {orderData.address.sonha} - {orderData.address.xa} - {orderData.address.huyen} - {orderData.address.tinh}
                     </li>
                     <li>Số điện thoại: {orderData.address.phone}</li>
                     <li>Tên: {orderData.address.name}</li>

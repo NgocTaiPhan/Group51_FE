@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { message } from 'antd';
 import { useCart } from '../ProductDetail/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 interface FormValues {
     sonha: string;
@@ -8,11 +9,11 @@ interface FormValues {
     xa: string;
     phone: string;
     name: string;
-    phiShip:number;
-    thoiGian:string;
+    phiShip: number;
+    thoiGian: string;
+    tinh: string;
 }
 
-// Cấu hình thông báo
 message.config({
     top: 100,
     duration: 3,
@@ -20,8 +21,10 @@ message.config({
 });
 
 export const useOrderLogic = () => {
-    const { products, clearCart, getTotalPrice, sumQuantity} = useCart();
+    const { products, clearCart, getTotalPrice, sumQuantity } = useCart();
     const selectedDistrict = "TP.Thủ Đức"; // Cố định huyện là Thủ Đức
+    const provin = "TP.HCM"; // Cố định huyện là Thủ Đức
+    const [shippingInfo, setShippingInfo] = useState({ phiShip: 0, thoiGian: "" });
 
     const formatPrice = (price: number): string => {
         return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
@@ -43,14 +46,14 @@ export const useOrderLogic = () => {
                 xa: values.xa,
                 phone: values.phone,
                 name: values.name,
+                tinh: provin,
             },
             phiShip,
             thoiGian,
         };
 
         try {
-            // Gửi dữ liệu đơn hàng đến API
-            await fetch('http://localhost:3000/orders', {
+            await fetch('http://localhost:3003/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +61,6 @@ export const useOrderLogic = () => {
                 body: JSON.stringify(orderData),
             });
 
-            // Lưu dữ liệu đơn hàng vào sessionStorage
             sessionStorage.setItem('orderData', JSON.stringify(orderData));
 
             message.success('Đặt hàng thành công!');
@@ -67,8 +69,6 @@ export const useOrderLogic = () => {
             message.error('Đặt hàng thất bại!');
         }
     };
-
-
 
     const getShippingAndTime = (xa: string): { phiShip: number; thoiGian: string } => {
         const sumQuantityValue = sumQuantity();
@@ -129,12 +129,14 @@ export const useOrderLogic = () => {
         }
     };
 
-
     return {
         products,
         selectedDistrict,
         formatPrice,
         getTotalAmount,
         handleFinish,
+        getShippingAndTime,
+        shippingInfo,
+        setShippingInfo,
     };
 };
