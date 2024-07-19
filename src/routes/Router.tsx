@@ -10,6 +10,7 @@ import Product from "../pages/product/Product";
 import Cart from "../pages/cart/Cart";
 import Order from "../pages/order/Order";
 import OrderDetails from "../pages/order/OrderDetails";
+import OrderHistory from "../pages/history/OrderHistory";
 
 
 export default function Router() {
@@ -64,6 +65,10 @@ export default function Router() {
           element: <Account />,
         },
         {
+          path: "/order-history",
+          element: <OrderHistory />,
+        },
+        {
           path: "/product",
           element: <Product />,
         },
@@ -106,6 +111,7 @@ export default function Router() {
           <Route path="/order" element={<Order />} />
           <Route path="/orderDetail" element={<OrderDetails />} />
           <Route path="/account" element={<Account />} />
+          <Route path="order-history" element={<OrderHistory />} />
           <Route path="/product" element={<Product />} />
         </Route>
       </Routes>

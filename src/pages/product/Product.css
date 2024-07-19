@@ -4,7 +4,15 @@
 }
 
 .detail {
-  background: #87c84a;
+  border: 1px solid #87c84a;
+  background: #fff;
+  color: #87c84a;
+  transition: all 0.3s;
+}
+.detail:hover {
+  background: #87c84a !important;
+  border: none;
+  color: #fff !important;
 }
 
 .mb-0 {
