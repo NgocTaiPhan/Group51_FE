@@ -13,6 +13,7 @@ import OrderDetails from "../pages/order/OrderDetails";
 import Home from "../pages/Home/Home";
 import OrderHistoryPage from "../pages/history/OrderHistory";
 import withAuthGuard from "../guards/AuthGuard";
+import AdminLayout from "../layout/AdminLayout/AdminLayout";
 
 export default function Router() {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -27,80 +28,6 @@ export default function Router() {
 
     // eslint-disable-next-line no-restricted-globals
   }, [location.pathname]);
-  useRoutes([
-    {
-      path: "/",
-      element: <HomeLayout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/product-detail/:productId",
-          element: <ProductDetail />,
-        },
-      ],
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/register",
-      element: <Register />,
-    },
-    {
-      path: "/",
-      element: <HomeLayout />,
-      children: [
-        {
-          path: "/login",
-          element: <Login />,
-        },
-        {
-          path: "/register",
-          element: <Register />,
-        },
-        {
-          path: "/account",
-          element: <Account />,
-        },
-        {
-          path: "/order-history",
-          element: <OrderHistoryPage />,
-        },
-        {
-          path: "/product",
-          element: <Product />,
-        },
-        {
-          path: "/cart",
-          element: <Cart />,
-        },
-        {
-          path: "/order",
-          element: <Order />,
-        },
-
-        {
-          path: "/orderDetail",
-          element: <OrderDetails />,
-        },
-
-        {
-          path: "/",
-          element: <HomeLayout />,
-          children: [
-            {
-              path: "/tracking",
-              element: <Tracking />,
-            },
-          ],
-        },
-      ],
-    },
-  ]);
   return (
     <Routes>
       <Route path="/" element={<HomeLayout />}>
@@ -135,6 +62,9 @@ export default function Router() {
           path="/product"
           element={React.createElement(withAuthGuard(Product))}
         />
+      </Route>
+      <Route path="/admin" element={<AdminLayout />}>
+
       </Route>
     </Routes>
   );

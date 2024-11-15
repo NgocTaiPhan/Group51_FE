@@ -6,7 +6,13 @@
       "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user01",
       "password": "User01@",
-      "address": "123 Đường Hoàng Diệu, Phường Linh Trung, Thủ Đức, TP.HCM",
+      "address": {
+        "soNha": "123",
+        "duong": "Đường Hoàng Diệu",
+        "phuong": "Linh Trung",
+        "huyen": "Thủ Đức",
+        "tinh": "TP.HCM"
+      },
       "phone": "0901234567",
       "birthDate": "1990-01-01"
     },
@@ -16,7 +22,13 @@
       "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user02",
       "password": "User02@",
-      "address": "456 Đường Võ Văn Ngân, Phường Bình Thọ, Thủ Đức, TP.HCM",
+      "address": {
+        "soNha": "456",
+        "duong": "Đường Võ Văn Ngân",
+        "phuong": "Bình Thọ",
+        "huyen": "Thủ Đức",
+        "tinh": "TP.HCM"
+      },
       "phone": "0902233445",
       "birthDate": "1992-02-02"
     },
@@ -26,7 +38,13 @@
       "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user03",
       "password": "User03@",
-      "address": "789 Đường Kha Vạn Cân, Phường Hiệp Bình Chánh, Thủ Đức, TP.HCM",
+      "address": {
+        "soNha": "789",
+        "duong": "Đường Kha Vạn Cân",
+        "phuong": "Hiệp Bình Chánh",
+        "huyen": "Thủ Đức",
+        "tinh": "TP.HCM"
+      },
       "phone": "0903234567",
       "birthDate": "1994-03-03"
     },
@@ -36,7 +54,13 @@
       "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user04",
       "password": "User04@",
-      "address": "123 Đường Phạm Văn Đồng, Phường Linh Tây, Thủ Đức, TP.HCM",
+      "address": {
+        "soNha": "123",
+        "duong": "Đường Phạm Văn Đồng",
+        "phuong": "Linh Tây",
+        "huyen": "Thủ Đức",
+        "tinh": "TP.HCM"
+      },
       "phone": "0904234567",
       "birthDate": "1988-04-04"
     },
@@ -46,21 +70,15 @@
       "email": "21130164@st.hcmuaf.edu.vn",
       "username": "user05",
       "password": "User05@",
-      "address": "456 Đường Tô Ngọc Vân, Phường Linh Đông, Thủ Đức, TP.HCM",
+      "address": {
+        "soNha": "456",
+        "duong": "Đường Tô Ngọc Vân",
+        "phuong": "Linh Đông",
+        "huyen": "Thủ Đức",
+        "tinh": "TP.HCM"
+      },
       "phone": "0905234567",
       "birthDate": "1996-05-05"
-    },
- 
-    {
-      "id": "0bd3",
-      "email": "21130164@st.hcmuaf.edu.vn",
-      "password": "gggggggefsdsf",
-      "username": "fdfdfdf",
-      "province": "24",
-      "quan": "217",
-      "phuong": "07405",
-      "phone": "0365374458",
-      "date-picker": "2024-06-30T17:00:00.000Z"
     }
   ]
 }
